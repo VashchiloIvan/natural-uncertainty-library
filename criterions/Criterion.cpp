@@ -30,5 +30,5 @@ std::string Criterion::join(std::vector<std::string> strings, std::string separa
         startString += separator + strings[i];
     }
 
-    return startString
+    return startString;
 }

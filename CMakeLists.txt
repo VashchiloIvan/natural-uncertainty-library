@@ -21,4 +21,5 @@ add_library(natural_uncertainty SHARED
         criterions/OptimismPessimismCriterion.cpp
         criterions/OptimismPessimismCriterion.h
         criterions/PrincipleOfInsufficientReason.cpp
-        criterions/PrincipleOfInsufficientReason.h)
+        criterions/PrincipleOfInsufficientReason.h
+)

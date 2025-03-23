@@ -5,7 +5,7 @@
 Alternative::Alternative(std::string name, std::vector<double> marks) :
         name(std::move(name)), marks(std::move(marks)) {}
 
-std::string Alternative::getName() {
+std::string Alternative::getName() const {
     return name;
 }
 
@@ -63,5 +63,5 @@ double Alternative::avgOfMarks() {
         return 0;
     }
 
-    return sumOfMarks() / marks.size()
+    return sumOfMarks() / marks.size();
 }

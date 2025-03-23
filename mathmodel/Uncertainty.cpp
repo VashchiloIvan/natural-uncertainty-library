@@ -4,6 +4,6 @@
 
 Uncertainty::Uncertainty(std::string name) : name(std::move(name)) {}
 
-std::string Uncertainty::getName() {
+std::string Uncertainty::getName() const {
     return name;
 }

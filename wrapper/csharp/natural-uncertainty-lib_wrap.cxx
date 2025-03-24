@@ -1096,7 +1096,7 @@ SWIGINTERN void std_vector_Sl_Uncertainty_Sg__SetRange(std::vector< Uncertainty 
 extern "C" {
 #endif
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_Alternative(const char * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_Alternative(const char * jarg1, void * jarg2) {
   void * jresult ;
   std::string arg1 ;
   std::vector< double > arg2 ;
@@ -1120,7 +1120,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_Alternative(const char * jarg1, void * 
 }
 
 
-SWIGEXPORT const char * SWIGSTDCALL CSharp_Alternative_getName(void * jarg1) {
+SWIGEXPORT const char * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Alternative_getName(void * jarg1) {
   const char * jresult ;
   Alternative *arg1 = (Alternative *) 0 ;
   std::string result;
@@ -1132,7 +1132,7 @@ SWIGEXPORT const char * SWIGSTDCALL CSharp_Alternative_getName(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Alternative_getMarks(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Alternative_getMarks(void * jarg1) {
   void * jresult ;
   Alternative *arg1 = (Alternative *) 0 ;
   std::vector< double > result;
@@ -1144,7 +1144,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Alternative_getMarks(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Alternative_setMarks(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Alternative_setMarks(void * jarg1, void * jarg2) {
   Alternative *arg1 = (Alternative *) 0 ;
   std::vector< double > arg2 ;
   std::vector< double > *argp2 ;
@@ -1160,7 +1160,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Alternative_setMarks(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_Alternative_minMark(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Alternative_minMark(void * jarg1) {
   double jresult ;
   Alternative *arg1 = (Alternative *) 0 ;
   double result;
@@ -1172,7 +1172,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_Alternative_minMark(void * jarg1) {
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_Alternative_maxMark(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Alternative_maxMark(void * jarg1) {
   double jresult ;
   Alternative *arg1 = (Alternative *) 0 ;
   double result;
@@ -1184,7 +1184,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_Alternative_maxMark(void * jarg1) {
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_Alternative_sumOfMarks(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Alternative_sumOfMarks(void * jarg1) {
   double jresult ;
   Alternative *arg1 = (Alternative *) 0 ;
   double result;
@@ -1196,7 +1196,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_Alternative_sumOfMarks(void * jarg1) {
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_Alternative_avgOfMarks(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Alternative_avgOfMarks(void * jarg1) {
   double jresult ;
   Alternative *arg1 = (Alternative *) 0 ;
   double result;
@@ -1208,7 +1208,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_Alternative_avgOfMarks(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_Alternative(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_Alternative(void * jarg1) {
   Alternative *arg1 = (Alternative *) 0 ;
   
   arg1 = (Alternative *)jarg1; 
@@ -1216,7 +1216,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_Alternative(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_Uncertainty(const char * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_Uncertainty(const char * jarg1) {
   void * jresult ;
   std::string arg1 ;
   Uncertainty *result = 0 ;
@@ -1232,7 +1232,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_Uncertainty(const char * jarg1) {
 }
 
 
-SWIGEXPORT const char * SWIGSTDCALL CSharp_Uncertainty_getName(void * jarg1) {
+SWIGEXPORT const char * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Uncertainty_getName(void * jarg1) {
   const char * jresult ;
   Uncertainty *arg1 = (Uncertainty *) 0 ;
   std::string result;
@@ -1244,7 +1244,7 @@ SWIGEXPORT const char * SWIGSTDCALL CSharp_Uncertainty_getName(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_Uncertainty(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_Uncertainty(void * jarg1) {
   Uncertainty *arg1 = (Uncertainty *) 0 ;
   
   arg1 = (Uncertainty *)jarg1; 
@@ -1252,7 +1252,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_Uncertainty(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_MathModel__SWIG_0() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_MathModel__SWIG_0() {
   void * jresult ;
   MathModel *result = 0 ;
   
@@ -1262,7 +1262,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_MathModel__SWIG_0() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_MathModel__SWIG_1(void * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_MathModel__SWIG_1(void * jarg1, void * jarg2) {
   void * jresult ;
   std::vector< Alternative > arg1 ;
   std::vector< Uncertainty > arg2 ;
@@ -1288,7 +1288,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_MathModel__SWIG_1(void * jarg1, void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_MathModel__SWIG_2(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_MathModel__SWIG_2(void * jarg1) {
   void * jresult ;
   MathModel *arg1 = 0 ;
   MathModel *result = 0 ;
@@ -1304,7 +1304,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_MathModel__SWIG_2(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_MathModel_setAlternatives(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_MathModel_setAlternatives(void * jarg1, void * jarg2) {
   MathModel *arg1 = (MathModel *) 0 ;
   std::vector< Alternative > arg2 ;
   std::vector< Alternative > *argp2 ;
@@ -1320,7 +1320,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_MathModel_setAlternatives(void * jarg1, void 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_MathModel_setUncertainties(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_MathModel_setUncertainties(void * jarg1, void * jarg2) {
   MathModel *arg1 = (MathModel *) 0 ;
   std::vector< Uncertainty > arg2 ;
   std::vector< Uncertainty > *argp2 ;
@@ -1336,7 +1336,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_MathModel_setUncertainties(void * jarg1, void
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_MathModel_getAlternatives(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_MathModel_getAlternatives(void * jarg1) {
   void * jresult ;
   MathModel *arg1 = (MathModel *) 0 ;
   std::vector< Alternative > result;
@@ -1348,7 +1348,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_MathModel_getAlternatives(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_MathModel_getUncertainties(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_MathModel_getUncertainties(void * jarg1) {
   void * jresult ;
   MathModel *arg1 = (MathModel *) 0 ;
   std::vector< Uncertainty > result;
@@ -1360,7 +1360,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_MathModel_getUncertainties(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MathModel_isValid(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_MathModel_isValid(void * jarg1) {
   unsigned int jresult ;
   MathModel *arg1 = (MathModel *) 0 ;
   bool result;
@@ -1372,7 +1372,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_MathModel_isValid(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_MathModel(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_MathModel(void * jarg1) {
   MathModel *arg1 = (MathModel *) 0 ;
   
   arg1 = (MathModel *)jarg1; 
@@ -1380,7 +1380,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_MathModel(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_Criterion_withLoggingProcess(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Criterion_withLoggingProcess(void * jarg1) {
   Criterion *arg1 = (Criterion *) 0 ;
   
   arg1 = (Criterion *)jarg1; 
@@ -1388,7 +1388,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Criterion_withLoggingProcess(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Criterion_getProcess(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Criterion_getProcess(void * jarg1) {
   void * jresult ;
   Criterion *arg1 = (Criterion *) 0 ;
   std::vector< TaskStep * > result;
@@ -1400,7 +1400,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Criterion_getProcess(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_Criterion_solve(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Criterion_solve(void * jarg1) {
   void * jresult ;
   Criterion *arg1 = (Criterion *) 0 ;
   SolveStatus result;
@@ -1412,7 +1412,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_Criterion_solve(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_Criterion(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_Criterion(void * jarg1) {
   Criterion *arg1 = (Criterion *) 0 ;
   
   arg1 = (Criterion *)jarg1; 
@@ -1420,7 +1420,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_Criterion(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_MaximinCriterion(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_MaximinCriterion(void * jarg1) {
   void * jresult ;
   MathModel arg1 ;
   MathModel *argp1 ;
@@ -1438,7 +1438,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_MaximinCriterion(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_MaximinCriterion_solve(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_MaximinCriterion_solve(void * jarg1) {
   void * jresult ;
   MaximinCriterion *arg1 = (MaximinCriterion *) 0 ;
   SolveStatus result;
@@ -1450,7 +1450,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_MaximinCriterion_solve(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_MaximinCriterion(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_MaximinCriterion(void * jarg1) {
   MaximinCriterion *arg1 = (MaximinCriterion *) 0 ;
   
   arg1 = (MaximinCriterion *)jarg1; 
@@ -1458,7 +1458,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_MaximinCriterion(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_SolveStatus_OptimalDecisionResult(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_SolveStatus_OptimalDecisionResult(void * jarg1) {
   void * jresult ;
   std::vector< int > arg1 ;
   std::vector< int > *argp1 ;
@@ -1476,7 +1476,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_SolveStatus_OptimalDecisionResult(void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_SolveStatus_FailedResult() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_SolveStatus_FailedResult() {
   void * jresult ;
   SolveStatus result;
   
@@ -1486,7 +1486,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_SolveStatus_FailedResult() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_SolveStatus_InvalidModelResult() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_SolveStatus_InvalidModelResult() {
   void * jresult ;
   SolveStatus result;
   
@@ -1496,7 +1496,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_SolveStatus_InvalidModelResult() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_SolveStatus_InvalidParameterResult() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_SolveStatus_InvalidParameterResult() {
   void * jresult ;
   SolveStatus result;
   
@@ -1506,7 +1506,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_SolveStatus_InvalidParameterResult() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_SolveStatus_getStatus(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_SolveStatus_getStatus(void * jarg1) {
   int jresult ;
   SolveStatus *arg1 = (SolveStatus *) 0 ;
   Status result;
@@ -1518,7 +1518,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SolveStatus_getStatus(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_SolveStatus_getBestAlternatives(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_SolveStatus_getBestAlternatives(void * jarg1) {
   void * jresult ;
   SolveStatus *arg1 = (SolveStatus *) 0 ;
   std::vector< int > result;
@@ -1530,7 +1530,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_SolveStatus_getBestAlternatives(void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_SolveStatus() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_SolveStatus() {
   void * jresult ;
   SolveStatus *result = 0 ;
   
@@ -1540,7 +1540,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_SolveStatus() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_SolveStatus(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_SolveStatus(void * jarg1) {
   SolveStatus *arg1 = (SolveStatus *) 0 ;
   
   arg1 = (SolveStatus *)jarg1; 
@@ -1548,7 +1548,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_SolveStatus(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_TaskStep__SWIG_0(const char * jarg1, const char * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_TaskStep__SWIG_0(const char * jarg1, const char * jarg2) {
   void * jresult ;
   std::string arg1 ;
   std::string arg2 ;
@@ -1570,7 +1570,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_TaskStep__SWIG_0(const char * jarg1, co
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_TaskStep__SWIG_1(const char * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_TaskStep__SWIG_1(const char * jarg1, void * jarg2) {
   void * jresult ;
   std::string arg1 ;
   std::vector< std::string > arg2 ;
@@ -1594,7 +1594,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_TaskStep__SWIG_1(const char * jarg1, vo
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TaskStep_TextType(const char * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskStep_TextType(const char * jarg1) {
   void * jresult ;
   std::string arg1 ;
   TaskStep *result = 0 ;
@@ -1610,7 +1610,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TaskStep_TextType(const char * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TaskStep_TablePartType(const char * jarg1, void * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskStep_TablePartType(const char * jarg1, void * jarg2) {
   void * jresult ;
   std::string arg1 ;
   std::vector< std::string > arg2 ;
@@ -1634,7 +1634,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TaskStep_TablePartType(const char * jarg1, 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TaskStep_EndTableType() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskStep_EndTableType() {
   void * jresult ;
   TaskStep *result = 0 ;
   
@@ -1644,7 +1644,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TaskStep_EndTableType() {
 }
 
 
-SWIGEXPORT const char * SWIGSTDCALL CSharp_TaskStep_StepType(void * jarg1) {
+SWIGEXPORT const char * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskStep_StepType(void * jarg1) {
   const char * jresult ;
   TaskStep *arg1 = (TaskStep *) 0 ;
   std::string result;
@@ -1656,7 +1656,7 @@ SWIGEXPORT const char * SWIGSTDCALL CSharp_TaskStep_StepType(void * jarg1) {
 }
 
 
-SWIGEXPORT const char * SWIGSTDCALL CSharp_TaskStep_AsString(void * jarg1) {
+SWIGEXPORT const char * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskStep_AsString(void * jarg1) {
   const char * jresult ;
   TaskStep *arg1 = (TaskStep *) 0 ;
   std::string result;
@@ -1668,7 +1668,7 @@ SWIGEXPORT const char * SWIGSTDCALL CSharp_TaskStep_AsString(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_TaskStep(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_TaskStep(void * jarg1) {
   TaskStep *arg1 = (TaskStep *) 0 ;
   
   arg1 = (TaskStep *)jarg1; 
@@ -1676,7 +1676,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_TaskStep(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_OptimismPessimismCriterion(void * jarg1, double jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_OptimismPessimismCriterion(void * jarg1, double jarg2) {
   void * jresult ;
   MathModel arg1 ;
   double arg2 ;
@@ -1696,7 +1696,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_OptimismPessimismCriterion(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_OptimismPessimismCriterion_solve(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_OptimismPessimismCriterion_solve(void * jarg1) {
   void * jresult ;
   OptimismPessimismCriterion *arg1 = (OptimismPessimismCriterion *) 0 ;
   SolveStatus result;
@@ -1708,7 +1708,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_OptimismPessimismCriterion_solve(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_OptimismPessimismCriterion(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_OptimismPessimismCriterion(void * jarg1) {
   OptimismPessimismCriterion *arg1 = (OptimismPessimismCriterion *) 0 ;
   
   arg1 = (OptimismPessimismCriterion *)jarg1; 
@@ -1716,7 +1716,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_OptimismPessimismCriterion(void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_PrincipleOfInsufficientReason(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_PrincipleOfInsufficientReason(void * jarg1) {
   void * jresult ;
   MathModel arg1 ;
   MathModel *argp1 ;
@@ -1734,7 +1734,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_PrincipleOfInsufficientReason(void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_PrincipleOfInsufficientReason_solve(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_PrincipleOfInsufficientReason_solve(void * jarg1) {
   void * jresult ;
   PrincipleOfInsufficientReason *arg1 = (PrincipleOfInsufficientReason *) 0 ;
   SolveStatus result;
@@ -1746,7 +1746,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_PrincipleOfInsufficientReason_solve(void * 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_PrincipleOfInsufficientReason(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_PrincipleOfInsufficientReason(void * jarg1) {
   PrincipleOfInsufficientReason *arg1 = (PrincipleOfInsufficientReason *) 0 ;
   
   arg1 = (PrincipleOfInsufficientReason *)jarg1; 
@@ -1754,7 +1754,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_PrincipleOfInsufficientReason(void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_DoubleList__SWIG_0() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_DoubleList__SWIG_0() {
   void * jresult ;
   std::vector< double > *result = 0 ;
   
@@ -1764,7 +1764,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_DoubleList__SWIG_0() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_DoubleList__SWIG_1(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_DoubleList__SWIG_1(void * jarg1) {
   void * jresult ;
   std::vector< double > *arg1 = 0 ;
   std::vector< double > *result = 0 ;
@@ -1780,7 +1780,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_DoubleList__SWIG_1(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_Clear(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Clear(void * jarg1) {
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   
   arg1 = (std::vector< double > *)jarg1; 
@@ -1788,7 +1788,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_Clear(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_Add(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Add(void * jarg1, double jarg2) {
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   double *arg2 = 0 ;
   double temp2 ;
@@ -1800,7 +1800,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_Add(void * jarg1, double jarg2) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_DoubleList_size(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_size(void * jarg1) {
   unsigned int jresult ;
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   std::vector< double >::size_type result;
@@ -1812,7 +1812,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_DoubleList_size(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_DoubleList_empty(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_empty(void * jarg1) {
   unsigned int jresult ;
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   bool result;
@@ -1824,7 +1824,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_DoubleList_empty(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_DoubleList_capacity(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_capacity(void * jarg1) {
   unsigned int jresult ;
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   std::vector< double >::size_type result;
@@ -1836,7 +1836,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_DoubleList_capacity(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_reserve(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_reserve(void * jarg1, unsigned int jarg2) {
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   std::vector< double >::size_type arg2 ;
   
@@ -1846,7 +1846,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_reserve(void * jarg1, unsigned int
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_DoubleList__SWIG_2(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_DoubleList__SWIG_2(int jarg1) {
   void * jresult ;
   int arg1 ;
   std::vector< double > *result = 0 ;
@@ -1863,7 +1863,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_DoubleList__SWIG_2(int jarg1) {
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_DoubleList_getitemcopy(void * jarg1, int jarg2) {
+SWIGEXPORT double SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_getitemcopy(void * jarg1, int jarg2) {
   double jresult ;
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   int arg2 ;
@@ -1882,7 +1882,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_DoubleList_getitemcopy(void * jarg1, int ja
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_DoubleList_getitem(void * jarg1, int jarg2) {
+SWIGEXPORT double SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_getitem(void * jarg1, int jarg2) {
   double jresult ;
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   int arg2 ;
@@ -1901,7 +1901,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_DoubleList_getitem(void * jarg1, int jarg2)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_setitem(void * jarg1, int jarg2, double jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_setitem(void * jarg1, int jarg2, double jarg3) {
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   int arg2 ;
   double *arg3 = 0 ;
@@ -1920,7 +1920,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_setitem(void * jarg1, int jarg2, d
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_AddRange(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_AddRange(void * jarg1, void * jarg2) {
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   std::vector< double > *arg2 = 0 ;
   
@@ -1934,7 +1934,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_AddRange(void * jarg1, void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_DoubleList_GetRange(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_GetRange(void * jarg1, int jarg2, int jarg3) {
   void * jresult ;
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   int arg2 ;
@@ -1958,7 +1958,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_DoubleList_GetRange(void * jarg1, int jarg2
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_Insert(void * jarg1, int jarg2, double jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Insert(void * jarg1, int jarg2, double jarg3) {
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   int arg2 ;
   double *arg3 = 0 ;
@@ -1977,7 +1977,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_Insert(void * jarg1, int jarg2, do
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_InsertRange(void * jarg1, int jarg2, void * jarg3) {
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   int arg2 ;
   std::vector< double > *arg3 = 0 ;
@@ -1998,7 +1998,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_InsertRange(void * jarg1, int jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_RemoveAt(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_RemoveAt(void * jarg1, int jarg2) {
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   int arg2 ;
   
@@ -2013,7 +2013,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_RemoveAt(void * jarg1, int jarg2) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_RemoveRange(void * jarg1, int jarg2, int jarg3) {
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -2033,7 +2033,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_RemoveRange(void * jarg1, int jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_DoubleList_Repeat(double jarg1, int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Repeat(double jarg1, int jarg2) {
   void * jresult ;
   double *arg1 = 0 ;
   int arg2 ;
@@ -2054,7 +2054,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_DoubleList_Repeat(double jarg1, int jarg2) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_Reverse__SWIG_0(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Reverse__SWIG_0(void * jarg1) {
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   
   arg1 = (std::vector< double > *)jarg1; 
@@ -2062,7 +2062,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_Reverse__SWIG_0(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -2082,7 +2082,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_Reverse__SWIG_1(void * jarg1, int 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_SetRange(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_SetRange(void * jarg1, int jarg2, void * jarg3) {
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   int arg2 ;
   std::vector< double > *arg3 = 0 ;
@@ -2103,7 +2103,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_DoubleList_SetRange(void * jarg1, int jarg2, 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_DoubleList_Contains(void * jarg1, double jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Contains(void * jarg1, double jarg2) {
   unsigned int jresult ;
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   double *arg2 = 0 ;
@@ -2119,7 +2119,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_DoubleList_Contains(void * jarg1, dou
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_DoubleList_IndexOf(void * jarg1, double jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_IndexOf(void * jarg1, double jarg2) {
   int jresult ;
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   double *arg2 = 0 ;
@@ -2135,7 +2135,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_DoubleList_IndexOf(void * jarg1, double jarg2)
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_DoubleList_LastIndexOf(void * jarg1, double jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_LastIndexOf(void * jarg1, double jarg2) {
   int jresult ;
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   double *arg2 = 0 ;
@@ -2151,7 +2151,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_DoubleList_LastIndexOf(void * jarg1, double ja
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_DoubleList_Remove(void * jarg1, double jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Remove(void * jarg1, double jarg2) {
   unsigned int jresult ;
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   double *arg2 = 0 ;
@@ -2167,7 +2167,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_DoubleList_Remove(void * jarg1, doubl
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_DoubleList(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_DoubleList(void * jarg1) {
   std::vector< double > *arg1 = (std::vector< double > *) 0 ;
   
   arg1 = (std::vector< double > *)jarg1; 
@@ -2175,7 +2175,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_DoubleList(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_StringList__SWIG_0() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_StringList__SWIG_0() {
   void * jresult ;
   std::vector< std::string > *result = 0 ;
   
@@ -2185,7 +2185,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_StringList__SWIG_0() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_StringList__SWIG_1(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_StringList__SWIG_1(void * jarg1) {
   void * jresult ;
   std::vector< std::string > *arg1 = 0 ;
   std::vector< std::string > *result = 0 ;
@@ -2201,7 +2201,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_StringList__SWIG_1(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_StringList_Clear(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Clear(void * jarg1) {
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   
   arg1 = (std::vector< std::string > *)jarg1; 
@@ -2209,7 +2209,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_StringList_Clear(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_StringList_Add(void * jarg1, const char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Add(void * jarg1, const char * jarg2) {
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   std::string *arg2 = 0 ;
   
@@ -2224,7 +2224,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_StringList_Add(void * jarg1, const char * jar
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_StringList_size(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_size(void * jarg1) {
   unsigned int jresult ;
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   std::vector< std::string >::size_type result;
@@ -2236,7 +2236,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_StringList_size(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_StringList_empty(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_empty(void * jarg1) {
   unsigned int jresult ;
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   bool result;
@@ -2248,7 +2248,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_StringList_empty(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_StringList_capacity(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_capacity(void * jarg1) {
   unsigned int jresult ;
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   std::vector< std::string >::size_type result;
@@ -2260,7 +2260,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_StringList_capacity(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_StringList_reserve(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_reserve(void * jarg1, unsigned int jarg2) {
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   std::vector< std::string >::size_type arg2 ;
   
@@ -2270,7 +2270,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_StringList_reserve(void * jarg1, unsigned int
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_StringList__SWIG_2(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_StringList__SWIG_2(int jarg1) {
   void * jresult ;
   int arg1 ;
   std::vector< std::string > *result = 0 ;
@@ -2287,7 +2287,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_StringList__SWIG_2(int jarg1) {
 }
 
 
-SWIGEXPORT const char * SWIGSTDCALL CSharp_StringList_getitemcopy(void * jarg1, int jarg2) {
+SWIGEXPORT const char * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_getitemcopy(void * jarg1, int jarg2) {
   const char * jresult ;
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   int arg2 ;
@@ -2306,7 +2306,7 @@ SWIGEXPORT const char * SWIGSTDCALL CSharp_StringList_getitemcopy(void * jarg1, 
 }
 
 
-SWIGEXPORT const char * SWIGSTDCALL CSharp_StringList_getitem(void * jarg1, int jarg2) {
+SWIGEXPORT const char * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_getitem(void * jarg1, int jarg2) {
   const char * jresult ;
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   int arg2 ;
@@ -2325,7 +2325,7 @@ SWIGEXPORT const char * SWIGSTDCALL CSharp_StringList_getitem(void * jarg1, int 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_StringList_setitem(void * jarg1, int jarg2, const char * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_setitem(void * jarg1, int jarg2, const char * jarg3) {
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   int arg2 ;
   std::string *arg3 = 0 ;
@@ -2347,7 +2347,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_StringList_setitem(void * jarg1, int jarg2, c
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_StringList_AddRange(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_AddRange(void * jarg1, void * jarg2) {
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   std::vector< std::string > *arg2 = 0 ;
   
@@ -2361,7 +2361,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_StringList_AddRange(void * jarg1, void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_StringList_GetRange(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_GetRange(void * jarg1, int jarg2, int jarg3) {
   void * jresult ;
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   int arg2 ;
@@ -2385,7 +2385,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_StringList_GetRange(void * jarg1, int jarg2
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_StringList_Insert(void * jarg1, int jarg2, const char * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Insert(void * jarg1, int jarg2, const char * jarg3) {
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   int arg2 ;
   std::string *arg3 = 0 ;
@@ -2407,7 +2407,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_StringList_Insert(void * jarg1, int jarg2, co
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_StringList_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_InsertRange(void * jarg1, int jarg2, void * jarg3) {
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   int arg2 ;
   std::vector< std::string > *arg3 = 0 ;
@@ -2428,7 +2428,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_StringList_InsertRange(void * jarg1, int jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_StringList_RemoveAt(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_RemoveAt(void * jarg1, int jarg2) {
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   int arg2 ;
   
@@ -2443,7 +2443,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_StringList_RemoveAt(void * jarg1, int jarg2) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_StringList_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_RemoveRange(void * jarg1, int jarg2, int jarg3) {
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -2463,7 +2463,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_StringList_RemoveRange(void * jarg1, int jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_StringList_Repeat(const char * jarg1, int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Repeat(const char * jarg1, int jarg2) {
   void * jresult ;
   std::string *arg1 = 0 ;
   int arg2 ;
@@ -2487,7 +2487,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_StringList_Repeat(const char * jarg1, int j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_StringList_Reverse__SWIG_0(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Reverse__SWIG_0(void * jarg1) {
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   
   arg1 = (std::vector< std::string > *)jarg1; 
@@ -2495,7 +2495,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_StringList_Reverse__SWIG_0(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_StringList_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -2515,7 +2515,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_StringList_Reverse__SWIG_1(void * jarg1, int 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_StringList_SetRange(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_SetRange(void * jarg1, int jarg2, void * jarg3) {
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   int arg2 ;
   std::vector< std::string > *arg3 = 0 ;
@@ -2536,7 +2536,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_StringList_SetRange(void * jarg1, int jarg2, 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_StringList_Contains(void * jarg1, const char * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Contains(void * jarg1, const char * jarg2) {
   unsigned int jresult ;
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   std::string *arg2 = 0 ;
@@ -2555,7 +2555,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_StringList_Contains(void * jarg1, con
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_StringList_IndexOf(void * jarg1, const char * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_IndexOf(void * jarg1, const char * jarg2) {
   int jresult ;
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   std::string *arg2 = 0 ;
@@ -2574,7 +2574,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_StringList_IndexOf(void * jarg1, const char * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_StringList_LastIndexOf(void * jarg1, const char * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_LastIndexOf(void * jarg1, const char * jarg2) {
   int jresult ;
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   std::string *arg2 = 0 ;
@@ -2593,7 +2593,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_StringList_LastIndexOf(void * jarg1, const cha
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_StringList_Remove(void * jarg1, const char * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Remove(void * jarg1, const char * jarg2) {
   unsigned int jresult ;
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   std::string *arg2 = 0 ;
@@ -2612,7 +2612,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_StringList_Remove(void * jarg1, const
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_StringList(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_StringList(void * jarg1) {
   std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
   
   arg1 = (std::vector< std::string > *)jarg1; 
@@ -2620,7 +2620,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_StringList(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_IntList__SWIG_0() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_IntList__SWIG_0() {
   void * jresult ;
   std::vector< int > *result = 0 ;
   
@@ -2630,7 +2630,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_IntList__SWIG_0() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_IntList__SWIG_1(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_IntList__SWIG_1(void * jarg1) {
   void * jresult ;
   std::vector< int > *arg1 = 0 ;
   std::vector< int > *result = 0 ;
@@ -2646,7 +2646,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_IntList__SWIG_1(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_IntList_Clear(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Clear(void * jarg1) {
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   
   arg1 = (std::vector< int > *)jarg1; 
@@ -2654,7 +2654,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_IntList_Clear(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_IntList_Add(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Add(void * jarg1, int jarg2) {
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   int *arg2 = 0 ;
   int temp2 ;
@@ -2666,7 +2666,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_IntList_Add(void * jarg1, int jarg2) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IntList_size(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_size(void * jarg1) {
   unsigned int jresult ;
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   std::vector< int >::size_type result;
@@ -2678,7 +2678,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IntList_size(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IntList_empty(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_empty(void * jarg1) {
   unsigned int jresult ;
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   bool result;
@@ -2690,7 +2690,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IntList_empty(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IntList_capacity(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_capacity(void * jarg1) {
   unsigned int jresult ;
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   std::vector< int >::size_type result;
@@ -2702,7 +2702,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IntList_capacity(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_IntList_reserve(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_reserve(void * jarg1, unsigned int jarg2) {
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   std::vector< int >::size_type arg2 ;
   
@@ -2712,7 +2712,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_IntList_reserve(void * jarg1, unsigned int ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_IntList__SWIG_2(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_IntList__SWIG_2(int jarg1) {
   void * jresult ;
   int arg1 ;
   std::vector< int > *result = 0 ;
@@ -2729,7 +2729,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_IntList__SWIG_2(int jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IntList_getitemcopy(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_getitemcopy(void * jarg1, int jarg2) {
   int jresult ;
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   int arg2 ;
@@ -2748,7 +2748,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IntList_getitemcopy(void * jarg1, int jarg2) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IntList_getitem(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_getitem(void * jarg1, int jarg2) {
   int jresult ;
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   int arg2 ;
@@ -2767,7 +2767,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IntList_getitem(void * jarg1, int jarg2) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_IntList_setitem(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_setitem(void * jarg1, int jarg2, int jarg3) {
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   int arg2 ;
   int *arg3 = 0 ;
@@ -2786,7 +2786,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_IntList_setitem(void * jarg1, int jarg2, int 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_IntList_AddRange(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_AddRange(void * jarg1, void * jarg2) {
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   std::vector< int > *arg2 = 0 ;
   
@@ -2800,7 +2800,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_IntList_AddRange(void * jarg1, void * jarg2) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IntList_GetRange(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_GetRange(void * jarg1, int jarg2, int jarg3) {
   void * jresult ;
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   int arg2 ;
@@ -2824,7 +2824,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IntList_GetRange(void * jarg1, int jarg2, i
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_IntList_Insert(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Insert(void * jarg1, int jarg2, int jarg3) {
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   int arg2 ;
   int *arg3 = 0 ;
@@ -2843,7 +2843,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_IntList_Insert(void * jarg1, int jarg2, int j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_IntList_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_InsertRange(void * jarg1, int jarg2, void * jarg3) {
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   int arg2 ;
   std::vector< int > *arg3 = 0 ;
@@ -2864,7 +2864,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_IntList_InsertRange(void * jarg1, int jarg2, 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_IntList_RemoveAt(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_RemoveAt(void * jarg1, int jarg2) {
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   int arg2 ;
   
@@ -2879,7 +2879,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_IntList_RemoveAt(void * jarg1, int jarg2) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_IntList_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_RemoveRange(void * jarg1, int jarg2, int jarg3) {
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -2899,7 +2899,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_IntList_RemoveRange(void * jarg1, int jarg2, 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IntList_Repeat(int jarg1, int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Repeat(int jarg1, int jarg2) {
   void * jresult ;
   int *arg1 = 0 ;
   int arg2 ;
@@ -2920,7 +2920,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IntList_Repeat(int jarg1, int jarg2) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_IntList_Reverse__SWIG_0(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Reverse__SWIG_0(void * jarg1) {
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   
   arg1 = (std::vector< int > *)jarg1; 
@@ -2928,7 +2928,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_IntList_Reverse__SWIG_0(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_IntList_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -2948,7 +2948,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_IntList_Reverse__SWIG_1(void * jarg1, int jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_IntList_SetRange(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_SetRange(void * jarg1, int jarg2, void * jarg3) {
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   int arg2 ;
   std::vector< int > *arg3 = 0 ;
@@ -2969,7 +2969,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_IntList_SetRange(void * jarg1, int jarg2, voi
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IntList_Contains(void * jarg1, int jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Contains(void * jarg1, int jarg2) {
   unsigned int jresult ;
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   int *arg2 = 0 ;
@@ -2985,7 +2985,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IntList_Contains(void * jarg1, int ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IntList_IndexOf(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_IndexOf(void * jarg1, int jarg2) {
   int jresult ;
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   int *arg2 = 0 ;
@@ -3001,7 +3001,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IntList_IndexOf(void * jarg1, int jarg2) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IntList_LastIndexOf(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_LastIndexOf(void * jarg1, int jarg2) {
   int jresult ;
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   int *arg2 = 0 ;
@@ -3017,7 +3017,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IntList_LastIndexOf(void * jarg1, int jarg2) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IntList_Remove(void * jarg1, int jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Remove(void * jarg1, int jarg2) {
   unsigned int jresult ;
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   int *arg2 = 0 ;
@@ -3033,7 +3033,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IntList_Remove(void * jarg1, int jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IntList(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_IntList(void * jarg1) {
   std::vector< int > *arg1 = (std::vector< int > *) 0 ;
   
   arg1 = (std::vector< int > *)jarg1; 
@@ -3041,7 +3041,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IntList(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_TaskProcess__SWIG_0() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_TaskProcess__SWIG_0() {
   void * jresult ;
   std::vector< TaskStep * > *result = 0 ;
   
@@ -3051,7 +3051,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_TaskProcess__SWIG_0() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_TaskProcess__SWIG_1(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_TaskProcess__SWIG_1(void * jarg1) {
   void * jresult ;
   std::vector< TaskStep * > *arg1 = 0 ;
   std::vector< TaskStep * > *result = 0 ;
@@ -3067,7 +3067,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_TaskProcess__SWIG_1(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_Clear(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Clear(void * jarg1) {
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   
   arg1 = (std::vector< TaskStep * > *)jarg1; 
@@ -3075,7 +3075,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_Clear(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_Add(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Add(void * jarg1, void * jarg2) {
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   TaskStep **arg2 = 0 ;
   TaskStep *temp2 = 0 ;
@@ -3087,7 +3087,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_Add(void * jarg1, void * jarg2) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TaskProcess_size(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_size(void * jarg1) {
   unsigned int jresult ;
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   std::vector< TaskStep * >::size_type result;
@@ -3099,7 +3099,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TaskProcess_size(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TaskProcess_empty(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_empty(void * jarg1) {
   unsigned int jresult ;
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   bool result;
@@ -3111,7 +3111,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TaskProcess_empty(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TaskProcess_capacity(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_capacity(void * jarg1) {
   unsigned int jresult ;
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   std::vector< TaskStep * >::size_type result;
@@ -3123,7 +3123,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TaskProcess_capacity(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_reserve(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_reserve(void * jarg1, unsigned int jarg2) {
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   std::vector< TaskStep * >::size_type arg2 ;
   
@@ -3133,7 +3133,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_reserve(void * jarg1, unsigned in
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_TaskProcess__SWIG_2(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_TaskProcess__SWIG_2(int jarg1) {
   void * jresult ;
   int arg1 ;
   std::vector< TaskStep * > *result = 0 ;
@@ -3150,7 +3150,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_TaskProcess__SWIG_2(int jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TaskProcess_getitemcopy(void * jarg1, int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_getitemcopy(void * jarg1, int jarg2) {
   void * jresult ;
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   int arg2 ;
@@ -3169,7 +3169,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TaskProcess_getitemcopy(void * jarg1, int j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TaskProcess_getitem(void * jarg1, int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_getitem(void * jarg1, int jarg2) {
   void * jresult ;
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   int arg2 ;
@@ -3188,7 +3188,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TaskProcess_getitem(void * jarg1, int jarg2
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_setitem(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_setitem(void * jarg1, int jarg2, void * jarg3) {
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   int arg2 ;
   TaskStep **arg3 = 0 ;
@@ -3207,7 +3207,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_setitem(void * jarg1, int jarg2, 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_AddRange(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_AddRange(void * jarg1, void * jarg2) {
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   std::vector< TaskStep * > *arg2 = 0 ;
   
@@ -3221,7 +3221,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_AddRange(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TaskProcess_GetRange(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_GetRange(void * jarg1, int jarg2, int jarg3) {
   void * jresult ;
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   int arg2 ;
@@ -3245,7 +3245,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TaskProcess_GetRange(void * jarg1, int jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_Insert(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Insert(void * jarg1, int jarg2, void * jarg3) {
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   int arg2 ;
   TaskStep **arg3 = 0 ;
@@ -3264,7 +3264,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_Insert(void * jarg1, int jarg2, v
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_InsertRange(void * jarg1, int jarg2, void * jarg3) {
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   int arg2 ;
   std::vector< TaskStep * > *arg3 = 0 ;
@@ -3285,7 +3285,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_InsertRange(void * jarg1, int jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_RemoveAt(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_RemoveAt(void * jarg1, int jarg2) {
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   int arg2 ;
   
@@ -3300,7 +3300,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_RemoveAt(void * jarg1, int jarg2)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_RemoveRange(void * jarg1, int jarg2, int jarg3) {
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -3320,7 +3320,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_RemoveRange(void * jarg1, int jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_TaskProcess_Repeat(void * jarg1, int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Repeat(void * jarg1, int jarg2) {
   void * jresult ;
   TaskStep **arg1 = 0 ;
   int arg2 ;
@@ -3341,7 +3341,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_TaskProcess_Repeat(void * jarg1, int jarg2)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_Reverse__SWIG_0(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Reverse__SWIG_0(void * jarg1) {
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   
   arg1 = (std::vector< TaskStep * > *)jarg1; 
@@ -3349,7 +3349,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_Reverse__SWIG_0(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -3369,7 +3369,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_Reverse__SWIG_1(void * jarg1, int
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_SetRange(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_SetRange(void * jarg1, int jarg2, void * jarg3) {
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   int arg2 ;
   std::vector< TaskStep * > *arg3 = 0 ;
@@ -3390,7 +3390,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_TaskProcess_SetRange(void * jarg1, int jarg2,
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TaskProcess_Contains(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Contains(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   TaskStep **arg2 = 0 ;
@@ -3406,7 +3406,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TaskProcess_Contains(void * jarg1, vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TaskProcess_IndexOf(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_IndexOf(void * jarg1, void * jarg2) {
   int jresult ;
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   TaskStep **arg2 = 0 ;
@@ -3422,7 +3422,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TaskProcess_IndexOf(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_TaskProcess_LastIndexOf(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_LastIndexOf(void * jarg1, void * jarg2) {
   int jresult ;
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   TaskStep **arg2 = 0 ;
@@ -3438,7 +3438,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TaskProcess_LastIndexOf(void * jarg1, void * j
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TaskProcess_Remove(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Remove(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   TaskStep **arg2 = 0 ;
@@ -3454,7 +3454,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TaskProcess_Remove(void * jarg1, void
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_TaskProcess(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_TaskProcess(void * jarg1) {
   std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
   
   arg1 = (std::vector< TaskStep * > *)jarg1; 
@@ -3462,7 +3462,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_TaskProcess(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_AlternativeList__SWIG_0() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_AlternativeList__SWIG_0() {
   void * jresult ;
   std::vector< Alternative > *result = 0 ;
   
@@ -3472,7 +3472,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_AlternativeList__SWIG_0() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_AlternativeList__SWIG_1(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_AlternativeList__SWIG_1(void * jarg1) {
   void * jresult ;
   std::vector< Alternative > *arg1 = 0 ;
   std::vector< Alternative > *result = 0 ;
@@ -3488,7 +3488,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_AlternativeList__SWIG_1(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_Clear(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_Clear(void * jarg1) {
   std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
   
   arg1 = (std::vector< Alternative > *)jarg1; 
@@ -3496,7 +3496,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_Clear(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_Add(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_Add(void * jarg1, void * jarg2) {
   std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
   Alternative *arg2 = 0 ;
   
@@ -3510,7 +3510,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_Add(void * jarg1, void * jarg
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_AlternativeList_size(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_size(void * jarg1) {
   unsigned int jresult ;
   std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
   std::vector< Alternative >::size_type result;
@@ -3522,7 +3522,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_AlternativeList_size(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_AlternativeList_empty(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_empty(void * jarg1) {
   unsigned int jresult ;
   std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
   bool result;
@@ -3534,7 +3534,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_AlternativeList_empty(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_AlternativeList_capacity(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_capacity(void * jarg1) {
   unsigned int jresult ;
   std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
   std::vector< Alternative >::size_type result;
@@ -3546,7 +3546,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_AlternativeList_capacity(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_reserve(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_reserve(void * jarg1, unsigned int jarg2) {
   std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
   std::vector< Alternative >::size_type arg2 ;
   
@@ -3556,7 +3556,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_reserve(void * jarg1, unsigne
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_AlternativeList__SWIG_2(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_AlternativeList__SWIG_2(int jarg1) {
   void * jresult ;
   int arg1 ;
   std::vector< Alternative > *result = 0 ;
@@ -3573,7 +3573,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_AlternativeList__SWIG_2(int jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_AlternativeList_getitemcopy(void * jarg1, int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_getitemcopy(void * jarg1, int jarg2) {
   void * jresult ;
   std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
   int arg2 ;
@@ -3592,7 +3592,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_AlternativeList_getitemcopy(void * jarg1, i
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_AlternativeList_getitem(void * jarg1, int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_getitem(void * jarg1, int jarg2) {
   void * jresult ;
   std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
   int arg2 ;
@@ -3611,7 +3611,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_AlternativeList_getitem(void * jarg1, int j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_setitem(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_setitem(void * jarg1, int jarg2, void * jarg3) {
   std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
   int arg2 ;
   Alternative *arg3 = 0 ;
@@ -3632,7 +3632,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_setitem(void * jarg1, int jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_AddRange(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_AddRange(void * jarg1, void * jarg2) {
   std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
   std::vector< Alternative > *arg2 = 0 ;
   
@@ -3646,7 +3646,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_AddRange(void * jarg1, void *
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_AlternativeList_GetRange(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_GetRange(void * jarg1, int jarg2, int jarg3) {
   void * jresult ;
   std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
   int arg2 ;
@@ -3670,7 +3670,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_AlternativeList_GetRange(void * jarg1, int 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_Insert(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_Insert(void * jarg1, int jarg2, void * jarg3) {
   std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
   int arg2 ;
   Alternative *arg3 = 0 ;
@@ -3691,7 +3691,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_Insert(void * jarg1, int jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_InsertRange(void * jarg1, int jarg2, void * jarg3) {
   std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
   int arg2 ;
   std::vector< Alternative > *arg3 = 0 ;
@@ -3712,7 +3712,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_InsertRange(void * jarg1, int
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_RemoveAt(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_RemoveAt(void * jarg1, int jarg2) {
   std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
   int arg2 ;
   
@@ -3727,7 +3727,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_RemoveAt(void * jarg1, int ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_RemoveRange(void * jarg1, int jarg2, int jarg3) {
   std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -3747,7 +3747,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_RemoveRange(void * jarg1, int
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_AlternativeList_Repeat(void * jarg1, int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_Repeat(void * jarg1, int jarg2) {
   void * jresult ;
   Alternative *arg1 = 0 ;
   int arg2 ;
@@ -3770,7 +3770,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_AlternativeList_Repeat(void * jarg1, int ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_Reverse__SWIG_0(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_Reverse__SWIG_0(void * jarg1) {
   std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
   
   arg1 = (std::vector< Alternative > *)jarg1; 
@@ -3778,7 +3778,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_Reverse__SWIG_0(void * jarg1)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
   std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -3798,7 +3798,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_Reverse__SWIG_1(void * jarg1,
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_SetRange(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_SetRange(void * jarg1, int jarg2, void * jarg3) {
   std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
   int arg2 ;
   std::vector< Alternative > *arg3 = 0 ;
@@ -3819,7 +3819,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_AlternativeList_SetRange(void * jarg1, int ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_AlternativeList(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_AlternativeList(void * jarg1) {
   std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
   
   arg1 = (std::vector< Alternative > *)jarg1; 
@@ -3827,7 +3827,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_AlternativeList(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_UncertaintyList__SWIG_0() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_UncertaintyList__SWIG_0() {
   void * jresult ;
   std::vector< Uncertainty > *result = 0 ;
   
@@ -3837,7 +3837,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_UncertaintyList__SWIG_0() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_UncertaintyList__SWIG_1(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_UncertaintyList__SWIG_1(void * jarg1) {
   void * jresult ;
   std::vector< Uncertainty > *arg1 = 0 ;
   std::vector< Uncertainty > *result = 0 ;
@@ -3853,7 +3853,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_UncertaintyList__SWIG_1(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_Clear(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_Clear(void * jarg1) {
   std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
   
   arg1 = (std::vector< Uncertainty > *)jarg1; 
@@ -3861,7 +3861,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_Clear(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_Add(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_Add(void * jarg1, void * jarg2) {
   std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
   Uncertainty *arg2 = 0 ;
   
@@ -3875,7 +3875,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_Add(void * jarg1, void * jarg
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_UncertaintyList_size(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_size(void * jarg1) {
   unsigned int jresult ;
   std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
   std::vector< Uncertainty >::size_type result;
@@ -3887,7 +3887,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_UncertaintyList_size(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_UncertaintyList_empty(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_empty(void * jarg1) {
   unsigned int jresult ;
   std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
   bool result;
@@ -3899,7 +3899,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_UncertaintyList_empty(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_UncertaintyList_capacity(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_capacity(void * jarg1) {
   unsigned int jresult ;
   std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
   std::vector< Uncertainty >::size_type result;
@@ -3911,7 +3911,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_UncertaintyList_capacity(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_reserve(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_reserve(void * jarg1, unsigned int jarg2) {
   std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
   std::vector< Uncertainty >::size_type arg2 ;
   
@@ -3921,7 +3921,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_reserve(void * jarg1, unsigne
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_UncertaintyList__SWIG_2(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_UncertaintyList__SWIG_2(int jarg1) {
   void * jresult ;
   int arg1 ;
   std::vector< Uncertainty > *result = 0 ;
@@ -3938,7 +3938,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_UncertaintyList__SWIG_2(int jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_UncertaintyList_getitemcopy(void * jarg1, int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_getitemcopy(void * jarg1, int jarg2) {
   void * jresult ;
   std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
   int arg2 ;
@@ -3957,7 +3957,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_UncertaintyList_getitemcopy(void * jarg1, i
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_UncertaintyList_getitem(void * jarg1, int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_getitem(void * jarg1, int jarg2) {
   void * jresult ;
   std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
   int arg2 ;
@@ -3976,7 +3976,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_UncertaintyList_getitem(void * jarg1, int j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_setitem(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_setitem(void * jarg1, int jarg2, void * jarg3) {
   std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
   int arg2 ;
   Uncertainty *arg3 = 0 ;
@@ -3997,7 +3997,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_setitem(void * jarg1, int jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_AddRange(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_AddRange(void * jarg1, void * jarg2) {
   std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
   std::vector< Uncertainty > *arg2 = 0 ;
   
@@ -4011,7 +4011,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_AddRange(void * jarg1, void *
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_UncertaintyList_GetRange(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_GetRange(void * jarg1, int jarg2, int jarg3) {
   void * jresult ;
   std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
   int arg2 ;
@@ -4035,7 +4035,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_UncertaintyList_GetRange(void * jarg1, int 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_Insert(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_Insert(void * jarg1, int jarg2, void * jarg3) {
   std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
   int arg2 ;
   Uncertainty *arg3 = 0 ;
@@ -4056,7 +4056,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_Insert(void * jarg1, int jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_InsertRange(void * jarg1, int jarg2, void * jarg3) {
   std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
   int arg2 ;
   std::vector< Uncertainty > *arg3 = 0 ;
@@ -4077,7 +4077,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_InsertRange(void * jarg1, int
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_RemoveAt(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_RemoveAt(void * jarg1, int jarg2) {
   std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
   int arg2 ;
   
@@ -4092,7 +4092,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_RemoveAt(void * jarg1, int ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_RemoveRange(void * jarg1, int jarg2, int jarg3) {
   std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -4112,7 +4112,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_RemoveRange(void * jarg1, int
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_UncertaintyList_Repeat(void * jarg1, int jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_Repeat(void * jarg1, int jarg2) {
   void * jresult ;
   Uncertainty *arg1 = 0 ;
   int arg2 ;
@@ -4135,7 +4135,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_UncertaintyList_Repeat(void * jarg1, int ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_Reverse__SWIG_0(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_Reverse__SWIG_0(void * jarg1) {
   std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
   
   arg1 = (std::vector< Uncertainty > *)jarg1; 
@@ -4143,7 +4143,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_Reverse__SWIG_0(void * jarg1)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
   std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -4163,7 +4163,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_Reverse__SWIG_1(void * jarg1,
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_SetRange(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_SetRange(void * jarg1, int jarg2, void * jarg3) {
   std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
   int arg2 ;
   std::vector< Uncertainty > *arg3 = 0 ;
@@ -4184,7 +4184,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_UncertaintyList_SetRange(void * jarg1, int ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_UncertaintyList(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_UncertaintyList(void * jarg1) {
   std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
   
   arg1 = (std::vector< Uncertainty > *)jarg1; 
@@ -4192,15 +4192,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_UncertaintyList(void * jarg1) {
 }
 
 
-SWIGEXPORT Criterion * SWIGSTDCALL CSharp_MaximinCriterion_SWIGUpcast(MaximinCriterion *jarg1) {
+SWIGEXPORT Criterion * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_MaximinCriterion_SWIGUpcast(MaximinCriterion *jarg1) {
     return (Criterion *)jarg1;
 }
 
-SWIGEXPORT Criterion * SWIGSTDCALL CSharp_OptimismPessimismCriterion_SWIGUpcast(OptimismPessimismCriterion *jarg1) {
+SWIGEXPORT Criterion * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_OptimismPessimismCriterion_SWIGUpcast(OptimismPessimismCriterion *jarg1) {
     return (Criterion *)jarg1;
 }
 
-SWIGEXPORT Criterion * SWIGSTDCALL CSharp_PrincipleOfInsufficientReason_SWIGUpcast(PrincipleOfInsufficientReason *jarg1) {
+SWIGEXPORT Criterion * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_PrincipleOfInsufficientReason_SWIGUpcast(PrincipleOfInsufficientReason *jarg1) {
     return (Criterion *)jarg1;
 }
 

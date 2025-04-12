@@ -22,9 +22,9 @@ SolveStatus OptimismPessimismCriterion::solve() {
         return SolveStatus::InvalidParameterResult();
     }
 
-    logText("Для поиска решения для каждой альтернативы вычисляется взвешенная сумма по формуле "
-            "H=α⋅максимальное значение + (1−α)⋅минимальное значение."
-            "Альтернатива с наибольшим значением взвешенной суммы является наилучшей");
+    logText("Для поиска решения для каждой альтернативы вычисляется взвешенная сумма по формуле");
+    logText("H=α⋅максимальное значение + (1−α)⋅минимальное значение.");
+    logText("Альтернатива с наибольшим значением взвешенной суммы является наилучшей");
 
     std::vector<double> minMarks;
     std::vector<double> maxMarks;
@@ -59,7 +59,7 @@ SolveStatus OptimismPessimismCriterion::solve() {
     }
 
     logText("В результате с максимальной взвешенной суммой " + std::to_string(maxWeightedSum) + " " +
-            (bestAlternatives.size() > 1 ? "наилучшими альтернативами являются" : "наилучшей альтернативой является") +
+            (bestAlternatives.size() > 1 ? "наилучшими альтернативами являются " : "наилучшей альтернативой является ") +
             join(alternativeNames, ", "));
 
     return SolveStatus::OptimalDecisionResult(bestAlternatives);

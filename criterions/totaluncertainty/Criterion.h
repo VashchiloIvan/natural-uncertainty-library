@@ -1,9 +1,9 @@
 #ifndef NATURAL_UNCERTAINTY_CRITERION_H
 #define NATURAL_UNCERTAINTY_CRITERION_H
 
-#include "../mathmodel/MathModel.h"
-#include "SolveStatus.h"
-#include "tasklog/TaskStep.h"
+#include "../../mathmodel/MathModel.h"
+#include "../SolveStatus.h"
+#include "../tasklog/TaskStep.h"
 
 class Criterion {
 protected:

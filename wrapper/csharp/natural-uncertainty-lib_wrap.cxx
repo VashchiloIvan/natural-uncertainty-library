@@ -245,7 +245,7 @@ static void SWIGUNUSED SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpExcepti
 #ifdef __cplusplus
 extern "C" 
 #endif
-SWIGEXPORT void SWIGSTDCALL SWIGRegisterExceptionCallbacks_natural_uncertainty_lib(
+SWIGEXPORT void SWIGSTDCALL SWIGRegisterExceptionCallbacks_libnatural_uncertainty(
                                                 SWIG_CSharpExceptionCallback_t applicationCallback,
                                                 SWIG_CSharpExceptionCallback_t arithmeticCallback,
                                                 SWIG_CSharpExceptionCallback_t divideByZeroCallback, 
@@ -273,7 +273,7 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterExceptionCallbacks_natural_uncertainty_l
 #ifdef __cplusplus
 extern "C" 
 #endif
-SWIGEXPORT void SWIGSTDCALL SWIGRegisterExceptionArgumentCallbacks_natural_uncertainty_lib(
+SWIGEXPORT void SWIGSTDCALL SWIGRegisterExceptionArgumentCallbacks_libnatural_uncertainty(
                                                 SWIG_CSharpExceptionArgumentCallback_t argumentCallback,
                                                 SWIG_CSharpExceptionArgumentCallback_t argumentNullCallback,
                                                 SWIG_CSharpExceptionArgumentCallback_t argumentOutOfRangeCallback) {
@@ -291,7 +291,7 @@ static SWIG_CSharpStringHelperCallback SWIG_csharp_string_callback = NULL;
 #ifdef __cplusplus
 extern "C" 
 #endif
-SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_natural_uncertainty_lib(SWIG_CSharpStringHelperCallback callback) {
+SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_libnatural_uncertainty(SWIG_CSharpStringHelperCallback callback) {
   SWIG_csharp_string_callback = callback;
 }
 
@@ -367,13 +367,17 @@ template <typename T> T SwigValueInit() {
 
 #include "../../mathmodel/Alternative.h"
 #include "../../mathmodel/Uncertainty.h"
+#include "../../mathmodel/ProbabilisticAlternative.h"
 #include "../../mathmodel/MathModel.h"
-#include "../../criterions/Criterion.h"
-#include "../../criterions/MaximinCriterion.h"
+#include "../../mathmodel/ProbabilisticModel.h"
 #include "../../criterions/SolveStatus.h"
 #include "../../criterions/tasklog/TaskStep.h"
-#include "../../criterions/OptimismPessimismCriterion.h"
-#include "../../criterions/PrincipleOfInsufficientReason.h"
+#include "../../criterions/totaluncertainty/Criterion.h"
+#include "../../criterions/totaluncertainty/MaximinCriterion.h"
+#include "../../criterions/totaluncertainty/OptimismPessimismCriterion.h"
+#include "../../criterions/totaluncertainty/PrincipleOfInsufficientReason.h"
+#include "../../criterions/probabilityuncertainty/ProbabilityCriterion.h"
+#include "../../criterions/probabilityuncertainty/BayesCriterion.h"
 
 
 #include <string>
@@ -1000,6 +1004,97 @@ SWIGINTERN void std_vector_Sl_Alternative_Sg__SetRange(std::vector< Alternative 
           throw std::out_of_range("index");
         std::copy(values.begin(), values.end(), self->begin()+index);
       }
+SWIGINTERN std::vector< ProbabilisticAlternative > *new_std_vector_Sl_ProbabilisticAlternative_Sg___SWIG_2(int capacity){
+        std::vector< ProbabilisticAlternative >* pv = 0;
+        if (capacity >= 0) {
+          pv = new std::vector< ProbabilisticAlternative >();
+          pv->reserve(capacity);
+       } else {
+          throw std::out_of_range("capacity");
+       }
+       return pv;
+      }
+SWIGINTERN ProbabilisticAlternative std_vector_Sl_ProbabilisticAlternative_Sg__getitemcopy(std::vector< ProbabilisticAlternative > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN std::vector< ProbabilisticAlternative >::value_type const &std_vector_Sl_ProbabilisticAlternative_Sg__getitem(std::vector< ProbabilisticAlternative > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          return (*self)[index];
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_ProbabilisticAlternative_Sg__setitem(std::vector< ProbabilisticAlternative > *self,int index,ProbabilisticAlternative const &val){
+        if (index>=0 && index<(int)self->size())
+          (*self)[index] = val;
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_ProbabilisticAlternative_Sg__AddRange(std::vector< ProbabilisticAlternative > *self,std::vector< ProbabilisticAlternative > const &values){
+        self->insert(self->end(), values.begin(), values.end());
+      }
+SWIGINTERN std::vector< ProbabilisticAlternative > *std_vector_Sl_ProbabilisticAlternative_Sg__GetRange(std::vector< ProbabilisticAlternative > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        return new std::vector< ProbabilisticAlternative >(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_ProbabilisticAlternative_Sg__Insert(std::vector< ProbabilisticAlternative > *self,int index,ProbabilisticAlternative const &x){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, x);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_ProbabilisticAlternative_Sg__InsertRange(std::vector< ProbabilisticAlternative > *self,int index,std::vector< ProbabilisticAlternative > const &values){
+        if (index>=0 && index<(int)self->size()+1)
+          self->insert(self->begin()+index, values.begin(), values.end());
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_ProbabilisticAlternative_Sg__RemoveAt(std::vector< ProbabilisticAlternative > *self,int index){
+        if (index>=0 && index<(int)self->size())
+          self->erase(self->begin() + index);
+        else
+          throw std::out_of_range("index");
+      }
+SWIGINTERN void std_vector_Sl_ProbabilisticAlternative_Sg__RemoveRange(std::vector< ProbabilisticAlternative > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        self->erase(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN std::vector< ProbabilisticAlternative > *std_vector_Sl_ProbabilisticAlternative_Sg__Repeat(ProbabilisticAlternative const &value,int count){
+        if (count < 0)
+          throw std::out_of_range("count");
+        return new std::vector< ProbabilisticAlternative >(count, value);
+      }
+SWIGINTERN void std_vector_Sl_ProbabilisticAlternative_Sg__Reverse__SWIG_0(std::vector< ProbabilisticAlternative > *self){
+        std::reverse(self->begin(), self->end());
+      }
+SWIGINTERN void std_vector_Sl_ProbabilisticAlternative_Sg__Reverse__SWIG_1(std::vector< ProbabilisticAlternative > *self,int index,int count){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (count < 0)
+          throw std::out_of_range("count");
+        if (index >= (int)self->size()+1 || index+count > (int)self->size())
+          throw std::invalid_argument("invalid range");
+        std::reverse(self->begin()+index, self->begin()+index+count);
+      }
+SWIGINTERN void std_vector_Sl_ProbabilisticAlternative_Sg__SetRange(std::vector< ProbabilisticAlternative > *self,int index,std::vector< ProbabilisticAlternative > const &values){
+        if (index < 0)
+          throw std::out_of_range("index");
+        if (index+values.size() > self->size())
+          throw std::out_of_range("index");
+        std::copy(values.begin(), values.end(), self->begin()+index);
+      }
 SWIGINTERN std::vector< Uncertainty > *new_std_vector_Sl_Uncertainty_Sg___SWIG_2(int capacity){
         std::vector< Uncertainty >* pv = 0;
         if (capacity >= 0) {
@@ -1096,6 +1191,4225 @@ SWIGINTERN void std_vector_Sl_Uncertainty_Sg__SetRange(std::vector< Uncertainty 
 extern "C" {
 #endif
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_DoubleList__SWIG_0() {
+  void * jresult ;
+  std::vector< double > *result = 0 ;
+  
+  {
+    try {
+      result = (std::vector< double > *)new std::vector< double >();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_DoubleList__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< double > *arg1 = 0 ;
+  std::vector< double > *result = 0 ;
+  
+  arg1 = (std::vector< double > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< double > const & is null", 0);
+    return 0;
+  } 
+  {
+    try {
+      result = (std::vector< double > *)new std::vector< double >((std::vector< double > const &)*arg1);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Clear(void * jarg1) {
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  {
+    try {
+      (arg1)->clear();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Add(void * jarg1, double jarg2) {
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  double *arg2 = 0 ;
+  double temp2 ;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  temp2 = (double)jarg2; 
+  arg2 = &temp2; 
+  {
+    try {
+      (arg1)->push_back((double const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  std::vector< double >::size_type result;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  {
+    try {
+      result = ((std::vector< double > const *)arg1)->size();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  bool result;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  {
+    try {
+      result = (bool)((std::vector< double > const *)arg1)->empty();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  std::vector< double >::size_type result;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  {
+    try {
+      result = ((std::vector< double > const *)arg1)->capacity();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  std::vector< double >::size_type arg2 ;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  arg2 = (std::vector< double >::size_type)jarg2; 
+  {
+    try {
+      (arg1)->reserve(arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_DoubleList__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< double > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  {
+    try {
+      try {
+        result = (std::vector< double > *)new_std_vector_Sl_double_Sg___SWIG_2(arg1);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_getitemcopy(void * jarg1, int jarg2) {
+  double jresult ;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  int arg2 ;
+  double result;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        result = (double)std_vector_Sl_double_Sg__getitemcopy(arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_getitem(void * jarg1, int jarg2) {
+  double jresult ;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  int arg2 ;
+  std::vector< double >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        result = (std::vector< double >::value_type *) &std_vector_Sl_double_Sg__getitem(arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = *result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_setitem(void * jarg1, int jarg2, double jarg3) {
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  int arg2 ;
+  double *arg3 = 0 ;
+  double temp3 ;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = (double)jarg3; 
+  arg3 = &temp3; 
+  {
+    try {
+      try {
+        std_vector_Sl_double_Sg__setitem(arg1,arg2,(double const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_AddRange(void * jarg1, void * jarg2) {
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  std::vector< double > *arg2 = 0 ;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  arg2 = (std::vector< double > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< double > const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      std_vector_Sl_double_Sg__AddRange(arg1,(std::vector< double > const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< double > *result = 0 ;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  {
+    try {
+      try {
+        result = (std::vector< double > *)std_vector_Sl_double_Sg__GetRange(arg1,arg2,arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      } catch(std::invalid_argument &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Insert(void * jarg1, int jarg2, double jarg3) {
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  int arg2 ;
+  double *arg3 = 0 ;
+  double temp3 ;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = (double)jarg3; 
+  arg3 = &temp3; 
+  {
+    try {
+      try {
+        std_vector_Sl_double_Sg__Insert(arg1,arg2,(double const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  int arg2 ;
+  std::vector< double > *arg3 = 0 ;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< double > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< double > const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      try {
+        std_vector_Sl_double_Sg__InsertRange(arg1,arg2,(std::vector< double > const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        std_vector_Sl_double_Sg__RemoveAt(arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  {
+    try {
+      try {
+        std_vector_Sl_double_Sg__RemoveRange(arg1,arg2,arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      } catch(std::invalid_argument &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Repeat(double jarg1, int jarg2) {
+  void * jresult ;
+  double *arg1 = 0 ;
+  int arg2 ;
+  double temp1 ;
+  std::vector< double > *result = 0 ;
+  
+  temp1 = (double)jarg1; 
+  arg1 = &temp1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        result = (std::vector< double > *)std_vector_Sl_double_Sg__Repeat((double const &)*arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Reverse__SWIG_0(void * jarg1) {
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  {
+    try {
+      std_vector_Sl_double_Sg__Reverse__SWIG_0(arg1);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  {
+    try {
+      try {
+        std_vector_Sl_double_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      } catch(std::invalid_argument &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  int arg2 ;
+  std::vector< double > *arg3 = 0 ;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< double > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< double > const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      try {
+        std_vector_Sl_double_Sg__SetRange(arg1,arg2,(std::vector< double > const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Contains(void * jarg1, double jarg2) {
+  unsigned int jresult ;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  double *arg2 = 0 ;
+  double temp2 ;
+  bool result;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  temp2 = (double)jarg2; 
+  arg2 = &temp2; 
+  {
+    try {
+      result = (bool)std_vector_Sl_double_Sg__Contains(arg1,(double const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_IndexOf(void * jarg1, double jarg2) {
+  int jresult ;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  double *arg2 = 0 ;
+  double temp2 ;
+  int result;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  temp2 = (double)jarg2; 
+  arg2 = &temp2; 
+  {
+    try {
+      result = (int)std_vector_Sl_double_Sg__IndexOf(arg1,(double const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_LastIndexOf(void * jarg1, double jarg2) {
+  int jresult ;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  double *arg2 = 0 ;
+  double temp2 ;
+  int result;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  temp2 = (double)jarg2; 
+  arg2 = &temp2; 
+  {
+    try {
+      result = (int)std_vector_Sl_double_Sg__LastIndexOf(arg1,(double const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Remove(void * jarg1, double jarg2) {
+  unsigned int jresult ;
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  double *arg2 = 0 ;
+  double temp2 ;
+  bool result;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  temp2 = (double)jarg2; 
+  arg2 = &temp2; 
+  {
+    try {
+      result = (bool)std_vector_Sl_double_Sg__Remove(arg1,(double const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_DoubleList(void * jarg1) {
+  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
+  
+  arg1 = (std::vector< double > *)jarg1; 
+  {
+    try {
+      delete arg1;
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_StringList__SWIG_0() {
+  void * jresult ;
+  std::vector< std::string > *result = 0 ;
+  
+  {
+    try {
+      result = (std::vector< std::string > *)new std::vector< std::string >();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_StringList__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< std::string > *arg1 = 0 ;
+  std::vector< std::string > *result = 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< std::string > const & is null", 0);
+    return 0;
+  } 
+  {
+    try {
+      result = (std::vector< std::string > *)new std::vector< std::string >((std::vector< std::string > const &)*arg1);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Clear(void * jarg1) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  {
+    try {
+      (arg1)->clear();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Add(void * jarg1, const char * jarg2) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  std::string *arg2 = 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return ;
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  {
+    try {
+      (arg1)->push_back((std::string const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  std::vector< std::string >::size_type result;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  {
+    try {
+      result = ((std::vector< std::string > const *)arg1)->size();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  bool result;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  {
+    try {
+      result = (bool)((std::vector< std::string > const *)arg1)->empty();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  std::vector< std::string >::size_type result;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  {
+    try {
+      result = ((std::vector< std::string > const *)arg1)->capacity();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  std::vector< std::string >::size_type arg2 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (std::vector< std::string >::size_type)jarg2; 
+  {
+    try {
+      (arg1)->reserve(arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_StringList__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< std::string > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  {
+    try {
+      try {
+        result = (std::vector< std::string > *)new_std_vector_Sl_std_string_Sg___SWIG_2(arg1);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_getitemcopy(void * jarg1, int jarg2) {
+  const char * jresult ;
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  int arg2 ;
+  std::string result;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        result = std_vector_Sl_std_string_Sg__getitemcopy(arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = SWIG_csharp_string_callback((&result)->c_str()); 
+  return jresult;
+}
+
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_getitem(void * jarg1, int jarg2) {
+  const char * jresult ;
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  int arg2 ;
+  std::vector< std::string >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        result = (std::vector< std::string >::value_type *) &std_vector_Sl_std_string_Sg__getitem(arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = SWIG_csharp_string_callback(result->c_str()); 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_setitem(void * jarg1, int jarg2, const char * jarg3) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  int arg2 ;
+  std::string *arg3 = 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (int)jarg2; 
+  if (!jarg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return ;
+  }
+  std::string arg3_str(jarg3);
+  arg3 = &arg3_str; 
+  {
+    try {
+      try {
+        std_vector_Sl_std_string_Sg__setitem(arg1,arg2,(std::string const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_AddRange(void * jarg1, void * jarg2) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  std::vector< std::string > *arg2 = 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (std::vector< std::string > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< std::string > const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      std_vector_Sl_std_string_Sg__AddRange(arg1,(std::vector< std::string > const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< std::string > *result = 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  {
+    try {
+      try {
+        result = (std::vector< std::string > *)std_vector_Sl_std_string_Sg__GetRange(arg1,arg2,arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      } catch(std::invalid_argument &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Insert(void * jarg1, int jarg2, const char * jarg3) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  int arg2 ;
+  std::string *arg3 = 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (int)jarg2; 
+  if (!jarg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return ;
+  }
+  std::string arg3_str(jarg3);
+  arg3 = &arg3_str; 
+  {
+    try {
+      try {
+        std_vector_Sl_std_string_Sg__Insert(arg1,arg2,(std::string const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  int arg2 ;
+  std::vector< std::string > *arg3 = 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< std::string > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< std::string > const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      try {
+        std_vector_Sl_std_string_Sg__InsertRange(arg1,arg2,(std::vector< std::string > const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        std_vector_Sl_std_string_Sg__RemoveAt(arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  {
+    try {
+      try {
+        std_vector_Sl_std_string_Sg__RemoveRange(arg1,arg2,arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      } catch(std::invalid_argument &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Repeat(const char * jarg1, int jarg2) {
+  void * jresult ;
+  std::string *arg1 = 0 ;
+  int arg2 ;
+  std::vector< std::string > *result = 0 ;
+  
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg1_str(jarg1);
+  arg1 = &arg1_str; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        result = (std::vector< std::string > *)std_vector_Sl_std_string_Sg__Repeat((std::string const &)*arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Reverse__SWIG_0(void * jarg1) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  {
+    try {
+      std_vector_Sl_std_string_Sg__Reverse__SWIG_0(arg1);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  {
+    try {
+      try {
+        std_vector_Sl_std_string_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      } catch(std::invalid_argument &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  int arg2 ;
+  std::vector< std::string > *arg3 = 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< std::string > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< std::string > const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      try {
+        std_vector_Sl_std_string_Sg__SetRange(arg1,arg2,(std::vector< std::string > const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Contains(void * jarg1, const char * jarg2) {
+  unsigned int jresult ;
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  std::string *arg2 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  {
+    try {
+      result = (bool)std_vector_Sl_std_string_Sg__Contains(arg1,(std::string const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_IndexOf(void * jarg1, const char * jarg2) {
+  int jresult ;
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  std::string *arg2 = 0 ;
+  int result;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  {
+    try {
+      result = (int)std_vector_Sl_std_string_Sg__IndexOf(arg1,(std::string const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_LastIndexOf(void * jarg1, const char * jarg2) {
+  int jresult ;
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  std::string *arg2 = 0 ;
+  int result;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  {
+    try {
+      result = (int)std_vector_Sl_std_string_Sg__LastIndexOf(arg1,(std::string const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Remove(void * jarg1, const char * jarg2) {
+  unsigned int jresult ;
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  std::string *arg2 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  if (!jarg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  std::string arg2_str(jarg2);
+  arg2 = &arg2_str; 
+  {
+    try {
+      result = (bool)std_vector_Sl_std_string_Sg__Remove(arg1,(std::string const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_StringList(void * jarg1) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  
+  arg1 = (std::vector< std::string > *)jarg1; 
+  {
+    try {
+      delete arg1;
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_IntList__SWIG_0() {
+  void * jresult ;
+  std::vector< int > *result = 0 ;
+  
+  {
+    try {
+      result = (std::vector< int > *)new std::vector< int >();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_IntList__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< int > *arg1 = 0 ;
+  std::vector< int > *result = 0 ;
+  
+  arg1 = (std::vector< int > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< int > const & is null", 0);
+    return 0;
+  } 
+  {
+    try {
+      result = (std::vector< int > *)new std::vector< int >((std::vector< int > const &)*arg1);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Clear(void * jarg1) {
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  {
+    try {
+      (arg1)->clear();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Add(void * jarg1, int jarg2) {
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  int *arg2 = 0 ;
+  int temp2 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  temp2 = (int)jarg2; 
+  arg2 = &temp2; 
+  {
+    try {
+      (arg1)->push_back((int const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  std::vector< int >::size_type result;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  {
+    try {
+      result = ((std::vector< int > const *)arg1)->size();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  bool result;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  {
+    try {
+      result = (bool)((std::vector< int > const *)arg1)->empty();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  std::vector< int >::size_type result;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  {
+    try {
+      result = ((std::vector< int > const *)arg1)->capacity();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  std::vector< int >::size_type arg2 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (std::vector< int >::size_type)jarg2; 
+  {
+    try {
+      (arg1)->reserve(arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_IntList__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< int > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  {
+    try {
+      try {
+        result = (std::vector< int > *)new_std_vector_Sl_int_Sg___SWIG_2(arg1);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_getitemcopy(void * jarg1, int jarg2) {
+  int jresult ;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  int arg2 ;
+  int result;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        result = (int)std_vector_Sl_int_Sg__getitemcopy(arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_getitem(void * jarg1, int jarg2) {
+  int jresult ;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  int arg2 ;
+  std::vector< int >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        result = (std::vector< int >::value_type *) &std_vector_Sl_int_Sg__getitem(arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = *result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_setitem(void * jarg1, int jarg2, int jarg3) {
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  int arg2 ;
+  int *arg3 = 0 ;
+  int temp3 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = (int)jarg3; 
+  arg3 = &temp3; 
+  {
+    try {
+      try {
+        std_vector_Sl_int_Sg__setitem(arg1,arg2,(int const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_AddRange(void * jarg1, void * jarg2) {
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  std::vector< int > *arg2 = 0 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (std::vector< int > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< int > const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      std_vector_Sl_int_Sg__AddRange(arg1,(std::vector< int > const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< int > *result = 0 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  {
+    try {
+      try {
+        result = (std::vector< int > *)std_vector_Sl_int_Sg__GetRange(arg1,arg2,arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      } catch(std::invalid_argument &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Insert(void * jarg1, int jarg2, int jarg3) {
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  int arg2 ;
+  int *arg3 = 0 ;
+  int temp3 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = (int)jarg3; 
+  arg3 = &temp3; 
+  {
+    try {
+      try {
+        std_vector_Sl_int_Sg__Insert(arg1,arg2,(int const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  int arg2 ;
+  std::vector< int > *arg3 = 0 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< int > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< int > const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      try {
+        std_vector_Sl_int_Sg__InsertRange(arg1,arg2,(std::vector< int > const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        std_vector_Sl_int_Sg__RemoveAt(arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  {
+    try {
+      try {
+        std_vector_Sl_int_Sg__RemoveRange(arg1,arg2,arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      } catch(std::invalid_argument &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Repeat(int jarg1, int jarg2) {
+  void * jresult ;
+  int *arg1 = 0 ;
+  int arg2 ;
+  int temp1 ;
+  std::vector< int > *result = 0 ;
+  
+  temp1 = (int)jarg1; 
+  arg1 = &temp1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        result = (std::vector< int > *)std_vector_Sl_int_Sg__Repeat((int const &)*arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Reverse__SWIG_0(void * jarg1) {
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  {
+    try {
+      std_vector_Sl_int_Sg__Reverse__SWIG_0(arg1);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  {
+    try {
+      try {
+        std_vector_Sl_int_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      } catch(std::invalid_argument &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  int arg2 ;
+  std::vector< int > *arg3 = 0 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< int > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< int > const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      try {
+        std_vector_Sl_int_Sg__SetRange(arg1,arg2,(std::vector< int > const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Contains(void * jarg1, int jarg2) {
+  unsigned int jresult ;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  int *arg2 = 0 ;
+  int temp2 ;
+  bool result;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  temp2 = (int)jarg2; 
+  arg2 = &temp2; 
+  {
+    try {
+      result = (bool)std_vector_Sl_int_Sg__Contains(arg1,(int const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_IndexOf(void * jarg1, int jarg2) {
+  int jresult ;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  int *arg2 = 0 ;
+  int temp2 ;
+  int result;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  temp2 = (int)jarg2; 
+  arg2 = &temp2; 
+  {
+    try {
+      result = (int)std_vector_Sl_int_Sg__IndexOf(arg1,(int const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_LastIndexOf(void * jarg1, int jarg2) {
+  int jresult ;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  int *arg2 = 0 ;
+  int temp2 ;
+  int result;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  temp2 = (int)jarg2; 
+  arg2 = &temp2; 
+  {
+    try {
+      result = (int)std_vector_Sl_int_Sg__LastIndexOf(arg1,(int const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Remove(void * jarg1, int jarg2) {
+  unsigned int jresult ;
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  int *arg2 = 0 ;
+  int temp2 ;
+  bool result;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  temp2 = (int)jarg2; 
+  arg2 = &temp2; 
+  {
+    try {
+      result = (bool)std_vector_Sl_int_Sg__Remove(arg1,(int const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_IntList(void * jarg1) {
+  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
+  
+  arg1 = (std::vector< int > *)jarg1; 
+  {
+    try {
+      delete arg1;
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_TaskProcess__SWIG_0() {
+  void * jresult ;
+  std::vector< TaskStep * > *result = 0 ;
+  
+  {
+    try {
+      result = (std::vector< TaskStep * > *)new std::vector< TaskStep * >();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_TaskProcess__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< TaskStep * > *arg1 = 0 ;
+  std::vector< TaskStep * > *result = 0 ;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< TaskStep * > const & is null", 0);
+    return 0;
+  } 
+  {
+    try {
+      result = (std::vector< TaskStep * > *)new std::vector< TaskStep * >((std::vector< TaskStep * > const &)*arg1);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Clear(void * jarg1) {
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  {
+    try {
+      (arg1)->clear();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Add(void * jarg1, void * jarg2) {
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  TaskStep **arg2 = 0 ;
+  TaskStep *temp2 = 0 ;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  temp2 = (TaskStep *)jarg2;
+  arg2 = (TaskStep **)&temp2; 
+  {
+    try {
+      (arg1)->push_back((TaskStep *const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  std::vector< TaskStep * >::size_type result;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  {
+    try {
+      result = ((std::vector< TaskStep * > const *)arg1)->size();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  bool result;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  {
+    try {
+      result = (bool)((std::vector< TaskStep * > const *)arg1)->empty();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  std::vector< TaskStep * >::size_type result;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  {
+    try {
+      result = ((std::vector< TaskStep * > const *)arg1)->capacity();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  std::vector< TaskStep * >::size_type arg2 ;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  arg2 = (std::vector< TaskStep * >::size_type)jarg2; 
+  {
+    try {
+      (arg1)->reserve(arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_TaskProcess__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< TaskStep * > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  {
+    try {
+      try {
+        result = (std::vector< TaskStep * > *)new_std_vector_Sl_TaskStep_Sm__Sg___SWIG_2(arg1);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  int arg2 ;
+  TaskStep *result = 0 ;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        result = (TaskStep *)std_vector_Sl_TaskStep_Sm__Sg__getitemcopy(arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  int arg2 ;
+  std::vector< TaskStep * >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        result = (std::vector< TaskStep * >::value_type *) &std_vector_Sl_TaskStep_Sm__Sg__getitem(arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)*result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_setitem(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  int arg2 ;
+  TaskStep **arg3 = 0 ;
+  TaskStep *temp3 = 0 ;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = (TaskStep *)jarg3;
+  arg3 = (TaskStep **)&temp3; 
+  {
+    try {
+      try {
+        std_vector_Sl_TaskStep_Sm__Sg__setitem(arg1,arg2,(TaskStep *const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_AddRange(void * jarg1, void * jarg2) {
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  std::vector< TaskStep * > *arg2 = 0 ;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  arg2 = (std::vector< TaskStep * > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< TaskStep * > const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      std_vector_Sl_TaskStep_Sm__Sg__AddRange(arg1,(std::vector< TaskStep * > const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< TaskStep * > *result = 0 ;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  {
+    try {
+      try {
+        result = (std::vector< TaskStep * > *)std_vector_Sl_TaskStep_Sm__Sg__GetRange(arg1,arg2,arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      } catch(std::invalid_argument &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Insert(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  int arg2 ;
+  TaskStep **arg3 = 0 ;
+  TaskStep *temp3 = 0 ;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  temp3 = (TaskStep *)jarg3;
+  arg3 = (TaskStep **)&temp3; 
+  {
+    try {
+      try {
+        std_vector_Sl_TaskStep_Sm__Sg__Insert(arg1,arg2,(TaskStep *const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  int arg2 ;
+  std::vector< TaskStep * > *arg3 = 0 ;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< TaskStep * > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< TaskStep * > const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      try {
+        std_vector_Sl_TaskStep_Sm__Sg__InsertRange(arg1,arg2,(std::vector< TaskStep * > const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        std_vector_Sl_TaskStep_Sm__Sg__RemoveAt(arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  {
+    try {
+      try {
+        std_vector_Sl_TaskStep_Sm__Sg__RemoveRange(arg1,arg2,arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      } catch(std::invalid_argument &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  TaskStep **arg1 = 0 ;
+  int arg2 ;
+  TaskStep *temp1 = 0 ;
+  std::vector< TaskStep * > *result = 0 ;
+  
+  temp1 = (TaskStep *)jarg1;
+  arg1 = (TaskStep **)&temp1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        result = (std::vector< TaskStep * > *)std_vector_Sl_TaskStep_Sm__Sg__Repeat((TaskStep *const &)*arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Reverse__SWIG_0(void * jarg1) {
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  {
+    try {
+      std_vector_Sl_TaskStep_Sm__Sg__Reverse__SWIG_0(arg1);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  {
+    try {
+      try {
+        std_vector_Sl_TaskStep_Sm__Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      } catch(std::invalid_argument &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  int arg2 ;
+  std::vector< TaskStep * > *arg3 = 0 ;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< TaskStep * > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< TaskStep * > const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      try {
+        std_vector_Sl_TaskStep_Sm__Sg__SetRange(arg1,arg2,(std::vector< TaskStep * > const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Contains(void * jarg1, void * jarg2) {
+  unsigned int jresult ;
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  TaskStep **arg2 = 0 ;
+  TaskStep *temp2 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  temp2 = (TaskStep *)jarg2;
+  arg2 = (TaskStep **)&temp2; 
+  {
+    try {
+      result = (bool)std_vector_Sl_TaskStep_Sm__Sg__Contains(arg1,(TaskStep *const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_IndexOf(void * jarg1, void * jarg2) {
+  int jresult ;
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  TaskStep **arg2 = 0 ;
+  TaskStep *temp2 = 0 ;
+  int result;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  temp2 = (TaskStep *)jarg2;
+  arg2 = (TaskStep **)&temp2; 
+  {
+    try {
+      result = (int)std_vector_Sl_TaskStep_Sm__Sg__IndexOf(arg1,(TaskStep *const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_LastIndexOf(void * jarg1, void * jarg2) {
+  int jresult ;
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  TaskStep **arg2 = 0 ;
+  TaskStep *temp2 = 0 ;
+  int result;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  temp2 = (TaskStep *)jarg2;
+  arg2 = (TaskStep **)&temp2; 
+  {
+    try {
+      result = (int)std_vector_Sl_TaskStep_Sm__Sg__LastIndexOf(arg1,(TaskStep *const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Remove(void * jarg1, void * jarg2) {
+  unsigned int jresult ;
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  TaskStep **arg2 = 0 ;
+  TaskStep *temp2 = 0 ;
+  bool result;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  temp2 = (TaskStep *)jarg2;
+  arg2 = (TaskStep **)&temp2; 
+  {
+    try {
+      result = (bool)std_vector_Sl_TaskStep_Sm__Sg__Remove(arg1,(TaskStep *const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_TaskProcess(void * jarg1) {
+  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
+  
+  arg1 = (std::vector< TaskStep * > *)jarg1; 
+  {
+    try {
+      delete arg1;
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_AlternativeList__SWIG_0() {
+  void * jresult ;
+  std::vector< Alternative > *result = 0 ;
+  
+  {
+    try {
+      result = (std::vector< Alternative > *)new std::vector< Alternative >();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_AlternativeList__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< Alternative > *arg1 = 0 ;
+  std::vector< Alternative > *result = 0 ;
+  
+  arg1 = (std::vector< Alternative > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Alternative > const & is null", 0);
+    return 0;
+  } 
+  {
+    try {
+      result = (std::vector< Alternative > *)new std::vector< Alternative >((std::vector< Alternative > const &)*arg1);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_Clear(void * jarg1) {
+  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
+  
+  arg1 = (std::vector< Alternative > *)jarg1; 
+  {
+    try {
+      (arg1)->clear();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_Add(void * jarg1, void * jarg2) {
+  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
+  Alternative *arg2 = 0 ;
+  
+  arg1 = (std::vector< Alternative > *)jarg1; 
+  arg2 = (Alternative *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Alternative const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      (arg1)->push_back((Alternative const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
+  std::vector< Alternative >::size_type result;
+  
+  arg1 = (std::vector< Alternative > *)jarg1; 
+  {
+    try {
+      result = ((std::vector< Alternative > const *)arg1)->size();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
+  bool result;
+  
+  arg1 = (std::vector< Alternative > *)jarg1; 
+  {
+    try {
+      result = (bool)((std::vector< Alternative > const *)arg1)->empty();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
+  std::vector< Alternative >::size_type result;
+  
+  arg1 = (std::vector< Alternative > *)jarg1; 
+  {
+    try {
+      result = ((std::vector< Alternative > const *)arg1)->capacity();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
+  std::vector< Alternative >::size_type arg2 ;
+  
+  arg1 = (std::vector< Alternative > *)jarg1; 
+  arg2 = (std::vector< Alternative >::size_type)jarg2; 
+  {
+    try {
+      (arg1)->reserve(arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_AlternativeList__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< Alternative > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  {
+    try {
+      try {
+        result = (std::vector< Alternative > *)new_std_vector_Sl_Alternative_Sg___SWIG_2(arg1);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
+  int arg2 ;
+  SwigValueWrapper< Alternative > result;
+  
+  arg1 = (std::vector< Alternative > *)jarg1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        result = std_vector_Sl_Alternative_Sg__getitemcopy(arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = new Alternative(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
+  int arg2 ;
+  std::vector< Alternative >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< Alternative > *)jarg1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        result = (std::vector< Alternative >::value_type *) &std_vector_Sl_Alternative_Sg__getitem(arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_setitem(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
+  int arg2 ;
+  Alternative *arg3 = 0 ;
+  
+  arg1 = (std::vector< Alternative > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (Alternative *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Alternative const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      try {
+        std_vector_Sl_Alternative_Sg__setitem(arg1,arg2,(Alternative const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_AddRange(void * jarg1, void * jarg2) {
+  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
+  std::vector< Alternative > *arg2 = 0 ;
+  
+  arg1 = (std::vector< Alternative > *)jarg1; 
+  arg2 = (std::vector< Alternative > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Alternative > const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      std_vector_Sl_Alternative_Sg__AddRange(arg1,(std::vector< Alternative > const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< Alternative > *result = 0 ;
+  
+  arg1 = (std::vector< Alternative > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  {
+    try {
+      try {
+        result = (std::vector< Alternative > *)std_vector_Sl_Alternative_Sg__GetRange(arg1,arg2,arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      } catch(std::invalid_argument &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_Insert(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
+  int arg2 ;
+  Alternative *arg3 = 0 ;
+  
+  arg1 = (std::vector< Alternative > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (Alternative *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Alternative const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      try {
+        std_vector_Sl_Alternative_Sg__Insert(arg1,arg2,(Alternative const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
+  int arg2 ;
+  std::vector< Alternative > *arg3 = 0 ;
+  
+  arg1 = (std::vector< Alternative > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< Alternative > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Alternative > const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      try {
+        std_vector_Sl_Alternative_Sg__InsertRange(arg1,arg2,(std::vector< Alternative > const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< Alternative > *)jarg1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        std_vector_Sl_Alternative_Sg__RemoveAt(arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< Alternative > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  {
+    try {
+      try {
+        std_vector_Sl_Alternative_Sg__RemoveRange(arg1,arg2,arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      } catch(std::invalid_argument &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  Alternative *arg1 = 0 ;
+  int arg2 ;
+  std::vector< Alternative > *result = 0 ;
+  
+  arg1 = (Alternative *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Alternative const & is null", 0);
+    return 0;
+  } 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        result = (std::vector< Alternative > *)std_vector_Sl_Alternative_Sg__Repeat((Alternative const &)*arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_Reverse__SWIG_0(void * jarg1) {
+  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
+  
+  arg1 = (std::vector< Alternative > *)jarg1; 
+  {
+    try {
+      std_vector_Sl_Alternative_Sg__Reverse__SWIG_0(arg1);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< Alternative > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  {
+    try {
+      try {
+        std_vector_Sl_Alternative_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      } catch(std::invalid_argument &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
+  int arg2 ;
+  std::vector< Alternative > *arg3 = 0 ;
+  
+  arg1 = (std::vector< Alternative > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< Alternative > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Alternative > const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      try {
+        std_vector_Sl_Alternative_Sg__SetRange(arg1,arg2,(std::vector< Alternative > const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_AlternativeList(void * jarg1) {
+  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
+  
+  arg1 = (std::vector< Alternative > *)jarg1; 
+  {
+    try {
+      delete arg1;
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_ProbabilisticAlternativeList__SWIG_0() {
+  void * jresult ;
+  std::vector< ProbabilisticAlternative > *result = 0 ;
+  
+  {
+    try {
+      result = (std::vector< ProbabilisticAlternative > *)new std::vector< ProbabilisticAlternative >();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_ProbabilisticAlternativeList__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< ProbabilisticAlternative > *arg1 = 0 ;
+  std::vector< ProbabilisticAlternative > *result = 0 ;
+  
+  arg1 = (std::vector< ProbabilisticAlternative > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< ProbabilisticAlternative > const & is null", 0);
+    return 0;
+  } 
+  {
+    try {
+      result = (std::vector< ProbabilisticAlternative > *)new std::vector< ProbabilisticAlternative >((std::vector< ProbabilisticAlternative > const &)*arg1);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternativeList_Clear(void * jarg1) {
+  std::vector< ProbabilisticAlternative > *arg1 = (std::vector< ProbabilisticAlternative > *) 0 ;
+  
+  arg1 = (std::vector< ProbabilisticAlternative > *)jarg1; 
+  {
+    try {
+      (arg1)->clear();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternativeList_Add(void * jarg1, void * jarg2) {
+  std::vector< ProbabilisticAlternative > *arg1 = (std::vector< ProbabilisticAlternative > *) 0 ;
+  ProbabilisticAlternative *arg2 = 0 ;
+  
+  arg1 = (std::vector< ProbabilisticAlternative > *)jarg1; 
+  arg2 = (ProbabilisticAlternative *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "ProbabilisticAlternative const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      (arg1)->push_back((ProbabilisticAlternative const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternativeList_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< ProbabilisticAlternative > *arg1 = (std::vector< ProbabilisticAlternative > *) 0 ;
+  std::vector< ProbabilisticAlternative >::size_type result;
+  
+  arg1 = (std::vector< ProbabilisticAlternative > *)jarg1; 
+  {
+    try {
+      result = ((std::vector< ProbabilisticAlternative > const *)arg1)->size();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternativeList_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< ProbabilisticAlternative > *arg1 = (std::vector< ProbabilisticAlternative > *) 0 ;
+  bool result;
+  
+  arg1 = (std::vector< ProbabilisticAlternative > *)jarg1; 
+  {
+    try {
+      result = (bool)((std::vector< ProbabilisticAlternative > const *)arg1)->empty();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternativeList_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< ProbabilisticAlternative > *arg1 = (std::vector< ProbabilisticAlternative > *) 0 ;
+  std::vector< ProbabilisticAlternative >::size_type result;
+  
+  arg1 = (std::vector< ProbabilisticAlternative > *)jarg1; 
+  {
+    try {
+      result = ((std::vector< ProbabilisticAlternative > const *)arg1)->capacity();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternativeList_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< ProbabilisticAlternative > *arg1 = (std::vector< ProbabilisticAlternative > *) 0 ;
+  std::vector< ProbabilisticAlternative >::size_type arg2 ;
+  
+  arg1 = (std::vector< ProbabilisticAlternative > *)jarg1; 
+  arg2 = (std::vector< ProbabilisticAlternative >::size_type)jarg2; 
+  {
+    try {
+      (arg1)->reserve(arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_ProbabilisticAlternativeList__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< ProbabilisticAlternative > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  {
+    try {
+      try {
+        result = (std::vector< ProbabilisticAlternative > *)new_std_vector_Sl_ProbabilisticAlternative_Sg___SWIG_2(arg1);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternativeList_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< ProbabilisticAlternative > *arg1 = (std::vector< ProbabilisticAlternative > *) 0 ;
+  int arg2 ;
+  SwigValueWrapper< ProbabilisticAlternative > result;
+  
+  arg1 = (std::vector< ProbabilisticAlternative > *)jarg1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        result = std_vector_Sl_ProbabilisticAlternative_Sg__getitemcopy(arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = new ProbabilisticAlternative(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternativeList_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< ProbabilisticAlternative > *arg1 = (std::vector< ProbabilisticAlternative > *) 0 ;
+  int arg2 ;
+  std::vector< ProbabilisticAlternative >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< ProbabilisticAlternative > *)jarg1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        result = (std::vector< ProbabilisticAlternative >::value_type *) &std_vector_Sl_ProbabilisticAlternative_Sg__getitem(arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternativeList_setitem(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< ProbabilisticAlternative > *arg1 = (std::vector< ProbabilisticAlternative > *) 0 ;
+  int arg2 ;
+  ProbabilisticAlternative *arg3 = 0 ;
+  
+  arg1 = (std::vector< ProbabilisticAlternative > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (ProbabilisticAlternative *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "ProbabilisticAlternative const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      try {
+        std_vector_Sl_ProbabilisticAlternative_Sg__setitem(arg1,arg2,(ProbabilisticAlternative const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternativeList_AddRange(void * jarg1, void * jarg2) {
+  std::vector< ProbabilisticAlternative > *arg1 = (std::vector< ProbabilisticAlternative > *) 0 ;
+  std::vector< ProbabilisticAlternative > *arg2 = 0 ;
+  
+  arg1 = (std::vector< ProbabilisticAlternative > *)jarg1; 
+  arg2 = (std::vector< ProbabilisticAlternative > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< ProbabilisticAlternative > const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      std_vector_Sl_ProbabilisticAlternative_Sg__AddRange(arg1,(std::vector< ProbabilisticAlternative > const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternativeList_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< ProbabilisticAlternative > *arg1 = (std::vector< ProbabilisticAlternative > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< ProbabilisticAlternative > *result = 0 ;
+  
+  arg1 = (std::vector< ProbabilisticAlternative > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  {
+    try {
+      try {
+        result = (std::vector< ProbabilisticAlternative > *)std_vector_Sl_ProbabilisticAlternative_Sg__GetRange(arg1,arg2,arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      } catch(std::invalid_argument &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternativeList_Insert(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< ProbabilisticAlternative > *arg1 = (std::vector< ProbabilisticAlternative > *) 0 ;
+  int arg2 ;
+  ProbabilisticAlternative *arg3 = 0 ;
+  
+  arg1 = (std::vector< ProbabilisticAlternative > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (ProbabilisticAlternative *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "ProbabilisticAlternative const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      try {
+        std_vector_Sl_ProbabilisticAlternative_Sg__Insert(arg1,arg2,(ProbabilisticAlternative const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternativeList_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< ProbabilisticAlternative > *arg1 = (std::vector< ProbabilisticAlternative > *) 0 ;
+  int arg2 ;
+  std::vector< ProbabilisticAlternative > *arg3 = 0 ;
+  
+  arg1 = (std::vector< ProbabilisticAlternative > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< ProbabilisticAlternative > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< ProbabilisticAlternative > const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      try {
+        std_vector_Sl_ProbabilisticAlternative_Sg__InsertRange(arg1,arg2,(std::vector< ProbabilisticAlternative > const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternativeList_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< ProbabilisticAlternative > *arg1 = (std::vector< ProbabilisticAlternative > *) 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< ProbabilisticAlternative > *)jarg1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        std_vector_Sl_ProbabilisticAlternative_Sg__RemoveAt(arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternativeList_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< ProbabilisticAlternative > *arg1 = (std::vector< ProbabilisticAlternative > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< ProbabilisticAlternative > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  {
+    try {
+      try {
+        std_vector_Sl_ProbabilisticAlternative_Sg__RemoveRange(arg1,arg2,arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      } catch(std::invalid_argument &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternativeList_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  ProbabilisticAlternative *arg1 = 0 ;
+  int arg2 ;
+  std::vector< ProbabilisticAlternative > *result = 0 ;
+  
+  arg1 = (ProbabilisticAlternative *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "ProbabilisticAlternative const & is null", 0);
+    return 0;
+  } 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        result = (std::vector< ProbabilisticAlternative > *)std_vector_Sl_ProbabilisticAlternative_Sg__Repeat((ProbabilisticAlternative const &)*arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternativeList_Reverse__SWIG_0(void * jarg1) {
+  std::vector< ProbabilisticAlternative > *arg1 = (std::vector< ProbabilisticAlternative > *) 0 ;
+  
+  arg1 = (std::vector< ProbabilisticAlternative > *)jarg1; 
+  {
+    try {
+      std_vector_Sl_ProbabilisticAlternative_Sg__Reverse__SWIG_0(arg1);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternativeList_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< ProbabilisticAlternative > *arg1 = (std::vector< ProbabilisticAlternative > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< ProbabilisticAlternative > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  {
+    try {
+      try {
+        std_vector_Sl_ProbabilisticAlternative_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      } catch(std::invalid_argument &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternativeList_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< ProbabilisticAlternative > *arg1 = (std::vector< ProbabilisticAlternative > *) 0 ;
+  int arg2 ;
+  std::vector< ProbabilisticAlternative > *arg3 = 0 ;
+  
+  arg1 = (std::vector< ProbabilisticAlternative > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< ProbabilisticAlternative > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< ProbabilisticAlternative > const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      try {
+        std_vector_Sl_ProbabilisticAlternative_Sg__SetRange(arg1,arg2,(std::vector< ProbabilisticAlternative > const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_ProbabilisticAlternativeList(void * jarg1) {
+  std::vector< ProbabilisticAlternative > *arg1 = (std::vector< ProbabilisticAlternative > *) 0 ;
+  
+  arg1 = (std::vector< ProbabilisticAlternative > *)jarg1; 
+  {
+    try {
+      delete arg1;
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_UncertaintyList__SWIG_0() {
+  void * jresult ;
+  std::vector< Uncertainty > *result = 0 ;
+  
+  {
+    try {
+      result = (std::vector< Uncertainty > *)new std::vector< Uncertainty >();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_UncertaintyList__SWIG_1(void * jarg1) {
+  void * jresult ;
+  std::vector< Uncertainty > *arg1 = 0 ;
+  std::vector< Uncertainty > *result = 0 ;
+  
+  arg1 = (std::vector< Uncertainty > *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Uncertainty > const & is null", 0);
+    return 0;
+  } 
+  {
+    try {
+      result = (std::vector< Uncertainty > *)new std::vector< Uncertainty >((std::vector< Uncertainty > const &)*arg1);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_Clear(void * jarg1) {
+  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
+  
+  arg1 = (std::vector< Uncertainty > *)jarg1; 
+  {
+    try {
+      (arg1)->clear();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_Add(void * jarg1, void * jarg2) {
+  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
+  Uncertainty *arg2 = 0 ;
+  
+  arg1 = (std::vector< Uncertainty > *)jarg1; 
+  arg2 = (Uncertainty *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Uncertainty const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      (arg1)->push_back((Uncertainty const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_size(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
+  std::vector< Uncertainty >::size_type result;
+  
+  arg1 = (std::vector< Uncertainty > *)jarg1; 
+  {
+    try {
+      result = ((std::vector< Uncertainty > const *)arg1)->size();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_empty(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
+  bool result;
+  
+  arg1 = (std::vector< Uncertainty > *)jarg1; 
+  {
+    try {
+      result = (bool)((std::vector< Uncertainty > const *)arg1)->empty();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_capacity(void * jarg1) {
+  unsigned int jresult ;
+  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
+  std::vector< Uncertainty >::size_type result;
+  
+  arg1 = (std::vector< Uncertainty > *)jarg1; 
+  {
+    try {
+      result = ((std::vector< Uncertainty > const *)arg1)->capacity();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_reserve(void * jarg1, unsigned int jarg2) {
+  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
+  std::vector< Uncertainty >::size_type arg2 ;
+  
+  arg1 = (std::vector< Uncertainty > *)jarg1; 
+  arg2 = (std::vector< Uncertainty >::size_type)jarg2; 
+  {
+    try {
+      (arg1)->reserve(arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_UncertaintyList__SWIG_2(int jarg1) {
+  void * jresult ;
+  int arg1 ;
+  std::vector< Uncertainty > *result = 0 ;
+  
+  arg1 = (int)jarg1; 
+  {
+    try {
+      try {
+        result = (std::vector< Uncertainty > *)new_std_vector_Sl_Uncertainty_Sg___SWIG_2(arg1);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_getitemcopy(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
+  int arg2 ;
+  SwigValueWrapper< Uncertainty > result;
+  
+  arg1 = (std::vector< Uncertainty > *)jarg1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        result = std_vector_Sl_Uncertainty_Sg__getitemcopy(arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = new Uncertainty(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_getitem(void * jarg1, int jarg2) {
+  void * jresult ;
+  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
+  int arg2 ;
+  std::vector< Uncertainty >::value_type *result = 0 ;
+  
+  arg1 = (std::vector< Uncertainty > *)jarg1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        result = (std::vector< Uncertainty >::value_type *) &std_vector_Sl_Uncertainty_Sg__getitem(arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_setitem(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
+  int arg2 ;
+  Uncertainty *arg3 = 0 ;
+  
+  arg1 = (std::vector< Uncertainty > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (Uncertainty *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Uncertainty const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      try {
+        std_vector_Sl_Uncertainty_Sg__setitem(arg1,arg2,(Uncertainty const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_AddRange(void * jarg1, void * jarg2) {
+  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
+  std::vector< Uncertainty > *arg2 = 0 ;
+  
+  arg1 = (std::vector< Uncertainty > *)jarg1; 
+  arg2 = (std::vector< Uncertainty > *)jarg2;
+  if (!arg2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Uncertainty > const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      std_vector_Sl_Uncertainty_Sg__AddRange(arg1,(std::vector< Uncertainty > const &)*arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_GetRange(void * jarg1, int jarg2, int jarg3) {
+  void * jresult ;
+  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  std::vector< Uncertainty > *result = 0 ;
+  
+  arg1 = (std::vector< Uncertainty > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  {
+    try {
+      try {
+        result = (std::vector< Uncertainty > *)std_vector_Sl_Uncertainty_Sg__GetRange(arg1,arg2,arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      } catch(std::invalid_argument &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_Insert(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
+  int arg2 ;
+  Uncertainty *arg3 = 0 ;
+  
+  arg1 = (std::vector< Uncertainty > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (Uncertainty *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Uncertainty const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      try {
+        std_vector_Sl_Uncertainty_Sg__Insert(arg1,arg2,(Uncertainty const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_InsertRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
+  int arg2 ;
+  std::vector< Uncertainty > *arg3 = 0 ;
+  
+  arg1 = (std::vector< Uncertainty > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< Uncertainty > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Uncertainty > const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      try {
+        std_vector_Sl_Uncertainty_Sg__InsertRange(arg1,arg2,(std::vector< Uncertainty > const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_RemoveAt(void * jarg1, int jarg2) {
+  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
+  int arg2 ;
+  
+  arg1 = (std::vector< Uncertainty > *)jarg1; 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        std_vector_Sl_Uncertainty_Sg__RemoveAt(arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_RemoveRange(void * jarg1, int jarg2, int jarg3) {
+  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< Uncertainty > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  {
+    try {
+      try {
+        std_vector_Sl_Uncertainty_Sg__RemoveRange(arg1,arg2,arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      } catch(std::invalid_argument &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_Repeat(void * jarg1, int jarg2) {
+  void * jresult ;
+  Uncertainty *arg1 = 0 ;
+  int arg2 ;
+  std::vector< Uncertainty > *result = 0 ;
+  
+  arg1 = (Uncertainty *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Uncertainty const & is null", 0);
+    return 0;
+  } 
+  arg2 = (int)jarg2; 
+  {
+    try {
+      try {
+        result = (std::vector< Uncertainty > *)std_vector_Sl_Uncertainty_Sg__Repeat((Uncertainty const &)*arg1,arg2);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return 0;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_Reverse__SWIG_0(void * jarg1) {
+  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
+  
+  arg1 = (std::vector< Uncertainty > *)jarg1; 
+  {
+    try {
+      std_vector_Sl_Uncertainty_Sg__Reverse__SWIG_0(arg1);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
+  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  arg1 = (std::vector< Uncertainty > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (int)jarg3; 
+  {
+    try {
+      try {
+        std_vector_Sl_Uncertainty_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      } catch(std::invalid_argument &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_SetRange(void * jarg1, int jarg2, void * jarg3) {
+  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
+  int arg2 ;
+  std::vector< Uncertainty > *arg3 = 0 ;
+  
+  arg1 = (std::vector< Uncertainty > *)jarg1; 
+  arg2 = (int)jarg2; 
+  arg3 = (std::vector< Uncertainty > *)jarg3;
+  if (!arg3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Uncertainty > const & is null", 0);
+    return ;
+  } 
+  {
+    try {
+      try {
+        std_vector_Sl_Uncertainty_Sg__SetRange(arg1,arg2,(std::vector< Uncertainty > const &)*arg3);
+      } catch(std::out_of_range &_e) {
+        SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
+        return ;
+      }
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_UncertaintyList(void * jarg1) {
+  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
+  
+  arg1 = (std::vector< Uncertainty > *)jarg1; 
+  {
+    try {
+      delete arg1;
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_Alternative(const char * jarg1, void * jarg2) {
   void * jresult ;
   std::string arg1 ;
@@ -1114,7 +5428,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_Alternative
     return 0;
   }
   arg2 = *argp2; 
-  result = (Alternative *)new Alternative(arg1,arg2);
+  {
+    try {
+      result = (Alternative *)new Alternative(arg1,arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -1126,7 +5448,15 @@ SWIGEXPORT const char * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Alternati
   std::string result;
   
   arg1 = (Alternative *)jarg1; 
-  result = ((Alternative const *)arg1)->getName();
+  {
+    try {
+      result = ((Alternative const *)arg1)->getName();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = SWIG_csharp_string_callback((&result)->c_str()); 
   return jresult;
 }
@@ -1138,7 +5468,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Alternative_get
   std::vector< double > result;
   
   arg1 = (Alternative *)jarg1; 
-  result = (arg1)->getMarks();
+  {
+    try {
+      result = (arg1)->getMarks();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = new std::vector< double >(result); 
   return jresult;
 }
@@ -1156,7 +5494,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Alternative_setMa
     return ;
   }
   arg2 = *argp2; 
-  (arg1)->setMarks(arg2);
+  {
+    try {
+      (arg1)->setMarks(arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
 }
 
 
@@ -1166,7 +5512,15 @@ SWIGEXPORT double SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Alternative_min
   double result;
   
   arg1 = (Alternative *)jarg1; 
-  result = (double)(arg1)->minMark();
+  {
+    try {
+      result = (double)(arg1)->minMark();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -1178,7 +5532,15 @@ SWIGEXPORT double SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Alternative_max
   double result;
   
   arg1 = (Alternative *)jarg1; 
-  result = (double)(arg1)->maxMark();
+  {
+    try {
+      result = (double)(arg1)->maxMark();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -1190,7 +5552,15 @@ SWIGEXPORT double SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Alternative_sum
   double result;
   
   arg1 = (Alternative *)jarg1; 
-  result = (double)(arg1)->sumOfMarks();
+  {
+    try {
+      result = (double)(arg1)->sumOfMarks();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -1202,7 +5572,15 @@ SWIGEXPORT double SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Alternative_avg
   double result;
   
   arg1 = (Alternative *)jarg1; 
-  result = (double)(arg1)->avgOfMarks();
+  {
+    try {
+      result = (double)(arg1)->avgOfMarks();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -1212,7 +5590,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_Alternativ
   Alternative *arg1 = (Alternative *) 0 ;
   
   arg1 = (Alternative *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
 }
 
 
@@ -1226,7 +5612,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_Uncertainty
     return 0;
   }
   (&arg1)->assign(jarg1); 
-  result = (Uncertainty *)new Uncertainty(arg1);
+  {
+    try {
+      result = (Uncertainty *)new Uncertainty(arg1);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -1238,7 +5632,15 @@ SWIGEXPORT const char * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Uncertain
   std::string result;
   
   arg1 = (Uncertainty *)jarg1; 
-  result = ((Uncertainty const *)arg1)->getName();
+  {
+    try {
+      result = ((Uncertainty const *)arg1)->getName();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = SWIG_csharp_string_callback((&result)->c_str()); 
   return jresult;
 }
@@ -1248,7 +5650,219 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_Uncertaint
   Uncertainty *arg1 = (Uncertainty *) 0 ;
   
   arg1 = (Uncertainty *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_ProbabilisticAlternative(const char * jarg1, void * jarg2, void * jarg3) {
+  void * jresult ;
+  std::string arg1 ;
+  std::vector< double > arg2 ;
+  std::vector< double > arg3 ;
+  std::vector< double > *argp2 ;
+  std::vector< double > *argp3 ;
+  ProbabilisticAlternative *result = 0 ;
+  
+  if (!jarg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
+    return 0;
+  }
+  (&arg1)->assign(jarg1); 
+  argp2 = (std::vector< double > *)jarg2; 
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::vector< double >", 0);
+    return 0;
+  }
+  arg2 = *argp2; 
+  argp3 = (std::vector< double > *)jarg3; 
+  if (!argp3) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::vector< double >", 0);
+    return 0;
+  }
+  arg3 = *argp3; 
+  {
+    try {
+      result = (ProbabilisticAlternative *)new ProbabilisticAlternative(arg1,arg2,arg3);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternative_isValid(void * jarg1) {
+  unsigned int jresult ;
+  ProbabilisticAlternative *arg1 = (ProbabilisticAlternative *) 0 ;
+  bool result;
+  
+  arg1 = (ProbabilisticAlternative *)jarg1; 
+  {
+    try {
+      result = (bool)((ProbabilisticAlternative const *)arg1)->isValid();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT const char * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternative_getName(void * jarg1) {
+  const char * jresult ;
+  ProbabilisticAlternative *arg1 = (ProbabilisticAlternative *) 0 ;
+  std::string result;
+  
+  arg1 = (ProbabilisticAlternative *)jarg1; 
+  {
+    try {
+      result = ((ProbabilisticAlternative const *)arg1)->getName();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = SWIG_csharp_string_callback((&result)->c_str()); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternative_getMarks(void * jarg1) {
+  void * jresult ;
+  ProbabilisticAlternative *arg1 = (ProbabilisticAlternative *) 0 ;
+  std::vector< double > result;
+  
+  arg1 = (ProbabilisticAlternative *)jarg1; 
+  {
+    try {
+      result = (arg1)->getMarks();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = new std::vector< double >(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternative_getProbabilities(void * jarg1) {
+  void * jresult ;
+  ProbabilisticAlternative *arg1 = (ProbabilisticAlternative *) 0 ;
+  std::vector< double > result;
+  
+  arg1 = (ProbabilisticAlternative *)jarg1; 
+  {
+    try {
+      result = (arg1)->getProbabilities();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = new std::vector< double >(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternative_setMarks(void * jarg1, void * jarg2) {
+  ProbabilisticAlternative *arg1 = (ProbabilisticAlternative *) 0 ;
+  std::vector< double > arg2 ;
+  std::vector< double > *argp2 ;
+  
+  arg1 = (ProbabilisticAlternative *)jarg1; 
+  argp2 = (std::vector< double > *)jarg2; 
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::vector< double >", 0);
+    return ;
+  }
+  arg2 = *argp2; 
+  {
+    try {
+      (arg1)->setMarks(arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternative_setProbabilities(void * jarg1, void * jarg2) {
+  ProbabilisticAlternative *arg1 = (ProbabilisticAlternative *) 0 ;
+  std::vector< double > arg2 ;
+  std::vector< double > *argp2 ;
+  
+  arg1 = (ProbabilisticAlternative *)jarg1; 
+  argp2 = (std::vector< double > *)jarg2; 
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::vector< double >", 0);
+    return ;
+  }
+  arg2 = *argp2; 
+  {
+    try {
+      (arg1)->setProbabilities(arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticAlternative_getMathematicalExpectation(void * jarg1) {
+  double jresult ;
+  ProbabilisticAlternative *arg1 = (ProbabilisticAlternative *) 0 ;
+  double result;
+  
+  arg1 = (ProbabilisticAlternative *)jarg1; 
+  {
+    try {
+      result = (double)(arg1)->getMathematicalExpectation();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_ProbabilisticAlternative(void * jarg1) {
+  ProbabilisticAlternative *arg1 = (ProbabilisticAlternative *) 0 ;
+  
+  arg1 = (ProbabilisticAlternative *)jarg1; 
+  {
+    try {
+      delete arg1;
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
 }
 
 
@@ -1256,7 +5870,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_MathModel__
   void * jresult ;
   MathModel *result = 0 ;
   
-  result = (MathModel *)new MathModel();
+  {
+    try {
+      result = (MathModel *)new MathModel();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -1282,7 +5904,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_MathModel__
     return 0;
   }
   arg2 = *argp2; 
-  result = (MathModel *)new MathModel(arg1,arg2);
+  {
+    try {
+      result = (MathModel *)new MathModel(arg1,arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -1298,7 +5928,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_MathModel__
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "MathModel const & is null", 0);
     return 0;
   } 
-  result = (MathModel *)new MathModel((MathModel const &)*arg1);
+  {
+    try {
+      result = (MathModel *)new MathModel((MathModel const &)*arg1);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -1316,7 +5954,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_MathModel_setAlte
     return ;
   }
   arg2 = *argp2; 
-  (arg1)->setAlternatives(arg2);
+  {
+    try {
+      (arg1)->setAlternatives(arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
 }
 
 
@@ -1332,7 +5978,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_MathModel_setUnce
     return ;
   }
   arg2 = *argp2; 
-  (arg1)->setUncertainties(arg2);
+  {
+    try {
+      (arg1)->setUncertainties(arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
 }
 
 
@@ -1342,7 +5996,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_MathModel_getAl
   std::vector< Alternative > result;
   
   arg1 = (MathModel *)jarg1; 
-  result = (arg1)->getAlternatives();
+  {
+    try {
+      result = (arg1)->getAlternatives();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = new std::vector< Alternative >(result); 
   return jresult;
 }
@@ -1354,7 +6016,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_MathModel_getUn
   std::vector< Uncertainty > result;
   
   arg1 = (MathModel *)jarg1; 
-  result = (arg1)->getUncertainties();
+  {
+    try {
+      result = (arg1)->getUncertainties();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = new std::vector< Uncertainty >(result); 
   return jresult;
 }
@@ -1366,7 +6036,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_MathModel
   bool result;
   
   arg1 = (MathModel *)jarg1; 
-  result = (bool)(arg1)->isValid();
+  {
+    try {
+      result = (bool)(arg1)->isValid();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -1376,85 +6054,215 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_MathModel(
   MathModel *arg1 = (MathModel *) 0 ;
   
   arg1 = (MathModel *)jarg1; 
-  delete arg1;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Criterion_withLoggingProcess(void * jarg1) {
-  Criterion *arg1 = (Criterion *) 0 ;
-  
-  arg1 = (Criterion *)jarg1; 
-  (arg1)->withLoggingProcess();
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Criterion_getProcess(void * jarg1) {
-  void * jresult ;
-  Criterion *arg1 = (Criterion *) 0 ;
-  std::vector< TaskStep * > result;
-  
-  arg1 = (Criterion *)jarg1; 
-  result = (arg1)->getProcess();
-  jresult = new std::vector< TaskStep * >(result); 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Criterion_solve(void * jarg1) {
-  void * jresult ;
-  Criterion *arg1 = (Criterion *) 0 ;
-  SolveStatus result;
-  
-  arg1 = (Criterion *)jarg1; 
-  result = (arg1)->solve();
-  jresult = new SolveStatus(result); 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_Criterion(void * jarg1) {
-  Criterion *arg1 = (Criterion *) 0 ;
-  
-  arg1 = (Criterion *)jarg1; 
-  delete arg1;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_MaximinCriterion(void * jarg1) {
-  void * jresult ;
-  MathModel arg1 ;
-  MathModel *argp1 ;
-  MaximinCriterion *result = 0 ;
-  
-  argp1 = (MathModel *)jarg1; 
-  if (!argp1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null MathModel", 0);
-    return 0;
+  {
+    try {
+      delete arg1;
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
   }
-  arg1 = *argp1; 
-  result = (MaximinCriterion *)new MaximinCriterion(arg1);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_ProbabilisticModel__SWIG_0() {
+  void * jresult ;
+  ProbabilisticModel *result = 0 ;
+  
+  {
+    try {
+      result = (ProbabilisticModel *)new ProbabilisticModel();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_MaximinCriterion_solve(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_ProbabilisticModel__SWIG_1(void * jarg1, void * jarg2) {
   void * jresult ;
-  MaximinCriterion *arg1 = (MaximinCriterion *) 0 ;
-  SolveStatus result;
+  std::vector< ProbabilisticAlternative > arg1 ;
+  std::vector< Uncertainty > arg2 ;
+  std::vector< ProbabilisticAlternative > *argp1 ;
+  std::vector< Uncertainty > *argp2 ;
+  ProbabilisticModel *result = 0 ;
   
-  arg1 = (MaximinCriterion *)jarg1; 
-  result = (arg1)->solve();
-  jresult = new SolveStatus(result); 
+  argp1 = (std::vector< ProbabilisticAlternative > *)jarg1; 
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::vector< ProbabilisticAlternative >", 0);
+    return 0;
+  }
+  arg1 = *argp1; 
+  argp2 = (std::vector< Uncertainty > *)jarg2; 
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::vector< Uncertainty >", 0);
+    return 0;
+  }
+  arg2 = *argp2; 
+  {
+    try {
+      result = (ProbabilisticModel *)new ProbabilisticModel(arg1,arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_MaximinCriterion(void * jarg1) {
-  MaximinCriterion *arg1 = (MaximinCriterion *) 0 ;
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_ProbabilisticModel__SWIG_2(void * jarg1) {
+  void * jresult ;
+  ProbabilisticModel *arg1 = 0 ;
+  ProbabilisticModel *result = 0 ;
   
-  arg1 = (MaximinCriterion *)jarg1; 
-  delete arg1;
+  arg1 = (ProbabilisticModel *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "ProbabilisticModel const & is null", 0);
+    return 0;
+  } 
+  {
+    try {
+      result = (ProbabilisticModel *)new ProbabilisticModel((ProbabilisticModel const &)*arg1);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticModel_setAlternatives(void * jarg1, void * jarg2) {
+  ProbabilisticModel *arg1 = (ProbabilisticModel *) 0 ;
+  std::vector< ProbabilisticAlternative > arg2 ;
+  std::vector< ProbabilisticAlternative > *argp2 ;
+  
+  arg1 = (ProbabilisticModel *)jarg1; 
+  argp2 = (std::vector< ProbabilisticAlternative > *)jarg2; 
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::vector< ProbabilisticAlternative >", 0);
+    return ;
+  }
+  arg2 = *argp2; 
+  {
+    try {
+      (arg1)->setAlternatives(arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticModel_setUncertainties(void * jarg1, void * jarg2) {
+  ProbabilisticModel *arg1 = (ProbabilisticModel *) 0 ;
+  std::vector< Uncertainty > arg2 ;
+  std::vector< Uncertainty > *argp2 ;
+  
+  arg1 = (ProbabilisticModel *)jarg1; 
+  argp2 = (std::vector< Uncertainty > *)jarg2; 
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null std::vector< Uncertainty >", 0);
+    return ;
+  }
+  arg2 = *argp2; 
+  {
+    try {
+      (arg1)->setUncertainties(arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticModel_getAlternatives(void * jarg1) {
+  void * jresult ;
+  ProbabilisticModel *arg1 = (ProbabilisticModel *) 0 ;
+  std::vector< ProbabilisticAlternative > result;
+  
+  arg1 = (ProbabilisticModel *)jarg1; 
+  {
+    try {
+      result = (arg1)->getAlternatives();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = new std::vector< ProbabilisticAlternative >(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticModel_getUncertainties(void * jarg1) {
+  void * jresult ;
+  ProbabilisticModel *arg1 = (ProbabilisticModel *) 0 ;
+  std::vector< Uncertainty > result;
+  
+  arg1 = (ProbabilisticModel *)jarg1; 
+  {
+    try {
+      result = (arg1)->getUncertainties();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = new std::vector< Uncertainty >(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilisticModel_isValid(void * jarg1) {
+  unsigned int jresult ;
+  ProbabilisticModel *arg1 = (ProbabilisticModel *) 0 ;
+  bool result;
+  
+  arg1 = (ProbabilisticModel *)jarg1; 
+  {
+    try {
+      result = (bool)(arg1)->isValid();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_ProbabilisticModel(void * jarg1) {
+  ProbabilisticModel *arg1 = (ProbabilisticModel *) 0 ;
+  
+  arg1 = (ProbabilisticModel *)jarg1; 
+  {
+    try {
+      delete arg1;
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
 }
 
 
@@ -1470,7 +6278,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_SolveStatus_Opt
     return 0;
   }
   arg1 = *argp1; 
-  result = SolveStatus::OptimalDecisionResult(SWIG_STD_MOVE(arg1));
+  {
+    try {
+      result = SolveStatus::OptimalDecisionResult(SWIG_STD_MOVE(arg1));
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = new SolveStatus(result); 
   return jresult;
 }
@@ -1480,7 +6296,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_SolveStatus_Fai
   void * jresult ;
   SolveStatus result;
   
-  result = SolveStatus::FailedResult();
+  {
+    try {
+      result = SolveStatus::FailedResult();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = new SolveStatus(result); 
   return jresult;
 }
@@ -1490,7 +6314,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_SolveStatus_Inv
   void * jresult ;
   SolveStatus result;
   
-  result = SolveStatus::InvalidModelResult();
+  {
+    try {
+      result = SolveStatus::InvalidModelResult();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = new SolveStatus(result); 
   return jresult;
 }
@@ -1500,7 +6332,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_SolveStatus_Inv
   void * jresult ;
   SolveStatus result;
   
-  result = SolveStatus::InvalidParameterResult();
+  {
+    try {
+      result = SolveStatus::InvalidParameterResult();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = new SolveStatus(result); 
   return jresult;
 }
@@ -1512,7 +6352,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_SolveStatus_getSta
   Status result;
   
   arg1 = (SolveStatus *)jarg1; 
-  result = (Status)(arg1)->getStatus();
+  {
+    try {
+      result = (Status)(arg1)->getStatus();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = (int)result; 
   return jresult;
 }
@@ -1524,7 +6372,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_SolveStatus_get
   std::vector< int > result;
   
   arg1 = (SolveStatus *)jarg1; 
-  result = (arg1)->getBestAlternatives();
+  {
+    try {
+      result = (arg1)->getBestAlternatives();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = new std::vector< int >(result); 
   return jresult;
 }
@@ -1534,7 +6390,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_SolveStatus
   void * jresult ;
   SolveStatus *result = 0 ;
   
-  result = (SolveStatus *)new SolveStatus();
+  {
+    try {
+      result = (SolveStatus *)new SolveStatus();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -1544,7 +6408,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_SolveStatu
   SolveStatus *arg1 = (SolveStatus *) 0 ;
   
   arg1 = (SolveStatus *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
 }
 
 
@@ -1564,7 +6436,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_TaskStep__S
     return 0;
   }
   (&arg2)->assign(jarg2); 
-  result = (TaskStep *)new TaskStep(arg1,arg2);
+  {
+    try {
+      result = (TaskStep *)new TaskStep(arg1,arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -1588,7 +6468,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_TaskStep__S
     return 0;
   }
   arg2 = *argp2; 
-  result = (TaskStep *)new TaskStep(arg1,arg2);
+  {
+    try {
+      result = (TaskStep *)new TaskStep(arg1,arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -1604,7 +6492,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskStep_TextTy
     return 0;
   }
   (&arg1)->assign(jarg1); 
-  result = (TaskStep *)TaskStep::TextType(SWIG_STD_MOVE(arg1));
+  {
+    try {
+      result = (TaskStep *)TaskStep::TextType(SWIG_STD_MOVE(arg1));
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -1628,7 +6524,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskStep_TableP
     return 0;
   }
   arg2 = *argp2; 
-  result = (TaskStep *)TaskStep::TablePartType(SWIG_STD_MOVE(arg1),SWIG_STD_MOVE(arg2));
+  {
+    try {
+      result = (TaskStep *)TaskStep::TablePartType(SWIG_STD_MOVE(arg1),SWIG_STD_MOVE(arg2));
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -1638,7 +6542,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskStep_EndTab
   void * jresult ;
   TaskStep *result = 0 ;
   
-  result = (TaskStep *)TaskStep::EndTableType();
+  {
+    try {
+      result = (TaskStep *)TaskStep::EndTableType();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -1650,7 +6562,15 @@ SWIGEXPORT const char * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskStep_
   std::string result;
   
   arg1 = (TaskStep *)jarg1; 
-  result = (arg1)->StepType();
+  {
+    try {
+      result = (arg1)->StepType();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = SWIG_csharp_string_callback((&result)->c_str()); 
   return jresult;
 }
@@ -1662,7 +6582,15 @@ SWIGEXPORT const char * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskStep_
   std::string result;
   
   arg1 = (TaskStep *)jarg1; 
-  result = (arg1)->AsString();
+  {
+    try {
+      result = (arg1)->AsString();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = SWIG_csharp_string_callback((&result)->c_str()); 
   return jresult;
 }
@@ -1672,7 +6600,149 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_TaskStep(v
   TaskStep *arg1 = (TaskStep *) 0 ;
   
   arg1 = (TaskStep *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Criterion_withLoggingProcess(void * jarg1) {
+  Criterion *arg1 = (Criterion *) 0 ;
+  
+  arg1 = (Criterion *)jarg1; 
+  {
+    try {
+      (arg1)->withLoggingProcess();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Criterion_getProcess(void * jarg1) {
+  void * jresult ;
+  Criterion *arg1 = (Criterion *) 0 ;
+  std::vector< TaskStep * > result;
+  
+  arg1 = (Criterion *)jarg1; 
+  {
+    try {
+      result = (arg1)->getProcess();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = new std::vector< TaskStep * >(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Criterion_solve(void * jarg1) {
+  void * jresult ;
+  Criterion *arg1 = (Criterion *) 0 ;
+  SolveStatus result;
+  
+  arg1 = (Criterion *)jarg1; 
+  {
+    try {
+      result = (arg1)->solve();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = new SolveStatus(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_Criterion(void * jarg1) {
+  Criterion *arg1 = (Criterion *) 0 ;
+  
+  arg1 = (Criterion *)jarg1; 
+  {
+    try {
+      delete arg1;
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_MaximinCriterion(void * jarg1) {
+  void * jresult ;
+  MathModel arg1 ;
+  MathModel *argp1 ;
+  MaximinCriterion *result = 0 ;
+  
+  argp1 = (MathModel *)jarg1; 
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null MathModel", 0);
+    return 0;
+  }
+  arg1 = *argp1; 
+  {
+    try {
+      result = (MaximinCriterion *)new MaximinCriterion(arg1);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_MaximinCriterion_solve(void * jarg1) {
+  void * jresult ;
+  MaximinCriterion *arg1 = (MaximinCriterion *) 0 ;
+  SolveStatus result;
+  
+  arg1 = (MaximinCriterion *)jarg1; 
+  {
+    try {
+      result = (arg1)->solve();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = new SolveStatus(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_MaximinCriterion(void * jarg1) {
+  MaximinCriterion *arg1 = (MaximinCriterion *) 0 ;
+  
+  arg1 = (MaximinCriterion *)jarg1; 
+  {
+    try {
+      delete arg1;
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
 }
 
 
@@ -1690,7 +6760,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_OptimismPes
   }
   arg1 = *argp1; 
   arg2 = (double)jarg2; 
-  result = (OptimismPessimismCriterion *)new OptimismPessimismCriterion(arg1,arg2);
+  {
+    try {
+      result = (OptimismPessimismCriterion *)new OptimismPessimismCriterion(arg1,arg2);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -1702,7 +6780,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_OptimismPessimi
   SolveStatus result;
   
   arg1 = (OptimismPessimismCriterion *)jarg1; 
-  result = (arg1)->solve();
+  {
+    try {
+      result = (arg1)->solve();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = new SolveStatus(result); 
   return jresult;
 }
@@ -1712,7 +6798,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_OptimismPe
   OptimismPessimismCriterion *arg1 = (OptimismPessimismCriterion *) 0 ;
   
   arg1 = (OptimismPessimismCriterion *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
 }
 
 
@@ -1728,7 +6822,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_PrincipleOf
     return 0;
   }
   arg1 = *argp1; 
-  result = (PrincipleOfInsufficientReason *)new PrincipleOfInsufficientReason(arg1);
+  {
+    try {
+      result = (PrincipleOfInsufficientReason *)new PrincipleOfInsufficientReason(arg1);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -1740,7 +6842,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_PrincipleOfInsu
   SolveStatus result;
   
   arg1 = (PrincipleOfInsufficientReason *)jarg1; 
-  result = (arg1)->solve();
+  {
+    try {
+      result = (arg1)->solve();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
   jresult = new SolveStatus(result); 
   return jresult;
 }
@@ -1750,2445 +6860,147 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_PrincipleO
   PrincipleOfInsufficientReason *arg1 = (PrincipleOfInsufficientReason *) 0 ;
   
   arg1 = (PrincipleOfInsufficientReason *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_DoubleList__SWIG_0() {
-  void * jresult ;
-  std::vector< double > *result = 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilityCriterion_withLoggingProcess(void * jarg1) {
+  ProbabilityCriterion *arg1 = (ProbabilityCriterion *) 0 ;
   
-  result = (std::vector< double > *)new std::vector< double >();
-  jresult = (void *)result; 
+  arg1 = (ProbabilityCriterion *)jarg1; 
+  {
+    try {
+      (arg1)->withLoggingProcess();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilityCriterion_getProcess(void * jarg1) {
+  void * jresult ;
+  ProbabilityCriterion *arg1 = (ProbabilityCriterion *) 0 ;
+  std::vector< TaskStep * > result;
+  
+  arg1 = (ProbabilityCriterion *)jarg1; 
+  {
+    try {
+      result = (arg1)->getProcess();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = new std::vector< TaskStep * >(result); 
   return jresult;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_DoubleList__SWIG_1(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilityCriterion_solve(void * jarg1) {
   void * jresult ;
-  std::vector< double > *arg1 = 0 ;
-  std::vector< double > *result = 0 ;
+  ProbabilityCriterion *arg1 = (ProbabilityCriterion *) 0 ;
+  SolveStatus result;
   
-  arg1 = (std::vector< double > *)jarg1;
+  arg1 = (ProbabilityCriterion *)jarg1; 
+  {
+    try {
+      result = (arg1)->solve();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = new SolveStatus(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_ProbabilityCriterion(void * jarg1) {
+  ProbabilityCriterion *arg1 = (ProbabilityCriterion *) 0 ;
+  
+  arg1 = (ProbabilityCriterion *)jarg1; 
+  {
+    try {
+      delete arg1;
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_BayesCriterion(void * jarg1) {
+  void * jresult ;
+  ProbabilisticModel *arg1 = 0 ;
+  BayesCriterion *result = 0 ;
+  
+  arg1 = (ProbabilisticModel *)jarg1;
   if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< double > const & is null", 0);
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "ProbabilisticModel const & is null", 0);
     return 0;
   } 
-  result = (std::vector< double > *)new std::vector< double >((std::vector< double > const &)*arg1);
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Clear(void * jarg1) {
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  
-  arg1 = (std::vector< double > *)jarg1; 
-  (arg1)->clear();
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Add(void * jarg1, double jarg2) {
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  double *arg2 = 0 ;
-  double temp2 ;
-  
-  arg1 = (std::vector< double > *)jarg1; 
-  temp2 = (double)jarg2; 
-  arg2 = &temp2; 
-  (arg1)->push_back((double const &)*arg2);
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_size(void * jarg1) {
-  unsigned int jresult ;
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  std::vector< double >::size_type result;
-  
-  arg1 = (std::vector< double > *)jarg1; 
-  result = ((std::vector< double > const *)arg1)->size();
-  jresult = (unsigned int)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_empty(void * jarg1) {
-  unsigned int jresult ;
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  bool result;
-  
-  arg1 = (std::vector< double > *)jarg1; 
-  result = (bool)((std::vector< double > const *)arg1)->empty();
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_capacity(void * jarg1) {
-  unsigned int jresult ;
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  std::vector< double >::size_type result;
-  
-  arg1 = (std::vector< double > *)jarg1; 
-  result = ((std::vector< double > const *)arg1)->capacity();
-  jresult = (unsigned int)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_reserve(void * jarg1, unsigned int jarg2) {
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  std::vector< double >::size_type arg2 ;
-  
-  arg1 = (std::vector< double > *)jarg1; 
-  arg2 = (std::vector< double >::size_type)jarg2; 
-  (arg1)->reserve(arg2);
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_DoubleList__SWIG_2(int jarg1) {
-  void * jresult ;
-  int arg1 ;
-  std::vector< double > *result = 0 ;
-  
-  arg1 = (int)jarg1; 
-  try {
-    result = (std::vector< double > *)new_std_vector_Sl_double_Sg___SWIG_2(arg1);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
+  {
+    try {
+      result = (BayesCriterion *)new BayesCriterion((ProbabilisticModel const &)*arg1);
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
   }
   jresult = (void *)result; 
   return jresult;
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_getitemcopy(void * jarg1, int jarg2) {
-  double jresult ;
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  int arg2 ;
-  double result;
-  
-  arg1 = (std::vector< double > *)jarg1; 
-  arg2 = (int)jarg2; 
-  try {
-    result = (double)std_vector_Sl_double_Sg__getitemcopy(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT double SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_getitem(void * jarg1, int jarg2) {
-  double jresult ;
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  int arg2 ;
-  std::vector< double >::value_type *result = 0 ;
-  
-  arg1 = (std::vector< double > *)jarg1; 
-  arg2 = (int)jarg2; 
-  try {
-    result = (std::vector< double >::value_type *) &std_vector_Sl_double_Sg__getitem(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = *result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_setitem(void * jarg1, int jarg2, double jarg3) {
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  int arg2 ;
-  double *arg3 = 0 ;
-  double temp3 ;
-  
-  arg1 = (std::vector< double > *)jarg1; 
-  arg2 = (int)jarg2; 
-  temp3 = (double)jarg3; 
-  arg3 = &temp3; 
-  try {
-    std_vector_Sl_double_Sg__setitem(arg1,arg2,(double const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_AddRange(void * jarg1, void * jarg2) {
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  std::vector< double > *arg2 = 0 ;
-  
-  arg1 = (std::vector< double > *)jarg1; 
-  arg2 = (std::vector< double > *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< double > const & is null", 0);
-    return ;
-  } 
-  std_vector_Sl_double_Sg__AddRange(arg1,(std::vector< double > const &)*arg2);
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_GetRange(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_BayesCriterion_solve(void * jarg1) {
   void * jresult ;
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  int arg2 ;
-  int arg3 ;
-  std::vector< double > *result = 0 ;
+  BayesCriterion *arg1 = (BayesCriterion *) 0 ;
+  SolveStatus result;
   
-  arg1 = (std::vector< double > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (int)jarg3; 
-  try {
-    result = (std::vector< double > *)std_vector_Sl_double_Sg__GetRange(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  } catch(std::invalid_argument &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
-    return 0;
+  arg1 = (BayesCriterion *)jarg1; 
+  {
+    try {
+      result = (arg1)->solve();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
   }
-  jresult = (void *)result; 
+  jresult = new SolveStatus(result); 
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Insert(void * jarg1, int jarg2, double jarg3) {
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  int arg2 ;
-  double *arg3 = 0 ;
-  double temp3 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_BayesCriterion(void * jarg1) {
+  BayesCriterion *arg1 = (BayesCriterion *) 0 ;
   
-  arg1 = (std::vector< double > *)jarg1; 
-  arg2 = (int)jarg2; 
-  temp3 = (double)jarg3; 
-  arg3 = &temp3; 
-  try {
-    std_vector_Sl_double_Sg__Insert(arg1,arg2,(double const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
+  arg1 = (BayesCriterion *)jarg1; 
+  {
+    try {
+      delete arg1;
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
   }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_InsertRange(void * jarg1, int jarg2, void * jarg3) {
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  int arg2 ;
-  std::vector< double > *arg3 = 0 ;
-  
-  arg1 = (std::vector< double > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (std::vector< double > *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< double > const & is null", 0);
-    return ;
-  } 
-  try {
-    std_vector_Sl_double_Sg__InsertRange(arg1,arg2,(std::vector< double > const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_RemoveAt(void * jarg1, int jarg2) {
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  int arg2 ;
-  
-  arg1 = (std::vector< double > *)jarg1; 
-  arg2 = (int)jarg2; 
-  try {
-    std_vector_Sl_double_Sg__RemoveAt(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_RemoveRange(void * jarg1, int jarg2, int jarg3) {
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  int arg2 ;
-  int arg3 ;
-  
-  arg1 = (std::vector< double > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (int)jarg3; 
-  try {
-    std_vector_Sl_double_Sg__RemoveRange(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  } catch(std::invalid_argument &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
-    return ;
-  }
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Repeat(double jarg1, int jarg2) {
-  void * jresult ;
-  double *arg1 = 0 ;
-  int arg2 ;
-  double temp1 ;
-  std::vector< double > *result = 0 ;
-  
-  temp1 = (double)jarg1; 
-  arg1 = &temp1; 
-  arg2 = (int)jarg2; 
-  try {
-    result = (std::vector< double > *)std_vector_Sl_double_Sg__Repeat((double const &)*arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Reverse__SWIG_0(void * jarg1) {
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  
-  arg1 = (std::vector< double > *)jarg1; 
-  std_vector_Sl_double_Sg__Reverse__SWIG_0(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  int arg2 ;
-  int arg3 ;
-  
-  arg1 = (std::vector< double > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (int)jarg3; 
-  try {
-    std_vector_Sl_double_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  } catch(std::invalid_argument &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_SetRange(void * jarg1, int jarg2, void * jarg3) {
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  int arg2 ;
-  std::vector< double > *arg3 = 0 ;
-  
-  arg1 = (std::vector< double > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (std::vector< double > *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< double > const & is null", 0);
-    return ;
-  } 
-  try {
-    std_vector_Sl_double_Sg__SetRange(arg1,arg2,(std::vector< double > const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Contains(void * jarg1, double jarg2) {
-  unsigned int jresult ;
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  double *arg2 = 0 ;
-  double temp2 ;
-  bool result;
-  
-  arg1 = (std::vector< double > *)jarg1; 
-  temp2 = (double)jarg2; 
-  arg2 = &temp2; 
-  result = (bool)std_vector_Sl_double_Sg__Contains(arg1,(double const &)*arg2);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_IndexOf(void * jarg1, double jarg2) {
-  int jresult ;
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  double *arg2 = 0 ;
-  double temp2 ;
-  int result;
-  
-  arg1 = (std::vector< double > *)jarg1; 
-  temp2 = (double)jarg2; 
-  arg2 = &temp2; 
-  result = (int)std_vector_Sl_double_Sg__IndexOf(arg1,(double const &)*arg2);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_LastIndexOf(void * jarg1, double jarg2) {
-  int jresult ;
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  double *arg2 = 0 ;
-  double temp2 ;
-  int result;
-  
-  arg1 = (std::vector< double > *)jarg1; 
-  temp2 = (double)jarg2; 
-  arg2 = &temp2; 
-  result = (int)std_vector_Sl_double_Sg__LastIndexOf(arg1,(double const &)*arg2);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_DoubleList_Remove(void * jarg1, double jarg2) {
-  unsigned int jresult ;
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  double *arg2 = 0 ;
-  double temp2 ;
-  bool result;
-  
-  arg1 = (std::vector< double > *)jarg1; 
-  temp2 = (double)jarg2; 
-  arg2 = &temp2; 
-  result = (bool)std_vector_Sl_double_Sg__Remove(arg1,(double const &)*arg2);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_DoubleList(void * jarg1) {
-  std::vector< double > *arg1 = (std::vector< double > *) 0 ;
-  
-  arg1 = (std::vector< double > *)jarg1; 
-  delete arg1;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_StringList__SWIG_0() {
-  void * jresult ;
-  std::vector< std::string > *result = 0 ;
-  
-  result = (std::vector< std::string > *)new std::vector< std::string >();
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_StringList__SWIG_1(void * jarg1) {
-  void * jresult ;
-  std::vector< std::string > *arg1 = 0 ;
-  std::vector< std::string > *result = 0 ;
-  
-  arg1 = (std::vector< std::string > *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< std::string > const & is null", 0);
-    return 0;
-  } 
-  result = (std::vector< std::string > *)new std::vector< std::string >((std::vector< std::string > const &)*arg1);
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Clear(void * jarg1) {
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  (arg1)->clear();
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Add(void * jarg1, const char * jarg2) {
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  std::string *arg2 = 0 ;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  if (!jarg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return ;
-  }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str; 
-  (arg1)->push_back((std::string const &)*arg2);
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_size(void * jarg1) {
-  unsigned int jresult ;
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  std::vector< std::string >::size_type result;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  result = ((std::vector< std::string > const *)arg1)->size();
-  jresult = (unsigned int)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_empty(void * jarg1) {
-  unsigned int jresult ;
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  bool result;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  result = (bool)((std::vector< std::string > const *)arg1)->empty();
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_capacity(void * jarg1) {
-  unsigned int jresult ;
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  std::vector< std::string >::size_type result;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  result = ((std::vector< std::string > const *)arg1)->capacity();
-  jresult = (unsigned int)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_reserve(void * jarg1, unsigned int jarg2) {
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  std::vector< std::string >::size_type arg2 ;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  arg2 = (std::vector< std::string >::size_type)jarg2; 
-  (arg1)->reserve(arg2);
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_StringList__SWIG_2(int jarg1) {
-  void * jresult ;
-  int arg1 ;
-  std::vector< std::string > *result = 0 ;
-  
-  arg1 = (int)jarg1; 
-  try {
-    result = (std::vector< std::string > *)new_std_vector_Sl_std_string_Sg___SWIG_2(arg1);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT const char * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_getitemcopy(void * jarg1, int jarg2) {
-  const char * jresult ;
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  int arg2 ;
-  std::string result;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  arg2 = (int)jarg2; 
-  try {
-    result = std_vector_Sl_std_string_Sg__getitemcopy(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = SWIG_csharp_string_callback((&result)->c_str()); 
-  return jresult;
-}
-
-
-SWIGEXPORT const char * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_getitem(void * jarg1, int jarg2) {
-  const char * jresult ;
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  int arg2 ;
-  std::vector< std::string >::value_type *result = 0 ;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  arg2 = (int)jarg2; 
-  try {
-    result = (std::vector< std::string >::value_type *) &std_vector_Sl_std_string_Sg__getitem(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = SWIG_csharp_string_callback(result->c_str()); 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_setitem(void * jarg1, int jarg2, const char * jarg3) {
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  int arg2 ;
-  std::string *arg3 = 0 ;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  arg2 = (int)jarg2; 
-  if (!jarg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return ;
-  }
-  std::string arg3_str(jarg3);
-  arg3 = &arg3_str; 
-  try {
-    std_vector_Sl_std_string_Sg__setitem(arg1,arg2,(std::string const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_AddRange(void * jarg1, void * jarg2) {
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  std::vector< std::string > *arg2 = 0 ;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  arg2 = (std::vector< std::string > *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< std::string > const & is null", 0);
-    return ;
-  } 
-  std_vector_Sl_std_string_Sg__AddRange(arg1,(std::vector< std::string > const &)*arg2);
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_GetRange(void * jarg1, int jarg2, int jarg3) {
-  void * jresult ;
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  int arg2 ;
-  int arg3 ;
-  std::vector< std::string > *result = 0 ;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (int)jarg3; 
-  try {
-    result = (std::vector< std::string > *)std_vector_Sl_std_string_Sg__GetRange(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  } catch(std::invalid_argument &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
-    return 0;
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Insert(void * jarg1, int jarg2, const char * jarg3) {
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  int arg2 ;
-  std::string *arg3 = 0 ;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  arg2 = (int)jarg2; 
-  if (!jarg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return ;
-  }
-  std::string arg3_str(jarg3);
-  arg3 = &arg3_str; 
-  try {
-    std_vector_Sl_std_string_Sg__Insert(arg1,arg2,(std::string const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_InsertRange(void * jarg1, int jarg2, void * jarg3) {
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  int arg2 ;
-  std::vector< std::string > *arg3 = 0 ;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (std::vector< std::string > *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< std::string > const & is null", 0);
-    return ;
-  } 
-  try {
-    std_vector_Sl_std_string_Sg__InsertRange(arg1,arg2,(std::vector< std::string > const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_RemoveAt(void * jarg1, int jarg2) {
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  int arg2 ;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  arg2 = (int)jarg2; 
-  try {
-    std_vector_Sl_std_string_Sg__RemoveAt(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_RemoveRange(void * jarg1, int jarg2, int jarg3) {
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  int arg2 ;
-  int arg3 ;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (int)jarg3; 
-  try {
-    std_vector_Sl_std_string_Sg__RemoveRange(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  } catch(std::invalid_argument &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
-    return ;
-  }
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Repeat(const char * jarg1, int jarg2) {
-  void * jresult ;
-  std::string *arg1 = 0 ;
-  int arg2 ;
-  std::vector< std::string > *result = 0 ;
-  
-  if (!jarg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return 0;
-  }
-  std::string arg1_str(jarg1);
-  arg1 = &arg1_str; 
-  arg2 = (int)jarg2; 
-  try {
-    result = (std::vector< std::string > *)std_vector_Sl_std_string_Sg__Repeat((std::string const &)*arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Reverse__SWIG_0(void * jarg1) {
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  std_vector_Sl_std_string_Sg__Reverse__SWIG_0(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  int arg2 ;
-  int arg3 ;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (int)jarg3; 
-  try {
-    std_vector_Sl_std_string_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  } catch(std::invalid_argument &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_SetRange(void * jarg1, int jarg2, void * jarg3) {
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  int arg2 ;
-  std::vector< std::string > *arg3 = 0 ;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (std::vector< std::string > *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< std::string > const & is null", 0);
-    return ;
-  } 
-  try {
-    std_vector_Sl_std_string_Sg__SetRange(arg1,arg2,(std::vector< std::string > const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Contains(void * jarg1, const char * jarg2) {
-  unsigned int jresult ;
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  std::string *arg2 = 0 ;
-  bool result;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  if (!jarg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return 0;
-  }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str; 
-  result = (bool)std_vector_Sl_std_string_Sg__Contains(arg1,(std::string const &)*arg2);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_IndexOf(void * jarg1, const char * jarg2) {
-  int jresult ;
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  std::string *arg2 = 0 ;
-  int result;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  if (!jarg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return 0;
-  }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str; 
-  result = (int)std_vector_Sl_std_string_Sg__IndexOf(arg1,(std::string const &)*arg2);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_LastIndexOf(void * jarg1, const char * jarg2) {
-  int jresult ;
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  std::string *arg2 = 0 ;
-  int result;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  if (!jarg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return 0;
-  }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str; 
-  result = (int)std_vector_Sl_std_string_Sg__LastIndexOf(arg1,(std::string const &)*arg2);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_StringList_Remove(void * jarg1, const char * jarg2) {
-  unsigned int jresult ;
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  std::string *arg2 = 0 ;
-  bool result;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  if (!jarg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "null string", 0);
-    return 0;
-  }
-  std::string arg2_str(jarg2);
-  arg2 = &arg2_str; 
-  result = (bool)std_vector_Sl_std_string_Sg__Remove(arg1,(std::string const &)*arg2);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_StringList(void * jarg1) {
-  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
-  
-  arg1 = (std::vector< std::string > *)jarg1; 
-  delete arg1;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_IntList__SWIG_0() {
-  void * jresult ;
-  std::vector< int > *result = 0 ;
-  
-  result = (std::vector< int > *)new std::vector< int >();
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_IntList__SWIG_1(void * jarg1) {
-  void * jresult ;
-  std::vector< int > *arg1 = 0 ;
-  std::vector< int > *result = 0 ;
-  
-  arg1 = (std::vector< int > *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< int > const & is null", 0);
-    return 0;
-  } 
-  result = (std::vector< int > *)new std::vector< int >((std::vector< int > const &)*arg1);
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Clear(void * jarg1) {
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  (arg1)->clear();
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Add(void * jarg1, int jarg2) {
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  int *arg2 = 0 ;
-  int temp2 ;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  temp2 = (int)jarg2; 
-  arg2 = &temp2; 
-  (arg1)->push_back((int const &)*arg2);
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_size(void * jarg1) {
-  unsigned int jresult ;
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  std::vector< int >::size_type result;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  result = ((std::vector< int > const *)arg1)->size();
-  jresult = (unsigned int)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_empty(void * jarg1) {
-  unsigned int jresult ;
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  bool result;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  result = (bool)((std::vector< int > const *)arg1)->empty();
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_capacity(void * jarg1) {
-  unsigned int jresult ;
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  std::vector< int >::size_type result;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  result = ((std::vector< int > const *)arg1)->capacity();
-  jresult = (unsigned int)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_reserve(void * jarg1, unsigned int jarg2) {
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  std::vector< int >::size_type arg2 ;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  arg2 = (std::vector< int >::size_type)jarg2; 
-  (arg1)->reserve(arg2);
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_IntList__SWIG_2(int jarg1) {
-  void * jresult ;
-  int arg1 ;
-  std::vector< int > *result = 0 ;
-  
-  arg1 = (int)jarg1; 
-  try {
-    result = (std::vector< int > *)new_std_vector_Sl_int_Sg___SWIG_2(arg1);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_getitemcopy(void * jarg1, int jarg2) {
-  int jresult ;
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  int arg2 ;
-  int result;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  arg2 = (int)jarg2; 
-  try {
-    result = (int)std_vector_Sl_int_Sg__getitemcopy(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_getitem(void * jarg1, int jarg2) {
-  int jresult ;
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  int arg2 ;
-  std::vector< int >::value_type *result = 0 ;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  arg2 = (int)jarg2; 
-  try {
-    result = (std::vector< int >::value_type *) &std_vector_Sl_int_Sg__getitem(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = *result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_setitem(void * jarg1, int jarg2, int jarg3) {
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  int arg2 ;
-  int *arg3 = 0 ;
-  int temp3 ;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  arg2 = (int)jarg2; 
-  temp3 = (int)jarg3; 
-  arg3 = &temp3; 
-  try {
-    std_vector_Sl_int_Sg__setitem(arg1,arg2,(int const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_AddRange(void * jarg1, void * jarg2) {
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  std::vector< int > *arg2 = 0 ;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  arg2 = (std::vector< int > *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< int > const & is null", 0);
-    return ;
-  } 
-  std_vector_Sl_int_Sg__AddRange(arg1,(std::vector< int > const &)*arg2);
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_GetRange(void * jarg1, int jarg2, int jarg3) {
-  void * jresult ;
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  int arg2 ;
-  int arg3 ;
-  std::vector< int > *result = 0 ;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (int)jarg3; 
-  try {
-    result = (std::vector< int > *)std_vector_Sl_int_Sg__GetRange(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  } catch(std::invalid_argument &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
-    return 0;
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Insert(void * jarg1, int jarg2, int jarg3) {
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  int arg2 ;
-  int *arg3 = 0 ;
-  int temp3 ;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  arg2 = (int)jarg2; 
-  temp3 = (int)jarg3; 
-  arg3 = &temp3; 
-  try {
-    std_vector_Sl_int_Sg__Insert(arg1,arg2,(int const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_InsertRange(void * jarg1, int jarg2, void * jarg3) {
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  int arg2 ;
-  std::vector< int > *arg3 = 0 ;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (std::vector< int > *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< int > const & is null", 0);
-    return ;
-  } 
-  try {
-    std_vector_Sl_int_Sg__InsertRange(arg1,arg2,(std::vector< int > const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_RemoveAt(void * jarg1, int jarg2) {
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  int arg2 ;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  arg2 = (int)jarg2; 
-  try {
-    std_vector_Sl_int_Sg__RemoveAt(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_RemoveRange(void * jarg1, int jarg2, int jarg3) {
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  int arg2 ;
-  int arg3 ;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (int)jarg3; 
-  try {
-    std_vector_Sl_int_Sg__RemoveRange(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  } catch(std::invalid_argument &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
-    return ;
-  }
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Repeat(int jarg1, int jarg2) {
-  void * jresult ;
-  int *arg1 = 0 ;
-  int arg2 ;
-  int temp1 ;
-  std::vector< int > *result = 0 ;
-  
-  temp1 = (int)jarg1; 
-  arg1 = &temp1; 
-  arg2 = (int)jarg2; 
-  try {
-    result = (std::vector< int > *)std_vector_Sl_int_Sg__Repeat((int const &)*arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Reverse__SWIG_0(void * jarg1) {
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  std_vector_Sl_int_Sg__Reverse__SWIG_0(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  int arg2 ;
-  int arg3 ;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (int)jarg3; 
-  try {
-    std_vector_Sl_int_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  } catch(std::invalid_argument &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_SetRange(void * jarg1, int jarg2, void * jarg3) {
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  int arg2 ;
-  std::vector< int > *arg3 = 0 ;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (std::vector< int > *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< int > const & is null", 0);
-    return ;
-  } 
-  try {
-    std_vector_Sl_int_Sg__SetRange(arg1,arg2,(std::vector< int > const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Contains(void * jarg1, int jarg2) {
-  unsigned int jresult ;
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  int *arg2 = 0 ;
-  int temp2 ;
-  bool result;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  temp2 = (int)jarg2; 
-  arg2 = &temp2; 
-  result = (bool)std_vector_Sl_int_Sg__Contains(arg1,(int const &)*arg2);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_IndexOf(void * jarg1, int jarg2) {
-  int jresult ;
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  int *arg2 = 0 ;
-  int temp2 ;
-  int result;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  temp2 = (int)jarg2; 
-  arg2 = &temp2; 
-  result = (int)std_vector_Sl_int_Sg__IndexOf(arg1,(int const &)*arg2);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_LastIndexOf(void * jarg1, int jarg2) {
-  int jresult ;
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  int *arg2 = 0 ;
-  int temp2 ;
-  int result;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  temp2 = (int)jarg2; 
-  arg2 = &temp2; 
-  result = (int)std_vector_Sl_int_Sg__LastIndexOf(arg1,(int const &)*arg2);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_IntList_Remove(void * jarg1, int jarg2) {
-  unsigned int jresult ;
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  int *arg2 = 0 ;
-  int temp2 ;
-  bool result;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  temp2 = (int)jarg2; 
-  arg2 = &temp2; 
-  result = (bool)std_vector_Sl_int_Sg__Remove(arg1,(int const &)*arg2);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_IntList(void * jarg1) {
-  std::vector< int > *arg1 = (std::vector< int > *) 0 ;
-  
-  arg1 = (std::vector< int > *)jarg1; 
-  delete arg1;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_TaskProcess__SWIG_0() {
-  void * jresult ;
-  std::vector< TaskStep * > *result = 0 ;
-  
-  result = (std::vector< TaskStep * > *)new std::vector< TaskStep * >();
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_TaskProcess__SWIG_1(void * jarg1) {
-  void * jresult ;
-  std::vector< TaskStep * > *arg1 = 0 ;
-  std::vector< TaskStep * > *result = 0 ;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< TaskStep * > const & is null", 0);
-    return 0;
-  } 
-  result = (std::vector< TaskStep * > *)new std::vector< TaskStep * >((std::vector< TaskStep * > const &)*arg1);
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Clear(void * jarg1) {
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  (arg1)->clear();
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Add(void * jarg1, void * jarg2) {
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  TaskStep **arg2 = 0 ;
-  TaskStep *temp2 = 0 ;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  temp2 = (TaskStep *)jarg2;
-  arg2 = (TaskStep **)&temp2; 
-  (arg1)->push_back((TaskStep *const &)*arg2);
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_size(void * jarg1) {
-  unsigned int jresult ;
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  std::vector< TaskStep * >::size_type result;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  result = ((std::vector< TaskStep * > const *)arg1)->size();
-  jresult = (unsigned int)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_empty(void * jarg1) {
-  unsigned int jresult ;
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  bool result;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  result = (bool)((std::vector< TaskStep * > const *)arg1)->empty();
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_capacity(void * jarg1) {
-  unsigned int jresult ;
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  std::vector< TaskStep * >::size_type result;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  result = ((std::vector< TaskStep * > const *)arg1)->capacity();
-  jresult = (unsigned int)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_reserve(void * jarg1, unsigned int jarg2) {
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  std::vector< TaskStep * >::size_type arg2 ;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  arg2 = (std::vector< TaskStep * >::size_type)jarg2; 
-  (arg1)->reserve(arg2);
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_TaskProcess__SWIG_2(int jarg1) {
-  void * jresult ;
-  int arg1 ;
-  std::vector< TaskStep * > *result = 0 ;
-  
-  arg1 = (int)jarg1; 
-  try {
-    result = (std::vector< TaskStep * > *)new_std_vector_Sl_TaskStep_Sm__Sg___SWIG_2(arg1);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_getitemcopy(void * jarg1, int jarg2) {
-  void * jresult ;
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  int arg2 ;
-  TaskStep *result = 0 ;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  arg2 = (int)jarg2; 
-  try {
-    result = (TaskStep *)std_vector_Sl_TaskStep_Sm__Sg__getitemcopy(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_getitem(void * jarg1, int jarg2) {
-  void * jresult ;
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  int arg2 ;
-  std::vector< TaskStep * >::value_type *result = 0 ;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  arg2 = (int)jarg2; 
-  try {
-    result = (std::vector< TaskStep * >::value_type *) &std_vector_Sl_TaskStep_Sm__Sg__getitem(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = (void *)*result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_setitem(void * jarg1, int jarg2, void * jarg3) {
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  int arg2 ;
-  TaskStep **arg3 = 0 ;
-  TaskStep *temp3 = 0 ;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  arg2 = (int)jarg2; 
-  temp3 = (TaskStep *)jarg3;
-  arg3 = (TaskStep **)&temp3; 
-  try {
-    std_vector_Sl_TaskStep_Sm__Sg__setitem(arg1,arg2,(TaskStep *const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_AddRange(void * jarg1, void * jarg2) {
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  std::vector< TaskStep * > *arg2 = 0 ;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  arg2 = (std::vector< TaskStep * > *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< TaskStep * > const & is null", 0);
-    return ;
-  } 
-  std_vector_Sl_TaskStep_Sm__Sg__AddRange(arg1,(std::vector< TaskStep * > const &)*arg2);
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_GetRange(void * jarg1, int jarg2, int jarg3) {
-  void * jresult ;
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  int arg2 ;
-  int arg3 ;
-  std::vector< TaskStep * > *result = 0 ;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (int)jarg3; 
-  try {
-    result = (std::vector< TaskStep * > *)std_vector_Sl_TaskStep_Sm__Sg__GetRange(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  } catch(std::invalid_argument &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
-    return 0;
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Insert(void * jarg1, int jarg2, void * jarg3) {
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  int arg2 ;
-  TaskStep **arg3 = 0 ;
-  TaskStep *temp3 = 0 ;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  arg2 = (int)jarg2; 
-  temp3 = (TaskStep *)jarg3;
-  arg3 = (TaskStep **)&temp3; 
-  try {
-    std_vector_Sl_TaskStep_Sm__Sg__Insert(arg1,arg2,(TaskStep *const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_InsertRange(void * jarg1, int jarg2, void * jarg3) {
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  int arg2 ;
-  std::vector< TaskStep * > *arg3 = 0 ;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (std::vector< TaskStep * > *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< TaskStep * > const & is null", 0);
-    return ;
-  } 
-  try {
-    std_vector_Sl_TaskStep_Sm__Sg__InsertRange(arg1,arg2,(std::vector< TaskStep * > const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_RemoveAt(void * jarg1, int jarg2) {
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  int arg2 ;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  arg2 = (int)jarg2; 
-  try {
-    std_vector_Sl_TaskStep_Sm__Sg__RemoveAt(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_RemoveRange(void * jarg1, int jarg2, int jarg3) {
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  int arg2 ;
-  int arg3 ;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (int)jarg3; 
-  try {
-    std_vector_Sl_TaskStep_Sm__Sg__RemoveRange(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  } catch(std::invalid_argument &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
-    return ;
-  }
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Repeat(void * jarg1, int jarg2) {
-  void * jresult ;
-  TaskStep **arg1 = 0 ;
-  int arg2 ;
-  TaskStep *temp1 = 0 ;
-  std::vector< TaskStep * > *result = 0 ;
-  
-  temp1 = (TaskStep *)jarg1;
-  arg1 = (TaskStep **)&temp1; 
-  arg2 = (int)jarg2; 
-  try {
-    result = (std::vector< TaskStep * > *)std_vector_Sl_TaskStep_Sm__Sg__Repeat((TaskStep *const &)*arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Reverse__SWIG_0(void * jarg1) {
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  std_vector_Sl_TaskStep_Sm__Sg__Reverse__SWIG_0(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  int arg2 ;
-  int arg3 ;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (int)jarg3; 
-  try {
-    std_vector_Sl_TaskStep_Sm__Sg__Reverse__SWIG_1(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  } catch(std::invalid_argument &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_SetRange(void * jarg1, int jarg2, void * jarg3) {
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  int arg2 ;
-  std::vector< TaskStep * > *arg3 = 0 ;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (std::vector< TaskStep * > *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< TaskStep * > const & is null", 0);
-    return ;
-  } 
-  try {
-    std_vector_Sl_TaskStep_Sm__Sg__SetRange(arg1,arg2,(std::vector< TaskStep * > const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Contains(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  TaskStep **arg2 = 0 ;
-  TaskStep *temp2 = 0 ;
-  bool result;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  temp2 = (TaskStep *)jarg2;
-  arg2 = (TaskStep **)&temp2; 
-  result = (bool)std_vector_Sl_TaskStep_Sm__Sg__Contains(arg1,(TaskStep *const &)*arg2);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_IndexOf(void * jarg1, void * jarg2) {
-  int jresult ;
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  TaskStep **arg2 = 0 ;
-  TaskStep *temp2 = 0 ;
-  int result;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  temp2 = (TaskStep *)jarg2;
-  arg2 = (TaskStep **)&temp2; 
-  result = (int)std_vector_Sl_TaskStep_Sm__Sg__IndexOf(arg1,(TaskStep *const &)*arg2);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_LastIndexOf(void * jarg1, void * jarg2) {
-  int jresult ;
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  TaskStep **arg2 = 0 ;
-  TaskStep *temp2 = 0 ;
-  int result;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  temp2 = (TaskStep *)jarg2;
-  arg2 = (TaskStep **)&temp2; 
-  result = (int)std_vector_Sl_TaskStep_Sm__Sg__LastIndexOf(arg1,(TaskStep *const &)*arg2);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_TaskProcess_Remove(void * jarg1, void * jarg2) {
-  unsigned int jresult ;
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  TaskStep **arg2 = 0 ;
-  TaskStep *temp2 = 0 ;
-  bool result;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  temp2 = (TaskStep *)jarg2;
-  arg2 = (TaskStep **)&temp2; 
-  result = (bool)std_vector_Sl_TaskStep_Sm__Sg__Remove(arg1,(TaskStep *const &)*arg2);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_TaskProcess(void * jarg1) {
-  std::vector< TaskStep * > *arg1 = (std::vector< TaskStep * > *) 0 ;
-  
-  arg1 = (std::vector< TaskStep * > *)jarg1; 
-  delete arg1;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_AlternativeList__SWIG_0() {
-  void * jresult ;
-  std::vector< Alternative > *result = 0 ;
-  
-  result = (std::vector< Alternative > *)new std::vector< Alternative >();
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_AlternativeList__SWIG_1(void * jarg1) {
-  void * jresult ;
-  std::vector< Alternative > *arg1 = 0 ;
-  std::vector< Alternative > *result = 0 ;
-  
-  arg1 = (std::vector< Alternative > *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Alternative > const & is null", 0);
-    return 0;
-  } 
-  result = (std::vector< Alternative > *)new std::vector< Alternative >((std::vector< Alternative > const &)*arg1);
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_Clear(void * jarg1) {
-  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
-  
-  arg1 = (std::vector< Alternative > *)jarg1; 
-  (arg1)->clear();
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_Add(void * jarg1, void * jarg2) {
-  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
-  Alternative *arg2 = 0 ;
-  
-  arg1 = (std::vector< Alternative > *)jarg1; 
-  arg2 = (Alternative *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Alternative const & is null", 0);
-    return ;
-  } 
-  (arg1)->push_back((Alternative const &)*arg2);
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_size(void * jarg1) {
-  unsigned int jresult ;
-  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
-  std::vector< Alternative >::size_type result;
-  
-  arg1 = (std::vector< Alternative > *)jarg1; 
-  result = ((std::vector< Alternative > const *)arg1)->size();
-  jresult = (unsigned int)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_empty(void * jarg1) {
-  unsigned int jresult ;
-  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
-  bool result;
-  
-  arg1 = (std::vector< Alternative > *)jarg1; 
-  result = (bool)((std::vector< Alternative > const *)arg1)->empty();
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_capacity(void * jarg1) {
-  unsigned int jresult ;
-  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
-  std::vector< Alternative >::size_type result;
-  
-  arg1 = (std::vector< Alternative > *)jarg1; 
-  result = ((std::vector< Alternative > const *)arg1)->capacity();
-  jresult = (unsigned int)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_reserve(void * jarg1, unsigned int jarg2) {
-  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
-  std::vector< Alternative >::size_type arg2 ;
-  
-  arg1 = (std::vector< Alternative > *)jarg1; 
-  arg2 = (std::vector< Alternative >::size_type)jarg2; 
-  (arg1)->reserve(arg2);
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_AlternativeList__SWIG_2(int jarg1) {
-  void * jresult ;
-  int arg1 ;
-  std::vector< Alternative > *result = 0 ;
-  
-  arg1 = (int)jarg1; 
-  try {
-    result = (std::vector< Alternative > *)new_std_vector_Sl_Alternative_Sg___SWIG_2(arg1);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_getitemcopy(void * jarg1, int jarg2) {
-  void * jresult ;
-  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
-  int arg2 ;
-  SwigValueWrapper< Alternative > result;
-  
-  arg1 = (std::vector< Alternative > *)jarg1; 
-  arg2 = (int)jarg2; 
-  try {
-    result = std_vector_Sl_Alternative_Sg__getitemcopy(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = new Alternative(result); 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_getitem(void * jarg1, int jarg2) {
-  void * jresult ;
-  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
-  int arg2 ;
-  std::vector< Alternative >::value_type *result = 0 ;
-  
-  arg1 = (std::vector< Alternative > *)jarg1; 
-  arg2 = (int)jarg2; 
-  try {
-    result = (std::vector< Alternative >::value_type *) &std_vector_Sl_Alternative_Sg__getitem(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_setitem(void * jarg1, int jarg2, void * jarg3) {
-  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
-  int arg2 ;
-  Alternative *arg3 = 0 ;
-  
-  arg1 = (std::vector< Alternative > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (Alternative *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Alternative const & is null", 0);
-    return ;
-  } 
-  try {
-    std_vector_Sl_Alternative_Sg__setitem(arg1,arg2,(Alternative const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_AddRange(void * jarg1, void * jarg2) {
-  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
-  std::vector< Alternative > *arg2 = 0 ;
-  
-  arg1 = (std::vector< Alternative > *)jarg1; 
-  arg2 = (std::vector< Alternative > *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Alternative > const & is null", 0);
-    return ;
-  } 
-  std_vector_Sl_Alternative_Sg__AddRange(arg1,(std::vector< Alternative > const &)*arg2);
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_GetRange(void * jarg1, int jarg2, int jarg3) {
-  void * jresult ;
-  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
-  int arg2 ;
-  int arg3 ;
-  std::vector< Alternative > *result = 0 ;
-  
-  arg1 = (std::vector< Alternative > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (int)jarg3; 
-  try {
-    result = (std::vector< Alternative > *)std_vector_Sl_Alternative_Sg__GetRange(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  } catch(std::invalid_argument &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
-    return 0;
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_Insert(void * jarg1, int jarg2, void * jarg3) {
-  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
-  int arg2 ;
-  Alternative *arg3 = 0 ;
-  
-  arg1 = (std::vector< Alternative > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (Alternative *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Alternative const & is null", 0);
-    return ;
-  } 
-  try {
-    std_vector_Sl_Alternative_Sg__Insert(arg1,arg2,(Alternative const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_InsertRange(void * jarg1, int jarg2, void * jarg3) {
-  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
-  int arg2 ;
-  std::vector< Alternative > *arg3 = 0 ;
-  
-  arg1 = (std::vector< Alternative > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (std::vector< Alternative > *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Alternative > const & is null", 0);
-    return ;
-  } 
-  try {
-    std_vector_Sl_Alternative_Sg__InsertRange(arg1,arg2,(std::vector< Alternative > const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_RemoveAt(void * jarg1, int jarg2) {
-  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
-  int arg2 ;
-  
-  arg1 = (std::vector< Alternative > *)jarg1; 
-  arg2 = (int)jarg2; 
-  try {
-    std_vector_Sl_Alternative_Sg__RemoveAt(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_RemoveRange(void * jarg1, int jarg2, int jarg3) {
-  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
-  int arg2 ;
-  int arg3 ;
-  
-  arg1 = (std::vector< Alternative > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (int)jarg3; 
-  try {
-    std_vector_Sl_Alternative_Sg__RemoveRange(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  } catch(std::invalid_argument &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
-    return ;
-  }
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_Repeat(void * jarg1, int jarg2) {
-  void * jresult ;
-  Alternative *arg1 = 0 ;
-  int arg2 ;
-  std::vector< Alternative > *result = 0 ;
-  
-  arg1 = (Alternative *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Alternative const & is null", 0);
-    return 0;
-  } 
-  arg2 = (int)jarg2; 
-  try {
-    result = (std::vector< Alternative > *)std_vector_Sl_Alternative_Sg__Repeat((Alternative const &)*arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_Reverse__SWIG_0(void * jarg1) {
-  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
-  
-  arg1 = (std::vector< Alternative > *)jarg1; 
-  std_vector_Sl_Alternative_Sg__Reverse__SWIG_0(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
-  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
-  int arg2 ;
-  int arg3 ;
-  
-  arg1 = (std::vector< Alternative > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (int)jarg3; 
-  try {
-    std_vector_Sl_Alternative_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  } catch(std::invalid_argument &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AlternativeList_SetRange(void * jarg1, int jarg2, void * jarg3) {
-  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
-  int arg2 ;
-  std::vector< Alternative > *arg3 = 0 ;
-  
-  arg1 = (std::vector< Alternative > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (std::vector< Alternative > *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Alternative > const & is null", 0);
-    return ;
-  } 
-  try {
-    std_vector_Sl_Alternative_Sg__SetRange(arg1,arg2,(std::vector< Alternative > const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_AlternativeList(void * jarg1) {
-  std::vector< Alternative > *arg1 = (std::vector< Alternative > *) 0 ;
-  
-  arg1 = (std::vector< Alternative > *)jarg1; 
-  delete arg1;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_UncertaintyList__SWIG_0() {
-  void * jresult ;
-  std::vector< Uncertainty > *result = 0 ;
-  
-  result = (std::vector< Uncertainty > *)new std::vector< Uncertainty >();
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_UncertaintyList__SWIG_1(void * jarg1) {
-  void * jresult ;
-  std::vector< Uncertainty > *arg1 = 0 ;
-  std::vector< Uncertainty > *result = 0 ;
-  
-  arg1 = (std::vector< Uncertainty > *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Uncertainty > const & is null", 0);
-    return 0;
-  } 
-  result = (std::vector< Uncertainty > *)new std::vector< Uncertainty >((std::vector< Uncertainty > const &)*arg1);
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_Clear(void * jarg1) {
-  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
-  
-  arg1 = (std::vector< Uncertainty > *)jarg1; 
-  (arg1)->clear();
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_Add(void * jarg1, void * jarg2) {
-  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
-  Uncertainty *arg2 = 0 ;
-  
-  arg1 = (std::vector< Uncertainty > *)jarg1; 
-  arg2 = (Uncertainty *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Uncertainty const & is null", 0);
-    return ;
-  } 
-  (arg1)->push_back((Uncertainty const &)*arg2);
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_size(void * jarg1) {
-  unsigned int jresult ;
-  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
-  std::vector< Uncertainty >::size_type result;
-  
-  arg1 = (std::vector< Uncertainty > *)jarg1; 
-  result = ((std::vector< Uncertainty > const *)arg1)->size();
-  jresult = (unsigned int)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_empty(void * jarg1) {
-  unsigned int jresult ;
-  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
-  bool result;
-  
-  arg1 = (std::vector< Uncertainty > *)jarg1; 
-  result = (bool)((std::vector< Uncertainty > const *)arg1)->empty();
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_capacity(void * jarg1) {
-  unsigned int jresult ;
-  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
-  std::vector< Uncertainty >::size_type result;
-  
-  arg1 = (std::vector< Uncertainty > *)jarg1; 
-  result = ((std::vector< Uncertainty > const *)arg1)->capacity();
-  jresult = (unsigned int)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_reserve(void * jarg1, unsigned int jarg2) {
-  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
-  std::vector< Uncertainty >::size_type arg2 ;
-  
-  arg1 = (std::vector< Uncertainty > *)jarg1; 
-  arg2 = (std::vector< Uncertainty >::size_type)jarg2; 
-  (arg1)->reserve(arg2);
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_UncertaintyList__SWIG_2(int jarg1) {
-  void * jresult ;
-  int arg1 ;
-  std::vector< Uncertainty > *result = 0 ;
-  
-  arg1 = (int)jarg1; 
-  try {
-    result = (std::vector< Uncertainty > *)new_std_vector_Sl_Uncertainty_Sg___SWIG_2(arg1);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_getitemcopy(void * jarg1, int jarg2) {
-  void * jresult ;
-  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
-  int arg2 ;
-  SwigValueWrapper< Uncertainty > result;
-  
-  arg1 = (std::vector< Uncertainty > *)jarg1; 
-  arg2 = (int)jarg2; 
-  try {
-    result = std_vector_Sl_Uncertainty_Sg__getitemcopy(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = new Uncertainty(result); 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_getitem(void * jarg1, int jarg2) {
-  void * jresult ;
-  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
-  int arg2 ;
-  std::vector< Uncertainty >::value_type *result = 0 ;
-  
-  arg1 = (std::vector< Uncertainty > *)jarg1; 
-  arg2 = (int)jarg2; 
-  try {
-    result = (std::vector< Uncertainty >::value_type *) &std_vector_Sl_Uncertainty_Sg__getitem(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_setitem(void * jarg1, int jarg2, void * jarg3) {
-  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
-  int arg2 ;
-  Uncertainty *arg3 = 0 ;
-  
-  arg1 = (std::vector< Uncertainty > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (Uncertainty *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Uncertainty const & is null", 0);
-    return ;
-  } 
-  try {
-    std_vector_Sl_Uncertainty_Sg__setitem(arg1,arg2,(Uncertainty const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_AddRange(void * jarg1, void * jarg2) {
-  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
-  std::vector< Uncertainty > *arg2 = 0 ;
-  
-  arg1 = (std::vector< Uncertainty > *)jarg1; 
-  arg2 = (std::vector< Uncertainty > *)jarg2;
-  if (!arg2) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Uncertainty > const & is null", 0);
-    return ;
-  } 
-  std_vector_Sl_Uncertainty_Sg__AddRange(arg1,(std::vector< Uncertainty > const &)*arg2);
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_GetRange(void * jarg1, int jarg2, int jarg3) {
-  void * jresult ;
-  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
-  int arg2 ;
-  int arg3 ;
-  std::vector< Uncertainty > *result = 0 ;
-  
-  arg1 = (std::vector< Uncertainty > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (int)jarg3; 
-  try {
-    result = (std::vector< Uncertainty > *)std_vector_Sl_Uncertainty_Sg__GetRange(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  } catch(std::invalid_argument &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
-    return 0;
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_Insert(void * jarg1, int jarg2, void * jarg3) {
-  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
-  int arg2 ;
-  Uncertainty *arg3 = 0 ;
-  
-  arg1 = (std::vector< Uncertainty > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (Uncertainty *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Uncertainty const & is null", 0);
-    return ;
-  } 
-  try {
-    std_vector_Sl_Uncertainty_Sg__Insert(arg1,arg2,(Uncertainty const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_InsertRange(void * jarg1, int jarg2, void * jarg3) {
-  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
-  int arg2 ;
-  std::vector< Uncertainty > *arg3 = 0 ;
-  
-  arg1 = (std::vector< Uncertainty > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (std::vector< Uncertainty > *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Uncertainty > const & is null", 0);
-    return ;
-  } 
-  try {
-    std_vector_Sl_Uncertainty_Sg__InsertRange(arg1,arg2,(std::vector< Uncertainty > const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_RemoveAt(void * jarg1, int jarg2) {
-  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
-  int arg2 ;
-  
-  arg1 = (std::vector< Uncertainty > *)jarg1; 
-  arg2 = (int)jarg2; 
-  try {
-    std_vector_Sl_Uncertainty_Sg__RemoveAt(arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_RemoveRange(void * jarg1, int jarg2, int jarg3) {
-  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
-  int arg2 ;
-  int arg3 ;
-  
-  arg1 = (std::vector< Uncertainty > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (int)jarg3; 
-  try {
-    std_vector_Sl_Uncertainty_Sg__RemoveRange(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  } catch(std::invalid_argument &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
-    return ;
-  }
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_Repeat(void * jarg1, int jarg2) {
-  void * jresult ;
-  Uncertainty *arg1 = 0 ;
-  int arg2 ;
-  std::vector< Uncertainty > *result = 0 ;
-  
-  arg1 = (Uncertainty *)jarg1;
-  if (!arg1) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Uncertainty const & is null", 0);
-    return 0;
-  } 
-  arg2 = (int)jarg2; 
-  try {
-    result = (std::vector< Uncertainty > *)std_vector_Sl_Uncertainty_Sg__Repeat((Uncertainty const &)*arg1,arg2);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return 0;
-  }
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_Reverse__SWIG_0(void * jarg1) {
-  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
-  
-  arg1 = (std::vector< Uncertainty > *)jarg1; 
-  std_vector_Sl_Uncertainty_Sg__Reverse__SWIG_0(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_Reverse__SWIG_1(void * jarg1, int jarg2, int jarg3) {
-  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
-  int arg2 ;
-  int arg3 ;
-  
-  arg1 = (std::vector< Uncertainty > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (int)jarg3; 
-  try {
-    std_vector_Sl_Uncertainty_Sg__Reverse__SWIG_1(arg1,arg2,arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  } catch(std::invalid_argument &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentException, (&_e)->what(), "");
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyList_SetRange(void * jarg1, int jarg2, void * jarg3) {
-  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
-  int arg2 ;
-  std::vector< Uncertainty > *arg3 = 0 ;
-  
-  arg1 = (std::vector< Uncertainty > *)jarg1; 
-  arg2 = (int)jarg2; 
-  arg3 = (std::vector< Uncertainty > *)jarg3;
-  if (!arg3) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "std::vector< Uncertainty > const & is null", 0);
-    return ;
-  } 
-  try {
-    std_vector_Sl_Uncertainty_Sg__SetRange(arg1,arg2,(std::vector< Uncertainty > const &)*arg3);
-  } catch(std::out_of_range &_e) {
-    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentOutOfRangeException, 0, (&_e)->what());
-    return ;
-  }
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_UncertaintyList(void * jarg1) {
-  std::vector< Uncertainty > *arg1 = (std::vector< Uncertainty > *) 0 ;
-  
-  arg1 = (std::vector< Uncertainty > *)jarg1; 
-  delete arg1;
 }
 
 
@@ -4202,6 +7014,10 @@ SWIGEXPORT Criterion * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_OptimismPe
 
 SWIGEXPORT Criterion * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_PrincipleOfInsufficientReason_SWIGUpcast(PrincipleOfInsufficientReason *jarg1) {
     return (Criterion *)jarg1;
+}
+
+SWIGEXPORT ProbabilityCriterion * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_BayesCriterion_SWIGUpcast(BayesCriterion *jarg1) {
+    return (ProbabilityCriterion *)jarg1;
 }
 
 #ifdef __cplusplus

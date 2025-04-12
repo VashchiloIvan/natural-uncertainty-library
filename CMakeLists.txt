@@ -10,16 +10,29 @@ add_library(natural_uncertainty SHARED
         mathmodel/Uncertainty.h
         mathmodel/MathModel.cpp
         mathmodel/MathModel.h
-        criterions/MaximinCriterion.cpp
-        criterions/MaximinCriterion.h
-        criterions/Criterion.cpp
-        criterions/Criterion.h
+        mathmodel/ProbabilisticModel.cpp
+        mathmodel/ProbabilisticModel.h
+        mathmodel/ProbabilisticAlternative.cpp
+        mathmodel/ProbabilisticAlternative.h
+
         criterions/SolveStatus.cpp
         criterions/SolveStatus.h
         criterions/tasklog/TaskStep.h
         criterions/tasklog/TaskStep.cpp
-        criterions/OptimismPessimismCriterion.cpp
-        criterions/OptimismPessimismCriterion.h
-        criterions/PrincipleOfInsufficientReason.cpp
-        criterions/PrincipleOfInsufficientReason.h
+
+        criterions/totaluncertainty/Criterion.cpp
+        criterions/totaluncertainty/Criterion.h
+        criterions/totaluncertainty/MaximinCriterion.cpp
+        criterions/totaluncertainty/MaximinCriterion.h
+        criterions/totaluncertainty/OptimismPessimismCriterion.cpp
+        criterions/totaluncertainty/OptimismPessimismCriterion.h
+        criterions/totaluncertainty/PrincipleOfInsufficientReason.cpp
+        criterions/totaluncertainty/PrincipleOfInsufficientReason.h
+
+        criterions/probabilityuncertainty/ProbabilityCriterion.cpp
+        criterions/probabilityuncertainty/ProbabilityCriterion.h
+        criterions/probabilityuncertainty/BayesCriterion.cpp
+        criterions/probabilityuncertainty/BayesCriterion.h
+
+        wrapper/csharp/natural-uncertainty-lib_wrap.cxx
 )

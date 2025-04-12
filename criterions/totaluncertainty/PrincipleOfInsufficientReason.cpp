@@ -1,10 +1,10 @@
-#include "MaximinCriterion.h"
+#include "PrincipleOfInsufficientReason.h"
 
-MaximinCriterion::MaximinCriterion(MathModel mathModel) {
+PrincipleOfInsufficientReason::PrincipleOfInsufficientReason(MathModel mathModel) {
     this->mathModel = MathModel(mathModel);
 }
 
-SolveStatus MaximinCriterion::solve() {
+SolveStatus PrincipleOfInsufficientReason::solve() {
     if (!mathModel.isValid()) {
         logText("Математическая модель невалидна. "
                 "Количество альтернатив и неопределенностей должно быть ненулевым. "
@@ -14,41 +14,43 @@ SolveStatus MaximinCriterion::solve() {
         return SolveStatus::InvalidModelResult();
     }
 
-    logText("Для поиска решения вычисляется минимальные значения по каждой альтернативе. "
-            "Альтернатива с наибольшим значением является наилучшей");
+    logText("Предполагается, что все заданные неопределенности равновероятны. "
+            "Исходя из этого предположения оценка альтернативы является средним значением "
+            "оценок по каждой альтернативе. ");
 
-    std::vector<double> minimalMarks;
-    double minMark = INT_MAX;
+    std::vector<double> averageMarks;
+    double maxAvgMark = INT_MIN;
     for (auto alternative: mathModel.getAlternatives()) {
-        auto altMinMark = alternative.minMark();
+        auto altAvgMark = alternative.avgOfMarks();
 
-        minimalMarks.push_back(altMinMark);
+        averageMarks.push_back(altAvgMark);
 
-        if (altMinMark < minMark) {
-            minMark = altMinMark;
+        if (altAvgMark > maxAvgMark) {
+            maxAvgMark = altAvgMark;
         }
     }
 
-    logMarks(minimalMarks);
+    logMarks(averageMarks);
 
     std::vector<int> bestAlternatives;
     std::vector<std::string> alternativeNames;
 
-    for (int i = 0; i < minimalMarks.size(); ++i) {
-        if (minimalMarks[i] == minMark) {
+    for (int i = 0; i < averageMarks.size(); ++i) {
+        if (averageMarks[i] == maxAvgMark) {
             bestAlternatives.push_back(i);
             alternativeNames.push_back(mathModel.getAlternatives()[i].getName());
         }
     }
 
-    logText("В результате с максимальной среди минимальных оценок " + std::to_string(minMark) + " " +
-            (bestAlternatives.size() > 1 ? "наилучшими альтернативами являются" : "наилучшей альтернативой является") +
+    logText("В результате с максимальной среди усредненных оценок является значение " + std::to_string(maxAvgMark) +
+            ". Таким образом, " +
+            (bestAlternatives.size() > 1 ? "наилучшими альтернативами являются " : "наилучшей альтернативой является ") +
             join(alternativeNames, ", "));
 
     return SolveStatus::OptimalDecisionResult(bestAlternatives);
 }
 
-void MaximinCriterion::logMarks(const std::vector<double>& minimalMarks) {
+void PrincipleOfInsufficientReason::logMarks(const std::vector<double>& avgMarks) {
     if (!withProcessLog) {
         return;
     }
@@ -60,10 +62,10 @@ void MaximinCriterion::logMarks(const std::vector<double>& minimalMarks) {
 
     process.push_back(TaskStep::TablePartType("sidebar", sidebar));
 
-    std::vector<std::string> header = {"минимальное значение"};
+    std::vector<std::string> header = {"среднее значение"};
     process.push_back(TaskStep::TablePartType("header", header));
 
-    for (auto mark: minimalMarks) {
+    for (auto mark: avgMarks) {
         std::vector<std::string> estimateVector = {std::to_string(mark)};
 
         process.push_back(TaskStep::TablePartType("row", estimateVector));

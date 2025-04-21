@@ -18,14 +18,14 @@ SolveStatus MaximinCriterion::solve() {
             "Альтернатива с наибольшим значением является наилучшей");
 
     std::vector<double> minimalMarks;
-    double minMark = INT_MAX;
+    double maxMark = INT_MIN;
     for (auto alternative: mathModel.getAlternatives()) {
         auto altMinMark = alternative.minMark();
 
         minimalMarks.push_back(altMinMark);
 
-        if (altMinMark < minMark) {
-            minMark = altMinMark;
+        if (altMinMark > maxMark) {
+            maxMark = altMinMark;
         }
     }
 
@@ -35,13 +35,13 @@ SolveStatus MaximinCriterion::solve() {
     std::vector<std::string> alternativeNames;
 
     for (int i = 0; i < minimalMarks.size(); ++i) {
-        if (minimalMarks[i] == minMark) {
+        if (minimalMarks[i] == maxMark) {
             bestAlternatives.push_back(i);
             alternativeNames.push_back(mathModel.getAlternatives()[i].getName());
         }
     }
 
-    logText("В результате с максимальной среди минимальных оценок " + std::to_string(minMark) + " " +
+    logText("В результате с максимальной среди минимальных оценок " + std::to_string(maxMark) + " " +
             (bestAlternatives.size() > 1 ? "наилучшими альтернативами являются " : "наилучшей альтернативой является ") +
             join(alternativeNames, ", "));
 

@@ -377,7 +377,8 @@ template <typename T> T SwigValueInit() {
 #include "../../criterions/totaluncertainty/OptimismPessimismCriterion.h"
 #include "../../criterions/totaluncertainty/PrincipleOfInsufficientReason.h"
 #include "../../criterions/probabilityuncertainty/ProbabilityCriterion.h"
-#include "../../criterions/probabilityuncertainty/BayesCriterion.h"
+#include "../../criterions/probabilityuncertainty/AverageResultCriterion.h"
+
 
 
 #include <string>
@@ -6944,10 +6945,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_Probabilit
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_BayesCriterion(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_AverageResultCriterion(void * jarg1) {
   void * jresult ;
   ProbabilisticModel *arg1 = 0 ;
-  BayesCriterion *result = 0 ;
+  AverageResultCriterion *result = 0 ;
   
   arg1 = (ProbabilisticModel *)jarg1;
   if (!arg1) {
@@ -6956,7 +6957,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_BayesCriter
   } 
   {
     try {
-      result = (BayesCriterion *)new BayesCriterion((ProbabilisticModel const &)*arg1);
+      result = (AverageResultCriterion *)new AverageResultCriterion((ProbabilisticModel const &)*arg1);
     } catch (const std::exception& e) {
       {
         SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
@@ -6968,12 +6969,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_new_BayesCriter
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_BayesCriterion_solve(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AverageResultCriterion_solve(void * jarg1) {
   void * jresult ;
-  BayesCriterion *arg1 = (BayesCriterion *) 0 ;
+  AverageResultCriterion *arg1 = (AverageResultCriterion *) 0 ;
   SolveStatus result;
   
-  arg1 = (BayesCriterion *)jarg1; 
+  arg1 = (AverageResultCriterion *)jarg1; 
   {
     try {
       result = (arg1)->solve();
@@ -6988,10 +6989,10 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_BayesCriterion_
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_BayesCriterion(void * jarg1) {
-  BayesCriterion *arg1 = (BayesCriterion *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_AverageResultCriterion(void * jarg1) {
+  AverageResultCriterion *arg1 = (AverageResultCriterion *) 0 ;
   
-  arg1 = (BayesCriterion *)jarg1; 
+  arg1 = (AverageResultCriterion *)jarg1; 
   {
     try {
       delete arg1;
@@ -7016,7 +7017,7 @@ SWIGEXPORT Criterion * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_PrincipleO
     return (Criterion *)jarg1;
 }
 
-SWIGEXPORT ProbabilityCriterion * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_BayesCriterion_SWIGUpcast(BayesCriterion *jarg1) {
+SWIGEXPORT ProbabilityCriterion * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_AverageResultCriterion_SWIGUpcast(AverageResultCriterion *jarg1) {
     return (ProbabilityCriterion *)jarg1;
 }
 

@@ -13,7 +13,8 @@
 #include "../../criterions/totaluncertainty/OptimismPessimismCriterion.h"
 #include "../../criterions/totaluncertainty/PrincipleOfInsufficientReason.h"
 #include "../../criterions/probabilityuncertainty/ProbabilityCriterion.h"
-#include "../../criterions/probabilityuncertainty/BayesCriterion.h"
+#include "../../criterions/probabilityuncertainty/AverageResultCriterion.h"
+
 %}
 
 %include <std_string.i>
@@ -56,4 +57,4 @@
 %include "../../criterions/totaluncertainty/OptimismPessimismCriterion.h"
 %include "../../criterions/totaluncertainty/PrincipleOfInsufficientReason.h"
 %include "../../criterions/probabilityuncertainty/ProbabilityCriterion.h"
-%include "../../criterions/probabilityuncertainty/BayesCriterion.h"
+%include "../../criterions/probabilityuncertainty/AverageResultCriterion.h"

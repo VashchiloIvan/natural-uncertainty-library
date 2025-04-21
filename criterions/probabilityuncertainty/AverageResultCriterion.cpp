@@ -1,10 +1,10 @@
-#include "BayesCriterion.h"
+#include "AverageResultCriterion.h"
 
-BayesCriterion::BayesCriterion(const ProbabilisticModel& mathModel) {
+AverageResultCriterion::AverageResultCriterion(const ProbabilisticModel& mathModel) {
     this->mathModel = ProbabilisticModel(mathModel);
 }
 
-SolveStatus BayesCriterion::solve() {
+SolveStatus AverageResultCriterion::solve() {
     if (!mathModel.isValid()) {
         logText("Математическая модель невалидна. "
                 "Количество альтернатив и неопределенностей должно быть ненулевым. "
@@ -50,7 +50,7 @@ SolveStatus BayesCriterion::solve() {
     return SolveStatus::OptimalDecisionResult(bestAlternatives);
 }
 
-void BayesCriterion::logMarks(const std::vector<double>& marks) {
+void AverageResultCriterion::logMarks(const std::vector<double>& marks) {
     if (!withProcessLog) {
         return;
     }

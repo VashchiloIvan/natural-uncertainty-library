@@ -31,8 +31,8 @@ add_library(natural_uncertainty SHARED
 
         criterions/probabilityuncertainty/ProbabilityCriterion.cpp
         criterions/probabilityuncertainty/ProbabilityCriterion.h
-        criterions/probabilityuncertainty/BayesCriterion.cpp
-        criterions/probabilityuncertainty/BayesCriterion.h
+        criterions/probabilityuncertainty/AverageResultCriterion.cpp
+        criterions/probabilityuncertainty/AverageResultCriterion.h
 
         wrapper/csharp/natural-uncertainty-lib_wrap.cxx
 )

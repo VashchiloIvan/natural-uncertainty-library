@@ -19,9 +19,10 @@ add_library(natural_uncertainty SHARED
         criterions/SolveStatus.h
         criterions/tasklog/TaskStep.h
         criterions/tasklog/TaskStep.cpp
+        criterions/Criterion.h
+        criterions/Criterion.cpp
 
-        criterions/totaluncertainty/Criterion.cpp
-        criterions/totaluncertainty/Criterion.h
+        criterions/totaluncertainty/UncertaintyCriterion.h
         criterions/totaluncertainty/MaximinCriterion.cpp
         criterions/totaluncertainty/MaximinCriterion.h
         criterions/totaluncertainty/OptimismPessimismCriterion.cpp
@@ -29,7 +30,6 @@ add_library(natural_uncertainty SHARED
         criterions/totaluncertainty/PrincipleOfInsufficientReason.cpp
         criterions/totaluncertainty/PrincipleOfInsufficientReason.h
 
-        criterions/probabilityuncertainty/ProbabilityCriterion.cpp
         criterions/probabilityuncertainty/ProbabilityCriterion.h
         criterions/probabilityuncertainty/AverageResultCriterion.cpp
         criterions/probabilityuncertainty/AverageResultCriterion.h

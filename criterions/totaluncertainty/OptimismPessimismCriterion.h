@@ -2,9 +2,9 @@
 #define NATURAL_UNCERTAINTY_OPTIMISMPESSIMISMCRITERION_H
 
 
-#include "Criterion.h"
+#include "UncertaintyCriterion.h"
 
-class OptimismPessimismCriterion : public Criterion {
+class OptimismPessimismCriterion : public UncertaintyCriterion {
 private:
     double optimismKoef;
 

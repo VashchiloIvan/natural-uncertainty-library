@@ -2,9 +2,9 @@
 #define NATURAL_UNCERTAINTY_PRINCIPLEOFINSUFFICIENTREASON_H
 
 
-#include "Criterion.h"
+#include "UncertaintyCriterion.h"
 
-class PrincipleOfInsufficientReason : public Criterion {
+class PrincipleOfInsufficientReason : public UncertaintyCriterion {
 private:
     void logMarks(const std::vector<double>& avgMarks);
 

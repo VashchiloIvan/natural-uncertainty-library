@@ -2,9 +2,9 @@
 #define NATURAL_UNCERTAINTY_MAXIMINCRITERION_H
 
 
-#include "Criterion.h"
+#include "UncertaintyCriterion.h"
 
-class MaximinCriterion : public Criterion {
+class MaximinCriterion : public UncertaintyCriterion {
 private:
     void logMarks(const std::vector<double>& minimalMarks);
 

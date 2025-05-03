@@ -6,9 +6,10 @@
 #include "../../mathmodel/ProbabilisticAlternative.h"
 #include "../../mathmodel/MathModel.h"
 #include "../../mathmodel/ProbabilisticModel.h"
+#include "../../criterions/Criterion.h"
 #include "../../criterions/SolveStatus.h"
 #include "../../criterions/tasklog/TaskStep.h"
-#include "../../criterions/totaluncertainty/Criterion.h"
+#include "../../criterions/totaluncertainty/UncertaintyCriterion.h"
 #include "../../criterions/totaluncertainty/MaximinCriterion.h"
 #include "../../criterions/totaluncertainty/OptimismPessimismCriterion.h"
 #include "../../criterions/totaluncertainty/PrincipleOfInsufficientReason.h"
@@ -49,12 +50,14 @@
 %include "../../mathmodel/MathModel.h"
 %include "../../mathmodel/ProbabilisticModel.h"
 
+%include "../../criterions/Criterion.h"
 %include "../../criterions/SolveStatus.h"
 %include "../../criterions/tasklog/TaskStep.h"
 
-%include "../../criterions/totaluncertainty/Criterion.h"
+%include "../../criterions/totaluncertainty/UncertaintyCriterion.h"
 %include "../../criterions/totaluncertainty/MaximinCriterion.h"
 %include "../../criterions/totaluncertainty/OptimismPessimismCriterion.h"
 %include "../../criterions/totaluncertainty/PrincipleOfInsufficientReason.h"
+
 %include "../../criterions/probabilityuncertainty/ProbabilityCriterion.h"
 %include "../../criterions/probabilityuncertainty/AverageResultCriterion.h"

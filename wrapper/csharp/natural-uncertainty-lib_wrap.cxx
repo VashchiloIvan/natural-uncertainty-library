@@ -370,9 +370,10 @@ template <typename T> T SwigValueInit() {
 #include "../../mathmodel/ProbabilisticAlternative.h"
 #include "../../mathmodel/MathModel.h"
 #include "../../mathmodel/ProbabilisticModel.h"
+#include "../../criterions/Criterion.h"
 #include "../../criterions/SolveStatus.h"
 #include "../../criterions/tasklog/TaskStep.h"
-#include "../../criterions/totaluncertainty/Criterion.h"
+#include "../../criterions/totaluncertainty/UncertaintyCriterion.h"
 #include "../../criterions/totaluncertainty/MaximinCriterion.h"
 #include "../../criterions/totaluncertainty/OptimismPessimismCriterion.h"
 #include "../../criterions/totaluncertainty/PrincipleOfInsufficientReason.h"
@@ -6267,6 +6268,78 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_Probabilis
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Criterion_withLoggingProcess(void * jarg1) {
+  Criterion *arg1 = (Criterion *) 0 ;
+  
+  arg1 = (Criterion *)jarg1; 
+  {
+    try {
+      (arg1)->withLoggingProcess();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Criterion_getProcess(void * jarg1) {
+  void * jresult ;
+  Criterion *arg1 = (Criterion *) 0 ;
+  std::vector< TaskStep * > result;
+  
+  arg1 = (Criterion *)jarg1; 
+  {
+    try {
+      result = (arg1)->getProcess();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = new std::vector< TaskStep * >(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Criterion_solve(void * jarg1) {
+  void * jresult ;
+  Criterion *arg1 = (Criterion *) 0 ;
+  SolveStatus result;
+  
+  arg1 = (Criterion *)jarg1; 
+  {
+    try {
+      result = (arg1)->solve();
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
+      };
+    }
+  }
+  jresult = new SolveStatus(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_Criterion(void * jarg1) {
+  Criterion *arg1 = (Criterion *) 0 ;
+  
+  arg1 = (Criterion *)jarg1; 
+  {
+    try {
+      delete arg1;
+    } catch (const std::exception& e) {
+      {
+        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
+      };
+    }
+  }
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_SolveStatus_OptimalDecisionResult(void * jarg1) {
   void * jresult ;
   std::vector< int > arg1 ;
@@ -6613,66 +6686,10 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_TaskStep(v
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Criterion_withLoggingProcess(void * jarg1) {
-  Criterion *arg1 = (Criterion *) 0 ;
+SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_UncertaintyCriterion(void * jarg1) {
+  UncertaintyCriterion *arg1 = (UncertaintyCriterion *) 0 ;
   
-  arg1 = (Criterion *)jarg1; 
-  {
-    try {
-      (arg1)->withLoggingProcess();
-    } catch (const std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
-      };
-    }
-  }
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Criterion_getProcess(void * jarg1) {
-  void * jresult ;
-  Criterion *arg1 = (Criterion *) 0 ;
-  std::vector< TaskStep * > result;
-  
-  arg1 = (Criterion *)jarg1; 
-  {
-    try {
-      result = (arg1)->getProcess();
-    } catch (const std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
-      };
-    }
-  }
-  jresult = new std::vector< TaskStep * >(result); 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_Criterion_solve(void * jarg1) {
-  void * jresult ;
-  Criterion *arg1 = (Criterion *) 0 ;
-  SolveStatus result;
-  
-  arg1 = (Criterion *)jarg1; 
-  {
-    try {
-      result = (arg1)->solve();
-    } catch (const std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
-      };
-    }
-  }
-  jresult = new SolveStatus(result); 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_Criterion(void * jarg1) {
-  Criterion *arg1 = (Criterion *) 0 ;
-  
-  arg1 = (Criterion *)jarg1; 
+  arg1 = (UncertaintyCriterion *)jarg1; 
   {
     try {
       delete arg1;
@@ -6873,62 +6890,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_PrincipleO
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilityCriterion_withLoggingProcess(void * jarg1) {
-  ProbabilityCriterion *arg1 = (ProbabilityCriterion *) 0 ;
-  
-  arg1 = (ProbabilityCriterion *)jarg1; 
-  {
-    try {
-      (arg1)->withLoggingProcess();
-    } catch (const std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return ; 
-      };
-    }
-  }
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilityCriterion_getProcess(void * jarg1) {
-  void * jresult ;
-  ProbabilityCriterion *arg1 = (ProbabilityCriterion *) 0 ;
-  std::vector< TaskStep * > result;
-  
-  arg1 = (ProbabilityCriterion *)jarg1; 
-  {
-    try {
-      result = (arg1)->getProcess();
-    } catch (const std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
-      };
-    }
-  }
-  jresult = new std::vector< TaskStep * >(result); 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilityCriterion_solve(void * jarg1) {
-  void * jresult ;
-  ProbabilityCriterion *arg1 = (ProbabilityCriterion *) 0 ;
-  SolveStatus result;
-  
-  arg1 = (ProbabilityCriterion *)jarg1; 
-  {
-    try {
-      result = (arg1)->solve();
-    } catch (const std::exception& e) {
-      {
-        SWIG_CSharpException(SWIG_RuntimeError, e.what()); return 0; 
-      };
-    }
-  }
-  jresult = new SolveStatus(result); 
-  return jresult;
-}
-
-
 SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_ProbabilityCriterion(void * jarg1) {
   ProbabilityCriterion *arg1 = (ProbabilityCriterion *) 0 ;
   
@@ -7005,15 +6966,23 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_delete_AverageRes
 }
 
 
-SWIGEXPORT Criterion * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_MaximinCriterion_SWIGUpcast(MaximinCriterion *jarg1) {
+SWIGEXPORT Criterion * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_UncertaintyCriterion_SWIGUpcast(UncertaintyCriterion *jarg1) {
     return (Criterion *)jarg1;
 }
 
-SWIGEXPORT Criterion * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_OptimismPessimismCriterion_SWIGUpcast(OptimismPessimismCriterion *jarg1) {
-    return (Criterion *)jarg1;
+SWIGEXPORT UncertaintyCriterion * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_MaximinCriterion_SWIGUpcast(MaximinCriterion *jarg1) {
+    return (UncertaintyCriterion *)jarg1;
 }
 
-SWIGEXPORT Criterion * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_PrincipleOfInsufficientReason_SWIGUpcast(PrincipleOfInsufficientReason *jarg1) {
+SWIGEXPORT UncertaintyCriterion * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_OptimismPessimismCriterion_SWIGUpcast(OptimismPessimismCriterion *jarg1) {
+    return (UncertaintyCriterion *)jarg1;
+}
+
+SWIGEXPORT UncertaintyCriterion * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_PrincipleOfInsufficientReason_SWIGUpcast(PrincipleOfInsufficientReason *jarg1) {
+    return (UncertaintyCriterion *)jarg1;
+}
+
+SWIGEXPORT Criterion * SWIGSTDCALL CSharp_NaturalUncertaintyCsharpApi_ProbabilityCriterion_SWIGUpcast(ProbabilityCriterion *jarg1) {
     return (Criterion *)jarg1;
 }
 

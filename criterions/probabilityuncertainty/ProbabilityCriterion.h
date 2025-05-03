@@ -2,24 +2,11 @@
 #define NATURAL_UNCERTAINTY_PROBABILITYCRITERION_H
 
 #include "../../mathmodel/ProbabilisticModel.h"
-#include "../SolveStatus.h"
-#include "../tasklog/TaskStep.h"
+#include "../Criterion.h"
 
-class ProbabilityCriterion {
+class ProbabilityCriterion : public Criterion {
 protected:
     ProbabilisticModel mathModel;
-
-    bool withProcessLog;
-    std::vector<TaskStep *> process;
-
-    void logText(std::string);
-    std::string join(std::vector<std::string> strings, std::string separator);
-
-public:
-    void withLoggingProcess();
-    std::vector<TaskStep *> getProcess();
-
-    virtual SolveStatus solve() = 0;
 };
 
 

@@ -1,14 +1,11 @@
 #ifndef NATURAL_UNCERTAINTY_CRITERION_H
 #define NATURAL_UNCERTAINTY_CRITERION_H
 
-#include "../../mathmodel/MathModel.h"
-#include "../SolveStatus.h"
-#include "../tasklog/TaskStep.h"
+#include "SolveStatus.h"
+#include "tasklog/TaskStep.h"
 
 class Criterion {
 protected:
-    MathModel mathModel;
-
     bool withProcessLog;
     std::vector<TaskStep *> process;
 
